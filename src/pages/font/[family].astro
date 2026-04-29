@@ -1,0 +1,143 @@
+---
+import { readFile } from 'fs/promises';
+import { join } from 'path';
+
+interface FontMeta {
+  family: string;
+  category: string;
+  variants: string[];
+  subsets: string[];
+  source: 'google' | 'noonnu';
+  designer?: string;
+  license: string;
+  previewUrl: string;
+  downloadUrl?: string;
+  popularity?: number;
+}
+
+export async function getStaticPaths() {
+  let fonts: FontMeta[] = [];
+  try {
+    const data = await readFile(join(process.cwd(), 'src/data/fonts.json'), 'utf-8');
+    fonts = JSON.parse(data);
+  } catch {}
+  return fonts.slice(0, 200).map((f) => ({
+    params: { family: f.family.toLowerCase().replace(/\s+/g, '-') },
+    props: { font: f },
+  }));
+}
+
+const { font } = Astro.props as { font: FontMeta };
+const baseUrl = import.meta.env.PUBLIC_SITE_URL || 'https://fontwell.online';
+const popunderKey = import.meta.env.PUBLIC_ADSTERRA_POPUNDER_KEY;
+const directLinkUrl = import.meta.env.PUBLIC_ADSTERRA_DIRECTLINK_URL || font.downloadUrl;
+
+// Google Fonts CSS for live preview
+const fontCssUrl = font.source === 'google'
+  ? `https://fonts.googleapis.com/css2?family=${encodeURIComponent(font.family.replace(/\s/g, '+'))}:wght@${font.variants.filter(v => /^\d+$/.test(v)).join(';') || '400'}&display=swap`
+  : null;
+
+const sampleTexts = {
+  ko: '하늘이 맑은 날씨에 자유롭게 비행하는 새들',
+  en: 'The quick brown fox jumps over the lazy dog',
+  num: '0123456789 +-*/= ABC abc',
+  pangram: 'Pack my box with five dozen liquor jugs.',
+};
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{font.family} — 무료 폰트 다운로드 | FontWell</title>
+    <meta name="description" content={`${font.family} 폰트 라이브 미리보기 + 무료 다운로드. ${font.license} 라이선스.`} />
+    <link rel="canonical" href={`${baseUrl}/font/${font.family.toLowerCase().replace(/\s+/g, '-')}`} />
+    {fontCssUrl && <link rel="stylesheet" href={fontCssUrl} />}
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased">
+    <header class="border-b bg-white">
+      <div class="container mx-auto flex max-w-5xl items-center justify-between p-4">
+        <a href="/" class="text-2xl font-bold text-purple-600">FontWell</a>
+        <a href="/" class="text-sm hover:text-purple-600">← 모든 폰트</a>
+      </div>
+    </header>
+
+    <section class="container mx-auto max-w-5xl px-4 py-8">
+      <div class="mb-2 text-sm text-slate-500 capitalize">{font.category}</div>
+      <h1 class="text-4xl font-bold tracking-tight">{font.family}</h1>
+      {font.designer && <p class="mt-1 text-slate-600">디자이너: {font.designer}</p>}
+
+      <div class="mt-3 flex flex-wrap gap-2 text-xs">
+        {font.subsets.map((s) => (
+          <span class="rounded-full bg-purple-100 px-3 py-1 text-purple-700">{s}</span>
+        ))}
+        <span class="rounded-full bg-emerald-100 px-3 py-1 text-emerald-700">{font.license}</span>
+        <span class="rounded-full bg-slate-100 px-3 py-1">{font.variants.length} weights</span>
+      </div>
+
+      {directLinkUrl && (
+        <a
+          href={directLinkUrl}
+          target="_blank"
+          rel="noopener noreferrer sponsored"
+          class="mt-4 inline-flex items-center gap-2 rounded-lg bg-purple-600 px-5 py-2.5 text-white hover:bg-purple-700 transition"
+        >
+          무료 다운로드
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+          </svg>
+        </a>
+      )}
+
+      <h2 class="mt-12 mb-4 text-xl font-semibold">라이브 미리보기</h2>
+      <div class="space-y-6 rounded-2xl border bg-white p-6">
+        <div>
+          <div class="mb-1 text-xs uppercase tracking-wider text-slate-500">한글</div>
+          <p style={`font-family: '${font.family}', sans-serif; font-size: 2.5rem; line-height: 1.3;`}>
+            {sampleTexts.ko}
+          </p>
+        </div>
+        <hr class="border-slate-100" />
+        <div>
+          <div class="mb-1 text-xs uppercase tracking-wider text-slate-500">English</div>
+          <p style={`font-family: '${font.family}', sans-serif; font-size: 2.5rem; line-height: 1.3;`}>
+            {sampleTexts.en}
+          </p>
+        </div>
+        <hr class="border-slate-100" />
+        <div>
+          <div class="mb-1 text-xs uppercase tracking-wider text-slate-500">Numbers & Symbols</div>
+          <p style={`font-family: '${font.family}', monospace; font-size: 2rem;`}>
+            {sampleTexts.num}
+          </p>
+        </div>
+      </div>
+
+      <h2 class="mt-12 mb-4 text-xl font-semibold">웨이트별 미리보기</h2>
+      <div class="space-y-3 rounded-2xl border bg-white p-6">
+        {font.variants.filter(v => /^\d+$/.test(v)).map((w) => (
+          <div class="flex items-baseline gap-4">
+            <span class="w-20 shrink-0 text-xs text-slate-500">Weight {w}</span>
+            <p style={`font-family: '${font.family}', sans-serif; font-weight: ${w}; font-size: 1.5rem;`}>
+              {sampleTexts.pangram}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="mt-12 mb-3 text-xl font-semibold">CSS 사용법</h2>
+      <pre class="rounded-lg bg-slate-900 p-4 text-xs text-slate-100 overflow-x-auto"><code>{`/* @import in your CSS */
+@import url('${fontCssUrl}');
+
+.text {
+  font-family: '${font.family}', sans-serif;
+  font-weight: 400;
+}`}</code></pre>
+    </section>
+
+    {popunderKey && (
+      <script is:inline async type="text/javascript" src={`//pl${popunderKey}.profitableratecpm.com/${popunderKey}/invoke.js`} />
+    )}
+  </body>
+</html>

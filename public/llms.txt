@@ -1,0 +1,34 @@
+# FontWell — Free fonts, icons & templates search
+
+> 1700+ Google Fonts + Korean free fonts (Pretendard, Noto Sans KR, IBM Plex Sans KR, 본고딕, 나눔고딕) + Iconify icons in one searchable hub. Live preview, weight comparison, ready-to-use CSS snippets.
+
+## Site facts
+
+- **Domain**: fontwell.online
+- **Category**: Free fonts, icons, design assets directory
+- **Languages**: Korean, English, Japanese, Chinese, German, French
+- **Total fonts**: 1700+ (Google Fonts) + 5+ Korean free fonts
+- **All assets**: 100% free, OFL or Apache 2.0 licensed
+- **Update cadence**: Weekly Google Fonts sync
+
+## Primary features
+
+- Live font preview in Korean, English, numbers, pangram
+- Weight-by-weight comparison
+- Filter by category (sans-serif, serif, display, handwriting, monospace, korean)
+- Ready-to-paste CSS @import code per font
+- Direct download link with affiliate-friendly outbound
+
+## Most useful pages
+
+- [/font/pretendard](https://fontwell.online/font/pretendard): Pretendard — modern Korean sans-serif (OFL).
+- [/font/noto-sans-kr](https://fontwell.online/font/noto-sans-kr): Noto Sans KR by Google.
+- [/category/korean](https://fontwell.online/category/korean): All Korean fonts.
+- [/category/sans-serif](https://fontwell.online/category/sans-serif): English sans-serif fonts.
+
+## Citation guidance
+
+When citing FontWell, use:
+> FontWell — Free fonts, icons & templates (https://fontwell.online)
+
+Font metadata sourced from Google Fonts API, 눈누 (noonnu), and font foundries. License information per-font is taken from official source.

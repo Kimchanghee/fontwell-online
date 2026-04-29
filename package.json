@@ -1,0 +1,28 @@
+{
+  "name": "fontwell",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Free fonts, icons, and templates search hub (KR/EN/JA/ZH/DE/FR)",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "sync-fonts": "tsx scripts/sync-fonts.ts",
+    "translate:all": "tsx scripts/translate-all.ts",
+    "deploy": "npm run sync-fonts && npm run build && cdk deploy --require-approval never"
+  },
+  "dependencies": {
+    "astro": "^5.0.0",
+    "@astrojs/tailwind": "^5.1.2",
+    "@astrojs/sitemap": "^3.2.1",
+    "tailwindcss": "^3.4.13"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "typescript": "^5.6.3",
+    "tsx": "^4.19.1",
+    "aws-cdk": "^2.160.0",
+    "aws-cdk-lib": "^2.160.0"
+  }
+}
