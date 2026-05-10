@@ -117,6 +117,18 @@ async function main() {
   const google = await fetchGoogleFonts();
   console.log(`  ✓ ${google.length} fonts`);
 
+  // Guard: if API returned nothing AND a seeded fonts.json already exists with
+  // more entries than our minimal hardcoded set, KEEP the seeded data.
+  if (google.length === 0 && existsSync(OUT)) {
+    try {
+      const existing = JSON.parse(await (await import('fs/promises')).readFile(OUT, 'utf-8'));
+      if (Array.isArray(existing) && existing.length > KOREAN_FREE_FONTS.length) {
+        console.log(`✅ Keeping existing seeded ${existing.length} fonts (Google Fonts API unavailable)`);
+        return;
+      }
+    } catch {}
+  }
+
   const all = [...KOREAN_FREE_FONTS, ...google];
   if (!existsSync(dirname(OUT))) await mkdir(dirname(OUT), { recursive: true });
   await writeFile(OUT, JSON.stringify(all, null, 2), 'utf-8');
