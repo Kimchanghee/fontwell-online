@@ -1,6 +1,13 @@
 ---
 import { readFile } from 'fs/promises';
 import { join } from 'path';
+import AffiliateBanner from '../components/AffiliateBanner.astro';
+
+const amazonPicks = [
+  { searchQuery: 'typography graphic design book', title: 'Typography & Design Book', subtitle: '디자인·타이포그래피 입문서', emoji: '📕' },
+  { searchQuery: 'wacom one drawing tablet', title: 'Wacom Drawing Tablet', subtitle: '디자이너용 펜 태블릿', emoji: '🖋️' },
+  { searchQuery: 'monitor color calibration spyder', title: 'Color Calibration Spyder', subtitle: '모니터 컬러 캘리브레이션', emoji: '🎨' }
+];
 
 interface FontMeta {
   family: string;
@@ -123,6 +130,15 @@ const popunderKey = import.meta.env.PUBLIC_ADSTERRA_POPUNDER_KEY;
         </div>
       </section>
     )}
+
+    <div class="container mx-auto max-w-6xl px-4">
+      <AffiliateBanner
+        amazonPicks={amazonPicks}
+        coupangKeyword="디자인 책 타이포그래피"
+        amazonKeyword="typography design book"
+        aliexpressCategory="graphic-tablet"
+      />
+    </div>
 
     {popunderKey && (
       <script is:inline async type="text/javascript" src={`//pl${popunderKey}.profitableratecpm.com/${popunderKey}/invoke.js`} />
