@@ -31,6 +31,7 @@ const popular = fonts.filter((f) => f.source === 'google').slice(0, 24);
 
 const baseUrl = import.meta.env.PUBLIC_SITE_URL || 'https://fontwell.online';
 const popunderKey = import.meta.env.PUBLIC_ADSTERRA_POPUNDER_KEY;
+const displayAdsEnabled = import.meta.env.PUBLIC_ENABLE_DISPLAY_ADS === 'true';
 ---
 
 <!doctype html>
@@ -140,7 +141,7 @@ const popunderKey = import.meta.env.PUBLIC_ADSTERRA_POPUNDER_KEY;
       />
     </div>
 
-    {popunderKey && (
+    {displayAdsEnabled && popunderKey && (
       <script is:inline async type="text/javascript" src={`//pl${popunderKey}.profitableratecpm.com/${popunderKey}/invoke.js`} />
     )}
   </body>
