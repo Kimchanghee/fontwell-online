@@ -1,15 +1,20 @@
 ---
-import fonts from '../../data/fonts.json';
-
-const categories = ['sans-serif', 'serif', 'display', 'handwriting', 'monospace', 'korean'];
+import { readFile } from 'fs/promises';
+import { join } from 'path';
 
 export function getStaticPaths() {
+  const categories = ['sans-serif', 'serif', 'display', 'handwriting', 'monospace', 'korean'];
   return categories.map((category) => ({ params: { category } }));
 }
 
 const { category } = Astro.params;
 const baseUrl = import.meta.env.PUBLIC_SITE_URL || 'https://fontwell.online';
-const filtered = (fonts as any[]).filter((font) => font.category === category);
+let fonts: any[] = [];
+try {
+  const data = await readFile(join(process.cwd(), 'src/data/fonts.json'), 'utf-8');
+  fonts = JSON.parse(data);
+} catch {}
+const filtered = fonts.filter((font) => font.category === category);
 const title = `${category} fonts | FontWell`;
 ---
 <!doctype html>
