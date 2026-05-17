@@ -16,6 +16,14 @@ try {
 } catch {}
 const filtered = fonts.filter((font) => font.category === category);
 const title = `${category} fonts | FontWell`;
+const categoryNotes: Record<string, string> = {
+  'sans-serif': 'Sans-serif families are usually the safest choice for dashboards, SaaS screens, mobile apps, and long interface labels because they stay readable at small sizes.',
+  serif: 'Serif families work well for editorial pages, essays, reports, and brand moments where a little more rhythm and authority helps the text feel intentional.',
+  display: 'Display fonts should be used for short headlines, campaign titles, thumbnails, and posters. Avoid using them for dense body copy or small buttons.',
+  handwriting: 'Handwriting fonts add personality to invitations, creator thumbnails, quote cards, and casual brand accents, but they need extra spacing to stay legible.',
+  monospace: 'Monospace fonts are best for code, tables, technical notes, terminal-style UI, and any layout where every character needs predictable width.',
+  korean: 'Korean fonts need careful previewing because Hangul density, Latin fallback, number shape, and weight availability can change the feel of an entire page.'
+};
 ---
 <!doctype html>
 <html lang="ko">
@@ -46,6 +54,15 @@ const title = `${category} fonts | FontWell`;
     <main class="mx-auto max-w-6xl px-4 py-10">
       <h1 class="text-4xl font-bold capitalize">{category} fonts</h1>
       <p class="mt-3 text-slate-600">Preview popular {category} font families and open the official source.</p>
+      <section class="mt-6 rounded-xl border bg-white p-6">
+        <h2 class="text-xl font-semibold">Choosing a {category} font</h2>
+        <p class="mt-3 leading-7 text-slate-700">{categoryNotes[category]}</p>
+        <div class="mt-5 grid gap-3 md:grid-cols-3">
+          <div class="rounded-lg bg-purple-50 p-4 text-sm leading-6">Preview Korean, English, numbers, and symbols before using a family in production.</div>
+          <div class="rounded-lg bg-purple-50 p-4 text-sm leading-6">Check license terms on the official source, especially for commercial templates or client work.</div>
+          <div class="rounded-lg bg-purple-50 p-4 text-sm leading-6">Compare at least two weights so headings and body text do not collapse into one visual tone.</div>
+        </div>
+      </section>
       <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((font) => (
           <a href={`/font/${encodeURIComponent(font.family.toLowerCase().replace(/\s+/g, '-'))}`} class="rounded-xl border bg-white p-5 hover:border-purple-400">
