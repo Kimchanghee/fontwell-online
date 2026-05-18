@@ -60,7 +60,18 @@ const sampleTexts = {
       gtag('js', new Date());
       gtag('config', 'G-G0YE8ZCN66', { page_path: window.location.pathname });
     </script>
-  </head>
+    <script is:inline>
+  window.addEventListener('click', function(event) {
+    var link = event.target && event.target.closest ? event.target.closest('a[rel*="sponsored"], [data-affiliate-link]') : null;
+    if (!link || typeof window.gtag !== 'function') return;
+    window.gtag('event', 'affiliate_click', {
+      merchant: (link.textContent || '').trim().slice(0, 60) || 'partner',
+      placement: link.getAttribute('data-placement') || link.getAttribute('aria-label') || 'sponsored-link',
+      page_location: window.location.href
+    });
+  }, { capture: true });
+</script>
+</head>
   <body class="bg-slate-50 text-slate-900 antialiased">
     <header class="border-b bg-white">
       <div class="container mx-auto flex max-w-5xl items-center justify-between p-4">
@@ -86,9 +97,9 @@ const sampleTexts = {
         <a
           href={downloadUrl}
           target="_blank"
-          rel="noopener noreferrer sponsored"
+          rel="noopener noreferrer sponsored nofollow"
           class="mt-4 inline-flex items-center gap-2 rounded-lg bg-purple-600 px-5 py-2.5 text-white hover:bg-purple-700 transition"
-        >
+         data-affiliate-link>
           무료 다운로드
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
