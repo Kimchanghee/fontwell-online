@@ -30,6 +30,7 @@ export async function getStaticPaths() {
 const { font } = Astro.props as { font: FontMeta };
 const baseUrl = import.meta.env.PUBLIC_SITE_URL || 'https://fontwell.online';
 const downloadUrl = font.downloadUrl;
+const fontSlug = encodeURIComponent(font.family.toLowerCase().replace(/\s+/g, '-'));
 
 // Google Fonts CSS for live preview
 const fontCssUrl = font.source === 'google'
@@ -51,14 +52,14 @@ const sampleTexts = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{font.family} — 무료 폰트 다운로드 | FontWell</title>
     <meta name="description" content={`${font.family} 폰트 라이브 미리보기 + 무료 다운로드. ${font.license} 라이선스.`} />
-    <link rel="canonical" href={`${baseUrl}/font/${font.family.toLowerCase().replace(/\s+/g, '-')}`} />
+    <link rel="canonical" href={`${baseUrl}/font/${fontSlug}`} />
     {fontCssUrl && <link rel="stylesheet" href={fontCssUrl} />}
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-3LYD80FR0D"></script>
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-HHPMVVCTOD"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-3LYD80FR0D', { page_path: window.location.pathname });
+      gtag('config', 'G-HHPMVVCTOD', { page_path: window.location.pathname });
     </script>
     <script is:inline>
   window.addEventListener('click', function(event) {
