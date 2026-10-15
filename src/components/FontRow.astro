@@ -1,0 +1,24 @@
+---
+import type { Family } from '../lib/data';
+import { curatedSet, sampleFor, styleCount, fallbackStack } from '../lib/data';
+import { LICENSES } from '../lib/core.mjs';
+interface Props { f: Family; rank: number }
+const { f, rank } = Astro.props;
+const href = curatedSet.has(f.s) ? `/fonts/${f.s}/` : `https://fonts.google.com/specimen/${f.f.replace(/ /g, '+')}`;
+const lic = f.lic ? LICENSES[f.lic].short : 'licence unmatched';
+const axes = f.ax.map((a) => a.t).join(' ');
+---
+<li class="row" data-family={f.f} data-sample={sampleFor(f)}>
+  <span class="row-no mono" aria-hidden="true">{String(rank).padStart(4, '0')}</span>
+  <div class="row-body">
+    <p class="spec" style={`font-family:'${f.f}',${fallbackStack(f.c)}`} aria-hidden="true">{sampleFor(f)}</p>
+    <p class="row-meta mono">
+      <a class="row-name" href={href}>{f.f}</a>
+      <span>{f.c}</span>
+      <span class={f.lic ? 'lic' : 'lic lic-unknown'}>{lic}</span>
+      <span>{styleCount(f)} style{styleCount(f) === 1 ? '' : 's'}</span>
+      {axes && <span>var: {axes}</span>}
+      <span>{f.sub.length} subset{f.sub.length === 1 ? '' : 's'}</span>
+    </p>
+  </div>
+</li>
