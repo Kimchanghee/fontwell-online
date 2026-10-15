@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { fitTitle, fitDesc, abs } from '../../lib/seo';
+import { fmtDate } from '../../lib/data';
+
+const guides = (await getCollection('guides')).sort((a, b) => a.data.order - b.data.order);
+const title = fitTitle(['Font licensing and web type guides, sourced | Fontwell', 'Font licensing and web typography guides | Fontwell']);
+const description = fitDesc([
+  `${guides.length} plain-English guides on open font licences, logos, self-hosting and GDPR, variable fonts, CJK subsetting and pairing, each sourced to SIL, Google, W3C or MDN.`,
+  `${guides.length} plain-English guides on open font licences, logos, self-hosting and GDPR, variable fonts, CJK subsetting and font pairing, each sourced to SIL, Google, W3C and MDN.`,
+]);
+const crumbs = [{ name: 'Desk', path: '/' }, { name: 'Guides', path: '/guides/' }];
+const ld = [{
+  '@type': 'CollectionPage', name: 'Fontwell guides', url: abs('/guides/'),
+  mainEntity: { '@type': 'ItemList', numberOfItems: guides.length, itemListElement: guides.map((g, i) => ({ '@type': 'ListItem', position: i + 1, url: abs(`/guides/${g.id}/`), name: g.data.question })) },
+}];
+---
+<Base title={title} description={description} path="/guides/" og="/og/guides.png" ld={ld} crumbs={crumbs}>
+  <p class="kicker">Guides · {guides.length} entries</p>
+  <h1>What should you know before using a free font?</h1>
+  <p class="lede" data-answer>Mostly the licence and the loading strategy. These {guides.length} guides answer one question each, lead with the answer, and cite the licence texts and standards they rely on. They are general information, not legal advice.</p>
+  <ol class="toc">
+    {guides.map((g, i) => (
+      <li>
+        <span class="mono n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+        <div>
+          <h2><a href={`/guides/${g.id}/`}>{g.data.question}</a></h2>
+          <p>{g.data.answer}</p>
+          <p class="mono small meta">Updated {fmtDate(g.data.updated.toISOString())} · {g.data.sources.length} sources</p>
+        </div>
+      </li>
+    ))}
+  </ol>
+  <p class="mono small">Subscribe: <a href="/guides/rss.xml">RSS feed</a> · Questions we plan to answer next are tracked from reader mail via the <a href="/contact/">contact page</a>.</p>
+</Base>
+<style>
+  .toc { list-style: none; margin: 1.5rem 0 2rem; padding: 0; max-width: 60rem; }
+  .toc li { display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: 0 1rem; border-top: 1px solid var(--ink); padding: 1rem 0 0.4rem; }
+  .toc .n { color: var(--proof); font-size: 0.9rem; padding-top: 0.35rem; }
+  .toc h2 { font-size: var(--s2); margin: 0 0 0.4rem; }
+  .toc h2 a { text-decoration: none; }
+  .toc h2 a:hover { text-decoration: underline; text-decoration-color: var(--proof); }
+  .toc p { margin: 0 0 0.4rem; max-width: 68ch; }
+  .meta { color: var(--ink-2); }
+</style>
