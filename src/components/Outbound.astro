@@ -1,0 +1,30 @@
+---
+// Paid-font pointer. Renders affiliate links only when a real URL is configured;
+// otherwise neutral official-site links (no rel=sponsored, no tracking claim).
+import { site } from '../site.config';
+const aff = site.affiliates;
+const items = [
+  { name: 'Adobe Fonts', aff: aff.adobeFonts, official: 'https://fonts.adobe.com/', what: 'subscription library bundled with Creative Cloud' },
+  { name: 'Fontspring', aff: aff.fontspring, official: 'https://www.fontspring.com/', what: 'retail foundry licences, with a licence-term search' },
+  { name: 'Envato Elements', aff: aff.envatoFonts, official: 'https://elements.envato.com/fonts', what: 'subscription fonts under a single item licence' },
+];
+const anyAff = items.some((i) => i.aff);
+---
+<aside class="outbound" aria-label="Paid font sources">
+  <p class="tag">{anyAff ? 'Paid alternatives · contains affiliate links' : 'Paid alternatives · plain links'}</p>
+  <p>If an open font does not fit, commercial foundries license fonts with different terms (often per-seat desktop, per-pageview web or per-app). Read the licence of the exact product before buying:</p>
+  <ul>
+    {items.map((i) => (
+      <li>
+        {i.aff
+          ? <a href={i.aff} rel="sponsored nofollow noopener" target="_blank" data-aff={new URL(i.aff).host}>{i.name}</a>
+          : <a href={i.official} rel="noopener" target="_blank">{i.name}</a>}
+        {' '}— {i.what}{i.aff && <span class="tag"> (affiliate link: we may earn a commission)</span>}
+      </li>
+    ))}
+  </ul>
+</aside>
+<script>
+  document.querySelectorAll<HTMLAnchorElement>('a[data-aff]').forEach((a) =>
+    a.addEventListener('click', () => (window as any).fwTrack?.('outbound_affiliate_click', { destination_host: a.dataset.aff })));
+</script>

@@ -1,0 +1,268 @@
+---
+import Base from '../../layouts/Base.astro';
+import Faq from '../../components/Faq.astro';
+import CodeBlock from '../../components/CodeBlock.astro';
+import Outbound from '../../components/Outbound.astro';
+import {
+  curated, families, details, fontsData, asOfHuman, fmtDate, fmtInt, fallbackStack, styleCount, subsetLabel,
+  sampleFor, subsetPercentile, pairsFor, similarFor, axesRegistry, CATEGORY_SLUG, type Family,
+} from '../../lib/data';
+import { LICENSES, licenseMatrix, checkUse, explainPair, axisSpec } from '../../lib/core.mjs';
+import { fitTitle, fitDesc, abs, faqLd } from '../../lib/seo';
+import { site } from '../../site.config';
+
+export function getStaticPaths() {
+  return curated.map((f) => ({ params: { slug: f.s }, props: { f } }));
+}
+const { f } = Astro.props as { f: Family };
+const lic = LICENSES[f.lic!];
+const det = details[f.f];
+const rank = families.indexOf(f) + 1;
+const catPeers = families.filter((x) => x.c === f.c);
+const catRank = catPeers.indexOf(f) + 1;
+const vf = f.ax.length > 0;
+const wAx = f.ax.find((a) => a.t === 'wght');
+const styles = styleCount(f);
+const pct = subsetPercentile(f);
+const pairs = pairsFor(f, 3);
+const similar = similarFor(f, 4);
+const matrix = licenseMatrix(f.lic);
+const sample = sampleFor(f);
+const gfUrl = `https://fonts.google.com/specimen/${f.f.replace(/ /g, '+')}`;
+const licFileUrl = det?.metadataUrl ? det.metadataUrl.replace(/METADATA\.pb$/, f.lic === 'ofl' ? 'OFL.txt' : f.lic === 'apache' ? 'LICENSE.txt' : 'UFL.txt') : lic.url;
+const cssFamily = `'${f.f}', ${fallbackStack(f.c)}`;
+const nonLatinScript = !f.sub.includes('latin');
+
+const weightsForSpecimen = wAx
+  ? [...new Set([wAx.min, ...[100, 200, 300, 400, 500, 600, 700, 800, 900].filter((w) => w > wAx.min && w < wAx.max), wAx.max])]
+  : f.w;
+const WEIGHT_NAMES: Record<number, string> = { 100: 'Thin', 200: 'ExtraLight', 300: 'Light', 400: 'Regular', 500: 'Medium', 600: 'SemiBold', 700: 'Bold', 800: 'ExtraBold', 900: 'Black', 1000: 'Black+' };
+
+const answers: Record<string, string> = {
+  ofl: `Yes. ${f.f} is licensed under the SIL Open Font License 1.1, so you can use it on commercial websites, in print, logos, apps and products you sell. The one firm limit: you cannot sell the font file by itself.`,
+  apache: `Yes. ${f.f} is released under the Apache License 2.0, which allows commercial use on websites, in print, logos and apps. If you redistribute the font files, keep the licence text and any notices with them.`,
+  ufl: `Yes. ${f.f} is under the Ubuntu Font Licence 1.0, which allows commercial use in documents, websites and software. If you modify and ship the font itself, its renaming rules apply.`,
+};
+const answer = answers[f.lic!];
+
+const title = fitTitle([
+  `Is ${f.f} free for commercial use? Licence, CSS | Fontwell`,
+  `Is ${f.f} free for commercial use? Licence & pairings`,
+  `Is ${f.f} free for commercial use? Licence and CSS`,
+  `Is ${f.f} free for commercial use? Licence, pairings, CSS`,
+  `Is ${f.f} free for commercial use? Licence & CSS guide`,
+  `${f.f} font: is it free for commercial use? | Fontwell`,
+  `${f.f}: licence, pairings and CSS | Fontwell`,
+  `${f.f}: commercial licence and CSS | Fontwell`,
+  `${f.f} licence, specimen and pairings for commercial use`,
+  `${f.f} font licence explained, with pairings and CSS code`,
+]);
+const description = fitDesc([
+  `${f.f} is ${lic.short}-licensed: ${vf ? 'a variable' : `a ${styles}-style`} ${f.c.toLowerCase()} family. See what the licence allows for logos, apps and resale, plus pairings and CSS.`,
+  `${f.f} is ${lic.short}-licensed: ${vf ? 'a variable' : `a ${styles}-style`} ${f.c.toLowerCase()} family. See what its licence allows for logos, apps and resale, with pairings and CSS.`,
+  `${f.f} is ${lic.short}: ${vf ? 'a variable' : `a ${styles}-style`} ${f.c.toLowerCase()} family. What the licence allows for logos, apps and resale, plus pairings and CSS.`,
+  `Can you use ${f.f} commercially? It is ${lic.short}. Logo, app and resale verdicts with clauses, ${f.sub.length} subsets, pairings and CSS.`,
+  `Can you use ${f.f} commercially? It is ${lic.short}-licensed. Logo, app and resale verdicts with clauses, plus ${f.sub.length} subsets, pairings and copy-ready CSS.`,
+  `Can you use ${f.f} commercially? It is ${lic.short}-licensed. See logo, app and resale verdicts with the clause behind each, its ${f.sub.length} subsets, pairings and CSS.`,
+]);
+
+const logo = checkUse(f.lic, 'logo');
+const app = checkUse(f.lic, 'app');
+const resell = checkUse(f.lic, 'resell');
+const subsetList = f.sub.map(subsetLabel).join(', ');
+const faq = [
+  { q: `Can I use ${f.f} in a logo?`, a: logo.answer },
+  { q: `Can I bundle ${f.f} in an app or game I sell?`, a: app.answer },
+  { q: `Can I sell the ${f.f} font file itself?`, a: resell.answer },
+  { q: `Which scripts does ${f.f} support?`, a: `On Google Fonts, ${f.f} ships ${f.sub.length} subset${f.sub.length === 1 ? '' : 's'}: ${subsetList}.` },
+];
+
+const embed = `<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=${axisSpec(f)}&display=swap" rel="stylesheet">`;
+const cssRule = `font-family: ${cssFamily};${vf && wAx ? `\nfont-weight: ${wAx.min} ${wAx.max}; /* variable range */` : ''}`;
+const selfHost = `@font-face {
+  font-family: '${f.f}';
+  src: url('/fonts/${f.s}${vf ? '-variable' : '-400'}.woff2') format('woff2');
+  font-weight: ${wAx ? `${wAx.min} ${wAx.max}` : 400};
+  font-style: normal;
+  font-display: swap;
+}`;
+const crumbs = [
+  { name: 'Desk', path: '/' },
+  { name: 'Fonts', path: '/fonts/' },
+  { name: f.c, path: `/fonts/#${CATEGORY_SLUG[f.c]}` },
+  { name: f.f, path: `/fonts/${f.s}/` },
+];
+const ld = [
+  {
+    '@type': 'TechArticle',
+    headline: `Is ${f.f} free for commercial use?`,
+    description,
+    url: abs(`/fonts/${f.s}/`),
+    dateModified: fontsData.asOf,
+    author: { '@id': `${site.url}/#organization` },
+    publisher: { '@id': `${site.url}/#organization` },
+    image: abs(`/og/fonts/${f.s}.png`),
+    about: { '@type': 'CreativeWork', name: f.f, creator: f.d.map((n) => ({ '@type': 'Person', name: n })), license: lic.url, url: gfUrl },
+    isBasedOn: [fontsData.sourceUrl, det?.metadataUrl ?? fontsData.licenseSourceUrl],
+  },
+  faqLd(faq),
+];
+const axisName = (t: string) => axesRegistry.find((a) => a.tag === t)?.name ?? t;
+---
+<Base title={title} description={description} path={`/fonts/${f.s}/`} og={`/og/fonts/${f.s}.png`} ogType="article" ld={ld} crumbs={crumbs}>
+  <article>
+    <p class="kicker">{f.c} · {lic.short} · No. {String(rank).padStart(4, '0')}</p>
+    <h1>Is {f.f} free for commercial use?</h1>
+    <p class="lede" data-answer>{answer}</p>
+
+    <section class="specimen" aria-label={`${f.f} specimen`} data-family={f.f} data-weights={weightsForSpecimen.join(',')} data-sample={sample}>
+      <p class="sp-big" style={`font-family:${cssFamily}`} aria-hidden="true">{sample}</p>
+      <div class="sp-ctl">
+        <label for="proof">Proof your own text</label>
+        <input id="proof" type="text" maxlength="80" placeholder={sample} />
+      </div>
+      <ol class="sp-weights" aria-label="Weights">
+        {weightsForSpecimen.map((w) => (
+          <li><span class="mono sp-w">{w} {WEIGHT_NAMES[w] ?? ''}</span><span class="sp-line" style={`font-family:${cssFamily};font-weight:${w}`} aria-hidden="true">{nonLatinScript ? sample : 'The quick brown fox jumps over the lazy dog'}</span></li>
+        ))}
+      </ol>
+      <p class="mono small sp-src">Specimen served by the Google Fonts CSS API at view time. <button type="button" class="ghost sp-off" hidden>Stop loading specimens</button></p>
+    </section>
+
+    <div class="split">
+      <div class="prose">
+        <h2>What the {lic.short} lets you do with {f.f}</h2>
+        <p>Verdicts are our plain-English reading of the {lic.name}; the right-hand column names the clause each one rests on. This is not legal advice.</p>
+        <div class="tbl-wrap">
+          <table class="matrix">
+            <caption>{f.f} · {lic.name}</caption>
+            <thead><tr><th scope="col">Use</th><th scope="col">Verdict</th><th scope="col">Basis</th></tr></thead>
+            <tbody>
+              {matrix.map((m) => (
+                <tr><th scope="row">{m.label}<span class="ans">{m.answer}</span></th><td><span class:list={['v', `v-${m.level}`]}>{m.level === 'conditions' ? 'with conditions' : m.level}</span></td><td class="small">{m.clause}</td></tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h2>How {f.f} compares in the library</h2>
+        <p>
+          {f.f} is No. {fmtInt(rank)} of {fmtInt(fontsData.count)} families in Google Fonts’ own popularity order and No. {fmtInt(catRank)} of {fmtInt(catPeers.length)} {f.c.toLowerCase()} families (snapshot {asOfHuman}).
+          It offers {styles} style{styles === 1 ? '' : 's'}{vf ? ` and is a variable font with ${f.ax.map((a) => `${axisName(a.t)} (${a.t}) ${a.min}–${a.max}`).join(', ')}` : ', as static files only'}.
+          Its {f.sub.length} subset{f.sub.length === 1 ? '' : 's'} give it broader script coverage than {pct}% of {f.c.toLowerCase()} families.
+          It was added to Google Fonts on {fmtDate(f.da)} and its files were last updated on {fmtDate(f.lm)}.
+        </p>
+
+        <h2>Which fonts pair with {f.f}?</h2>
+        {pairs.length ? (
+          <>
+            <p>Computed from metadata, not taste: each body face shares {f.f}’s scripts, has a usable weight range for text and sits close in line-height. <a href="/methodology/#pairing">How the score works</a>.</p>
+            <ol class="pairs">
+              {pairs.map((p) => (
+                <li>
+                  <a href={`/fonts/${p.f.s}/`}>{p.f.f}</a> for body text — {explainPair(f, p.f)}
+                  {' '}<a class="mono small" href={`/tools/pairing/?h=${f.s}&b=${p.f.s}`}>Proof this pair</a>
+                </li>
+              ))}
+            </ol>
+          </>
+        ) : <p>No body face in our curated set shares enough of {f.f}’s scripts to score as a pair. Try the <a href="/tools/pairing/">pairing tester</a> with any family.</p>}
+
+        <h2>How do I add {f.f} to a website?</h2>
+        <p>Paste the embed into your <code>&lt;head&gt;</code>, then use the family in CSS. The URL requests {vf && wAx ? `the full variable weight range (${wAx.min}–${wAx.max})` : `the ${f.w.length} published weight${f.w.length === 1 ? '' : 's'}`}; trim it to the weights you actually use.</p>
+        <CodeBlock label={`${f.f} Google Fonts embed`} code={embed} />
+        <CodeBlock label={`${f.f} CSS rule`} code={cssRule} />
+        <p>To self-host instead (often preferred for privacy, see <a href="/guides/self-hosting-google-fonts-gdpr/">self-hosting and GDPR</a>), download the files from the specimen page and declare them yourself. The {lic.short} allows redistribution with the licence kept alongside:</p>
+        <CodeBlock label={`${f.f} @font-face`} code={selfHost} />
+
+        <Faq items={faq} title={`${f.f}: licence questions`} />
+
+        {similar.length > 0 && (
+          <>
+            <h2>Similar {f.c.toLowerCase()} families</h2>
+            <ul class="index-list">
+              {similar.map((s) => <li><a href={`/fonts/${s.s}/`}><span class="nm">{s.f}</span><span class="meta">{s.ax.length ? 'variable' : `${styleCount(s)} styles`} · {s.sub.length} subsets</span></a></li>)}
+            </ul>
+          </>
+        )}
+
+        <Outbound />
+
+        <h2>Sources</h2>
+        <ul class="sources">
+          <li><a href={gfUrl}>{f.f} on Google Fonts</a> (specimen and download)</li>
+          {det?.metadataUrl && <li><a href={det.metadataUrl}>METADATA.pb in google/fonts</a> — licence field: {det.license ?? 'n/a'}</li>}
+          <li><a href={licFileUrl}>Licence file in the family folder</a> · <a href={lic.url}>{lic.name} full text</a> · <a href={lic.faqUrl}>licence FAQ</a></li>
+          {det?.repo && <li><a href={det.repo}>Upstream source repository</a></li>}
+          <li><a href={fontsData.sourceUrl}>Google Fonts family metadata</a>, fetched {asOfHuman}</li>
+        </ul>
+      </div>
+
+      <aside class="margin-note sticky" aria-label="Family facts">
+        <dl>
+          <dt>Family</dt><dd>{f.f}</dd>
+          <dt>Designer</dt><dd>{f.d.length ? f.d.join(', ') : 'Not listed'}</dd>
+          <dt>Licence</dt><dd><a href={lic.url}>{lic.short}</a></dd>
+          <dt>Category</dt><dd>{f.c}</dd>
+          <dt>Styles</dt><dd>{styles}{f.i ? ' (incl. italics)' : ''}</dd>
+          <dt>Weights</dt><dd>{wAx ? `${wAx.min}–${wAx.max} (variable)` : f.w.join(', ')}</dd>
+          {f.ax.length > 0 && <><dt>Axes</dt><dd>{f.ax.map((a) => `${a.t} ${a.min}–${a.max}`).join('; ')}</dd></>}
+          <dt>Subsets</dt><dd>{subsetList}</dd>
+          <dt>Added</dt><dd>{fmtDate(f.da)}</dd>
+          <dt>Updated</dt><dd>{fmtDate(f.lm)}</dd>
+          {det?.copyright && <><dt>©</dt><dd>{det.copyright.replace(/\\"/g, '"')}</dd></>}
+          <dt>Checked</dt><dd>{asOfHuman}</dd>
+        </dl>
+        <p><a href={`/tools/license-checker/?f=${f.s}`}>Check a specific use →</a></p>
+      </aside>
+    </div>
+  </article>
+</Base>
+
+<script>
+  import { loadFace, specimensEnabled, setSpecimens } from '../../scripts/specimen';
+  const sec = document.querySelector<HTMLElement>('.specimen');
+  if (sec) {
+    const fam = sec.dataset.family!;
+    const weights = sec.dataset.weights!.split(',').map(Number);
+    const base = sec.dataset.sample!;
+    const big = sec.querySelector<HTMLElement>('.sp-big')!;
+    const lines = [...sec.querySelectorAll<HTMLElement>('.sp-line')];
+    const input = sec.querySelector<HTMLInputElement>('#proof')!;
+    const off = sec.querySelector<HTMLButtonElement>('.sp-off')!;
+    const lineText = lines[0]?.textContent ?? '';
+    const load = (t: string) => loadFace(fam, t + base + lineText, weights);
+    if (specimensEnabled()) { load(''); off.hidden = false; }
+    let tm: number | undefined;
+    input.addEventListener('input', () => {
+      const t = input.value || base;
+      big.textContent = t;
+      lines.forEach((l) => (l.textContent = input.value || lineText));
+      clearTimeout(tm);
+      tm = window.setTimeout(() => load(input.value), 400);
+      (window as any).fwTrack?.('tool_used', { tool: 'font_proof' });
+    });
+    off.addEventListener('click', () => { setSpecimens(false); off.textContent = 'Specimens off for this browser'; off.disabled = true; });
+  }
+</script>
+
+<style>
+  .specimen { border-top: 2px solid var(--ink); border-bottom: 1px solid var(--ink); margin: 1.6rem 0 0; padding: 1rem 0 0.6rem; }
+  .sp-big {
+    font-size: clamp(2.4rem, 1.4rem + 5vw, 5.6rem); line-height: 1.2; height: 1.2em; margin: 0 0 0.6rem;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-synthesis: none;
+  }
+  .sp-ctl { max-width: 30rem; margin-bottom: 0.8rem; }
+  .sp-weights { list-style: none; margin: 0; padding: 0; }
+  .sp-weights li { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); align-items: baseline; gap: 0.8rem; border-top: 1px solid var(--hair); }
+  .sp-w { font-size: 0.72rem; color: var(--proof); }
+  .sp-line { font-size: 1.6rem; line-height: 1.5; height: 1.5em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-synthesis: none; }
+  @media (max-width: 520px) { .sp-weights li { grid-template-columns: 4.6rem minmax(0, 1fr); } .sp-line { font-size: 1.25rem; } }
+  .sp-src { color: var(--ink-2); margin: 0.5rem 0 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: center; }
+  .matrix th[scope='row'] { font-weight: 600; min-width: 13rem; }
+  .matrix .ans { display: block; font-weight: 400; font-size: 0.92rem; margin-top: 0.25rem; }
+  .matrix td.small { min-width: 11rem; color: var(--ink-2); }
+  .pairs li { margin-bottom: 0.6rem; }
+</style>

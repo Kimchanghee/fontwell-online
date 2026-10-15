@@ -4,9 +4,9 @@ Branch: `v2-cloudflare-static` (push after every milestone). Contract: `../CONTR
 
 ## Milestones
 - [x] M0 Old tree removed (incl. .env.local/.env.production), new package.json/.gitignore, `scripts/refresh.mjs`, `src/lib/core.mjs` (licenses, type scale, pairing)
-- [ ] M1 Data snapshot committed (`pnpm refresh` -> src/data/fonts.json, axes.json, details.json)
-- [ ] M2 Astro skeleton: astro.config, site.config.ts, wrangler.jsonc, layout (proofing-desk design), ads.txt/robots/llms, OG script
-- [ ] M3 Home live search/filter + per-font pages (curated ~200)
+- [x] M1 Data snapshot committed (`pnpm refresh` -> src/data/fonts.json, axes.json, details.json)
+- [x] M2 Astro skeleton: astro.config, site.config.ts, wrangler.jsonc, layout (proofing-desk design), ads.txt/robots/llms, OG script
+- [x] M3 Home live search/filter + per-font pages (curated ~200)
 - [ ] M4 Tools: pairing tester, license checker, type-scale generator (+ node:test)
 - [ ] M5 Guides x10+ (content collection) + RSS + backlog
 - [ ] M6 Legal/About/Methodology/Contact/404
@@ -15,3 +15,5 @@ Branch: `v2-cloudflare-static` (push after every milestone). Contract: `../CONTR
 
 ## Notes
 - Metaphor: type-foundry specimen sheet / proofing desk.
+
+- 2026-10-16 00:10 KST: home desk, 200 font pages, font index built OK (Astro 7.3.8 = latest stable). Next: guides, tools, legal, gate, OG.

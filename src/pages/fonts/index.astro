@@ -1,0 +1,40 @@
+---
+import Base from '../../layouts/Base.astro';
+import { curated, families, fontsData, asOfHuman, fmtInt, styleCount, CATEGORIES, CATEGORY_SLUG } from '../../lib/data';
+import { LICENSES, CURATED_COUNT } from '../../lib/core.mjs';
+import { fitTitle, fitDesc, abs } from '../../lib/seo';
+
+const title = fitTitle([`The ${CURATED_COUNT} most-used open fonts, licence-checked | Fontwell`, `${CURATED_COUNT} most-used open fonts with licence verdicts`]);
+const description = fitDesc([
+  `The ${CURATED_COUNT} most-used Google Fonts families by category, each with a plain-English licence page, specimen, script coverage, computed pairings and CSS snippets.`,
+  `The ${CURATED_COUNT} most-used Google Fonts families grouped by category, each with a plain-English licence page, specimen, script coverage, pairings and copy-ready CSS.`,
+]);
+const groups = CATEGORIES.map((c) => ({ c, list: curated.filter((f) => f.c === c).sort((a, b) => a.f.localeCompare(b.f)) })).filter((g) => g.list.length);
+const crumbs = [{ name: 'Desk', path: '/' }, { name: 'Fonts', path: '/fonts/' }];
+const ld = [{
+  '@type': 'CollectionPage', name: `The ${CURATED_COUNT} most-used open fonts`, url: abs('/fonts/'), dateModified: fontsData.asOf,
+  mainEntity: { '@type': 'ItemList', numberOfItems: curated.length, itemListElement: curated.slice(0, 20).map((f, i) => ({ '@type': 'ListItem', position: i + 1, url: abs(`/fonts/${f.s}/`), name: f.f })) },
+}];
+---
+<Base title={title} description={description} path="/fonts/" og="/og/fonts.png" ld={ld} crumbs={crumbs}>
+  <p class="kicker">Index · {curated.length} families · {asOfHuman}</p>
+  <h1>Which open fonts get their own licence page?</h1>
+  <p class="lede" data-answer>
+    The {fmtInt(curated.length)} most-used of the {fmtInt(fontsData.count)} Google Fonts families, ranked by Google’s own popularity order and limited to families we could match to a licence folder. Every other family is still searchable on the <a href="/">desk</a> and checkable in the <a href="/tools/license-checker/">licence checker</a>.
+  </p>
+  <p class="mono small">Jump to: {groups.map((g, i) => <>{i > 0 && ' · '}<a href={`#${CATEGORY_SLUG[g.c]}`}>{g.c} ({g.list.length})</a></>)}</p>
+  {groups.map((g) => (
+    <section>
+      <h2 id={CATEGORY_SLUG[g.c]}>{g.c}</h2>
+      <ul class="index-list">
+        {g.list.map((f) => <li><a href={`/fonts/${f.s}/`}><span class="nm">{f.f}</span><span class="meta">{LICENSES[f.lic!].short} · {f.ax.length ? 'var' : `${styleCount(f)} st`}</span></a></li>)}
+      </ul>
+    </section>
+  ))}
+  <h2>Sources</h2>
+  <ul class="sources">
+    <li><a href={fontsData.sourceUrl}>Google Fonts family metadata</a> (popularity order, categories, styles)</li>
+    <li><a href={fontsData.licenseSourceUrl}>google/fonts repository</a> licence folders (ofl/, apache/, ufl/)</li>
+    <li>How the list is built: <a href="/methodology/">methodology</a></li>
+  </ul>
+</Base>

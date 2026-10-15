@@ -1,0 +1,19 @@
+---
+interface Props { code: string; label: string }
+const { code, label } = Astro.props;
+---
+<div class="copy-wrap">
+  <pre aria-label={label}><code>{code}</code></pre>
+  <button type="button" class="copy-btn" data-copy hidden>Copy</button>
+</div>
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((b) => {
+    if (!navigator.clipboard) return;
+    b.hidden = false;
+    b.addEventListener('click', async () => {
+      const code = b.previousElementSibling?.textContent ?? '';
+      try { await navigator.clipboard.writeText(code); b.textContent = 'Copied'; } catch { b.textContent = 'Copy failed'; }
+      setTimeout(() => (b.textContent = 'Copy'), 1600);
+    });
+  });
+</script>

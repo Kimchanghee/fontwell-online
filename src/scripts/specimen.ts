@@ -14,7 +14,8 @@ export function setSpecimens(on: boolean) {
 
 export function loadFace(family: string, text: string, weights: number[] = []) {
   if (!enabled) return;
-  const url = cssApiUrl(family, { text: text.slice(0, 120), weights });
+  const chars = [...new Set([...text])].sort().join('').slice(0, 200);
+  const url = cssApiUrl(family, { text: chars, weights });
   if (loaded.has(url)) return;
   loaded.add(url);
   const link = document.createElement('link');
