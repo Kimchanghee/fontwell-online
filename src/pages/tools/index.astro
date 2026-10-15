@@ -1,0 +1,39 @@
+---
+import Base from '../../layouts/Base.astro';
+import { fitTitle, fitDesc, abs } from '../../lib/seo';
+import { fontsData, fmtInt } from '../../lib/data';
+
+const title = fitTitle(['Free font tools: licence, pairing and type scale | Fontwell', 'Font tools: licence checker, pairing and type scale']);
+const description = fitDesc([
+  'Three free browser tools for working with open fonts: a licence checker for logo, app and resale questions, a heading/body pairing tester and a fluid type-scale generator.',
+  'Three free browser tools for working with open fonts: a licence checker for logo, app and resale questions, a heading and body pairing tester, and a type-scale generator.',
+]);
+const tools = [
+  { href: '/tools/license-checker/', name: 'Licence checker', q: 'Can I use this font for my logo, app or merch?', d: `Any of ${fmtInt(fontsData.count)} families, eight uses, verdict with the licence clause.` },
+  { href: '/tools/pairing/', name: 'Pairing tester', q: 'Do these two fonts work together?', d: 'Editable heading and body proof, with computed body partners for 200 families.' },
+  { href: '/tools/type-scale/', name: 'Type-scale generator', q: 'What sizes should my headings be?', d: 'Modular scale in px and rem, fluid clamp() values and CSS custom properties.' },
+];
+const crumbs = [{ name: 'Desk', path: '/' }, { name: 'Tools', path: '/tools/' }];
+const ld = [{ '@type': 'CollectionPage', name: 'Fontwell tools', url: abs('/tools/'), hasPart: tools.map((t) => ({ '@type': 'WebApplication', name: t.name, url: abs(t.href) })) }];
+---
+<Base title={title} description={description} path="/tools/" og="/og/tools.png" ld={ld} crumbs={crumbs}>
+  <p class="kicker">Tools · 3 instruments on the desk</p>
+  <h1>Which font tool do you need?</h1>
+  <p class="lede" data-answer>Use the licence checker for “am I allowed to?”, the pairing tester for “does it look right?” and the type-scale generator for “how big?”. All three run in your browser on the same Google Fonts snapshot; nothing you type is sent to us.</p>
+  <ol class="tools">
+    {tools.map((t, i) => (
+      <li>
+        <span class="mono n">T{i + 1}</span>
+        <div><h2><a href={t.href}>{t.name}</a></h2><p class="q">{t.q}</p><p>{t.d}</p></div>
+      </li>
+    ))}
+  </ol>
+  <p>Looking for a font first? Start on the <a href="/">proofing desk</a> or browse the <a href="/fonts/">index of 200 families</a>.</p>
+</Base>
+<style>
+  .tools { list-style: none; padding: 0; margin: 1.6rem 0; max-width: 56rem; }
+  .tools li { display: grid; grid-template-columns: 3rem minmax(0, 1fr); border-top: 2px solid var(--ink); padding: 1rem 0; }
+  .tools .n { color: var(--proof); padding-top: 0.5rem; }
+  .tools h2 { margin: 0 0 0.3rem; font-size: var(--s3); }
+  .tools .q { font-style: italic; margin-bottom: 0.3rem; font-size: var(--s1); }
+</style>

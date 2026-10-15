@@ -1,0 +1,144 @@
+---
+import Base from '../../layouts/Base.astro';
+import Faq from '../../components/Faq.astro';
+import { LICENSES, USES, licenseMatrix } from '../../lib/core.mjs';
+import { fontsData, asOfHuman, fmtInt, stats } from '../../lib/data';
+import { fitTitle, fitDesc, abs, faqLd } from '../../lib/seo';
+import { site } from '../../site.config';
+
+const st = stats();
+const title = fitTitle(['Font licence checker: can I use this font for…? | Fontwell', 'Font licence checker for logos, apps and resale | Fontwell']);
+const description = fitDesc([
+  `Pick any of ${fmtInt(st.total)} Google Fonts families and a use (logo, app, merch, resale, modification) to get a plain-English verdict with the exact licence clause behind it.`,
+  `Pick any of ${fmtInt(st.total)} Google Fonts families and a use (logo, app, merch, resale, modification) and get a plain-English verdict with the licence clause behind it.`,
+]);
+const lics = ['ofl', 'apache', 'ufl'] as const;
+const mats = Object.fromEntries(lics.map((l) => [l, licenseMatrix(l)]));
+const faq = [
+  { q: 'Is this licence checker legal advice?', a: 'No. It is a plain-English reading of the licence texts with the relevant clause named, intended to help you find the right part of the licence quickly. For high-stakes uses, read the licence shipped with the font and consult a lawyer.' },
+  { q: 'Where does the licence for each family come from?', a: `From the folder each family sits in on the google/fonts GitHub repository (ofl, apache or ufl), checked on ${asOfHuman}. Families we cannot match by name are shown as unmatched rather than guessed.` },
+];
+const crumbs = [{ name: 'Desk', path: '/' }, { name: 'Tools', path: '/tools/' }, { name: 'Licence checker', path: '/tools/license-checker/' }];
+const ld = [
+  { '@type': 'WebApplication', name: 'Fontwell licence checker', url: abs('/tools/license-checker/'), applicationCategory: 'DesignApplication', operatingSystem: 'Any (web browser)', isAccessibleForFree: true, publisher: { '@id': `${site.url}/#organization` }, dateModified: fontsData.asOf },
+  faqLd(faq),
+];
+const short = (l: string) => (l === 'conditions' ? 'with conditions' : l);
+---
+<Base title={title} description={description} path="/tools/license-checker/" og="/og/tools/license-checker.png" ld={ld} crumbs={crumbs}>
+  <p class="kicker">Tool · licence checker</p>
+  <h1>Can I use this font for that?</h1>
+  <p class="lede" data-answer>Choose a Google Fonts family and what you want to do with it. You get a verdict (yes, with conditions, or no), a plain-English explanation and the clause of the {LICENSES.ofl.short}, {LICENSES.apache.short} or {LICENSES.ufl.short} it rests on.</p>
+
+  <form class="lc" id="lc" onsubmit="return false" novalidate>
+    <div>
+      <label for="fam">Font family</label>
+      <input id="fam" type="text" list="famlist" autocomplete="off" placeholder="Start typing, e.g. Montserrat" aria-describedby="famErr" />
+      <datalist id="famlist"></datalist>
+      <p class="err" id="famErr" aria-live="polite"></p>
+    </div>
+    <fieldset>
+      <legend class="lbl">What do you want to do?</legend>
+      {USES.map((u, i) => <label class="check"><input type="radio" name="use" value={u.id} checked={i === 0} /> {u.label}</label>)}
+    </fieldset>
+  </form>
+
+  <section class="verdict" id="verdict" aria-live="polite" aria-label="Verdict">
+    <p class="mono small">Type a family name to see the verdict. Data as of {asOfHuman}.</p>
+  </section>
+
+  <h2>How the three licences answer each use</h2>
+  <p>The same rules power the checker above. {fmtInt(st.lic.ofl)} families use the OFL, {fmtInt(st.lic.apache)} Apache 2.0 and {fmtInt(st.lic.ufl)} the UFL (snapshot {asOfHuman}).</p>
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <caption>Use-by-use verdicts, read from the licence texts</caption>
+      <thead><tr><th scope="col">Use</th>{lics.map((l) => <th scope="col">{LICENSES[l].short}</th>)}</tr></thead>
+      <tbody>
+        {USES.map((u, i) => (
+          <tr>
+            <th scope="row">{u.label}</th>
+            {lics.map((l) => <td><span class:list={['v', `v-${mats[l][i].level}`]}>{short(mats[l][i].level)}</span><span class="cl">{mats[l][i].clause}</span></td>)}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p>Longer explanations: <a href="/guides/ofl-vs-apache-vs-ubuntu-font-licence/">OFL vs Apache 2.0 vs UFL</a>, <a href="/guides/can-i-use-a-free-font-in-a-logo/">fonts in logos</a>, and <a href="/guides/what-is-the-sil-open-font-license/">the OFL clause by clause</a>.</p>
+
+  <Faq items={faq} />
+
+  <h2>Sources</h2>
+  <ul class="sources">
+    {lics.map((l) => <li><a href={LICENSES[l].url}>{LICENSES[l].name}</a> · <a href={LICENSES[l].faqUrl}>FAQ</a></li>)}
+    <li><a href={fontsData.licenseSourceUrl}>google/fonts repository</a> (licence folder per family)</li>
+  </ul>
+</Base>
+
+<script>
+  import { checkUse, LICENSES, USES } from '../../lib/core.mjs';
+  type Row = [string, string, string, string, string, number, string, string, string, number, number];
+  const fam = document.getElementById('fam') as HTMLInputElement;
+  const list = document.getElementById('famlist') as HTMLDataListElement;
+  const err = document.getElementById('famErr')!;
+  const out = document.getElementById('verdict')!;
+  const form = document.getElementById('lc') as HTMLFormElement;
+  let rows: Row[] = [];
+  let byName = new Map<string, Row>();
+  const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+
+  function render() {
+    const name = fam.value.trim();
+    const use = (form.querySelector('input[name="use"]:checked') as HTMLInputElement).value;
+    if (!name) { fam.removeAttribute('aria-invalid'); err.textContent = ''; return; }
+    const r = byName.get(name.toLowerCase());
+    if (!r) {
+      if (rows.length) { fam.setAttribute('aria-invalid', 'true'); err.textContent = `No family called “${name}” in the Google Fonts snapshot. Pick one from the list.`; }
+      return;
+    }
+    fam.removeAttribute('aria-invalid'); err.textContent = '';
+    const lic = r[7] || null;
+    const v = checkUse(lic, use);
+    const useLabel = USES.find((u) => u.id === use)!.label;
+    const licName = lic ? LICENSES[lic as 'ofl'].name : 'licence not matched';
+    const page = r[9] ? `<a href="/fonts/${r[1]}/">Full licence page for ${esc(r[0])}</a>` : `<a href="https://fonts.google.com/specimen/${r[0].replace(/ /g, '+')}">${esc(r[0])} on Google Fonts</a>`;
+    const label = v.level === 'conditions' ? 'with conditions' : v.level;
+    out.innerHTML = `<p class="kicker">${esc(r[0])} · ${esc(licName)}</p>
+      <p class="big"><span class="v v-${v.level}">${label}</span></p>
+      <p><strong>${esc(useLabel)}:</strong> ${esc(v.answer)}</p>
+      <p class="mono small">Basis: ${esc(v.clause)}${v.licenseUrl ? ` · <a href="${v.licenseUrl}">licence text</a>` : ''}</p>
+      <p>${page}</p>`;
+    (window as any).fwTrack?.('tool_used', { tool: 'license_checker', use });
+  }
+
+  async function init() {
+    try {
+      const res = await fetch('/data/fonts-index.json');
+      if (!res.ok) throw new Error(String(res.status));
+      const data = await res.json();
+      rows = data.rows;
+      byName = new Map(rows.map((r) => [r[0].toLowerCase(), r]));
+      list.innerHTML = rows.map((r) => `<option value="${esc(r[0])}"></option>`).join('');
+      const slug = new URLSearchParams(location.search).get('f');
+      const pre = slug && rows.find((r) => r[1] === slug);
+      if (pre) { fam.value = pre[0]; render(); }
+    } catch {
+      out.innerHTML = '<p class="stale">The family list could not be loaded, so the checker cannot look up a family right now. The table below shows the same verdicts by licence.</p>';
+    }
+  }
+  fam.addEventListener('change', render);
+  fam.addEventListener('input', () => { if (byName.has(fam.value.trim().toLowerCase())) render(); });
+  form.addEventListener('change', (e) => { if ((e.target as HTMLInputElement).name === 'use') render(); });
+  init();
+</script>
+
+<style>
+  .lc { display: grid; gap: 1rem 2rem; border-top: 2px solid var(--ink); padding-top: 1rem; margin-top: 1.4rem; max-width: 62rem; }
+  @media (min-width: 900px) { .lc { grid-template-columns: 1fr 1.4fr; } }
+  fieldset { border: 0; padding: 0; margin: 0; }
+  .verdict { border: 1px solid var(--ink); background: #fbf9f3; padding: 1rem 1.2rem; margin: 1.2rem 0 0; max-width: 62rem; min-height: 9.5rem; }
+  .verdict :global(.big) { font-size: 1.6rem; margin: 0.2rem 0 0.4rem; }
+  .verdict :global(.big .v) { font-size: 1.1rem; }
+  .cmp td { min-width: 12rem; }
+  .cmp th[scope='row'] { min-width: 14rem; }
+  .cl { display: block; font-size: 0.82rem; color: var(--ink-2); margin-top: 0.25rem; }
+</style>

@@ -1,0 +1,146 @@
+---
+import Base from '../../layouts/Base.astro';
+import { curated, pairsFor, fontsData, asOfHuman, bySlug, fallbackStack } from '../../lib/data';
+import { explainPair } from '../../lib/core.mjs';
+import { fitTitle, fitDesc, abs } from '../../lib/seo';
+import { site } from '../../site.config';
+
+const title = fitTitle(['Font pairing tester: heading and body fonts | Fontwell', 'Font pairing tester for heading and body fonts | Fontwell']);
+const description = fitDesc([
+  'Proof any two Google Fonts as heading and body with your own text, sizes and weights, plus pairings computed from shared scripts, weights and line-height metrics.',
+  'Proof any two Google Fonts as heading and body with your own text, sizes and weights, and see pairings computed from shared scripts, weights and line-height metrics.',
+]);
+const pairMap: Record<string, string[]> = {};
+for (const f of curated) pairMap[f.s] = pairsFor(f, 3).map((p) => p.f.s);
+const showcase = [
+  ...curated.filter((f) => ['Serif', 'Display', 'Handwriting'].includes(f.c)).slice(0, 10),
+  ...curated.filter((f) => f.c === 'Sans Serif').slice(0, 4),
+].filter((f) => pairMap[f.s].length);
+const defHead = bySlug.get('playfair-display') && pairMap['playfair-display']?.length ? bySlug.get('playfair-display')! : showcase[0];
+const defBody = bySlug.get(pairMap[defHead.s][0])!;
+const crumbs = [{ name: 'Desk', path: '/' }, { name: 'Tools', path: '/tools/' }, { name: 'Pairing tester', path: '/tools/pairing/' }];
+const ld = [{ '@type': 'WebApplication', name: 'Fontwell pairing tester', url: abs('/tools/pairing/'), applicationCategory: 'DesignApplication', operatingSystem: 'Any (web browser)', isAccessibleForFree: true, publisher: { '@id': `${site.url}/#organization` }, dateModified: fontsData.asOf }];
+---
+<Base title={title} description={description} path="/tools/pairing/" og="/og/tools/pairing.png" ld={ld} crumbs={crumbs} wide>
+  <p class="kicker">Tool · pairing tester</p>
+  <h1>Do these two fonts work together?</h1>
+  <p class="lede" data-answer>Set any two of the {fontsData.count.toLocaleString('en-US')} Google Fonts families as heading and body, type your own copy and judge them at real sizes. For the 200 families with their own page, three body partners are suggested from shared scripts, weights and metrics.</p>
+
+  <form class="pt" id="pt" onsubmit="return false">
+    <div><label for="h">Heading font</label><input id="h" type="text" list="pl" value={defHead.f} autocomplete="off" aria-describedby="hErr" /><p class="err" id="hErr"></p></div>
+    <div><label for="hw">Heading weight</label><select id="hw">{[300, 400, 500, 600, 700, 800, 900].map((w) => <option value={w} selected={w === 700}>{w}</option>)}</select></div>
+    <div><label for="b">Body font</label><input id="b" type="text" list="pl" value={defBody.f} autocomplete="off" aria-describedby="bErr" /><p class="err" id="bErr"></p></div>
+    <div><label for="bs">Body size <output id="bsOut">18</output>px</label><input id="bs" type="range" min="14" max="24" value="18" /></div>
+    <datalist id="pl"></datalist>
+    <div class="swap"><button type="button" class="ghost" id="swap">Swap roles</button></div>
+  </form>
+
+  <div class="proof" id="proof">
+    <p class="proof-meta mono" id="pm">{defHead.f} / {defBody.f}</p>
+    <h2 class="ph" contenteditable="true" spellcheck="false" style={`font-family:'${defHead.f}',${fallbackStack(defHead.c)};font-weight:700`}>The quiet craft of setting long text</h2>
+    <p class="pb" contenteditable="true" spellcheck="false" style={`font-family:'${defBody.f}',${fallbackStack(defBody.c)}`}>Good typography is invisible until it is missing. Readers notice when lines run too long, when headings shout, or when numbers wobble in a table, even if they cannot name the cause. Click into this paragraph or the heading above and replace them with your own copy: 0123456789, “quotes”, and an ampersand &amp; are worth checking too.</p>
+  </div>
+  <p class="mono small hint">The heading and paragraph are editable. Fonts load from the Google Fonts CSS API for the text shown.</p>
+
+  <section class="sugg" id="sugg" aria-live="polite"></section>
+
+  <h2>Computed pairings for popular heading fonts</h2>
+  <p>Top three body partners per heading face, ranked by Fontwell’s metadata score (scripts in common, usable body weights, line-height and width proximity, classification contrast). Data as of {asOfHuman}; <a href="/methodology/#pairing">how the score works</a>.</p>
+  <div class="tbl-wrap">
+    <table>
+      <caption>Heading → suggested body fonts</caption>
+      <thead><tr><th scope="col">Heading font</th><th scope="col">Category</th><th scope="col">Body partners (best first)</th></tr></thead>
+      <tbody>
+        {showcase.map((f) => (
+          <tr>
+            <th scope="row"><a href={`/fonts/${f.s}/`}>{f.f}</a></th>
+            <td>{f.c}</td>
+            <td>{pairMap[f.s].map((s, i) => <>{i > 0 && ', '}<a href={`/tools/pairing/?h=${f.s}&b=${s}`}>{bySlug.get(s)!.f}</a></>)}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p>Why the first pairing scores well, in the model’s own terms: {defHead.f} with {defBody.f}: {explainPair(defHead, defBody)}</p>
+  <p>Read the <a href="/guides/how-to-pair-fonts/">pairing guide</a> for the reasoning behind contrast and proportion, and check each font’s licence on its family page before you ship.</p>
+
+  <h2>Sources</h2>
+  <ul class="sources">
+    <li><a href={fontsData.sourceUrl}>Google Fonts family metadata</a> (categories, subsets, weights, metrics)</li>
+    <li><a href="https://developers.google.com/fonts/docs/css2">Google Fonts CSS API v2</a> (specimen loading)</li>
+  </ul>
+  <script type="application/json" id="pairdata" set:html={JSON.stringify(pairMap)} />
+</Base>
+
+<script>
+  import { loadFace } from '../../scripts/specimen';
+  type Row = [string, string, string, string, string, number, string, string, string, number, number];
+  const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
+  const h = $('h'), b = $('b'), hw = $('hw') as unknown as HTMLSelectElement, bs = $('bs');
+  const ph = document.querySelector<HTMLElement>('.ph')!, pb = document.querySelector<HTMLElement>('.pb')!;
+  const pm = $('pm'), sugg = $('sugg');
+  const pairs = JSON.parse(document.getElementById('pairdata')!.textContent || '{}') as Record<string, string[]>;
+  const FB: Record<string, string> = { Serif: 'Georgia, serif', Monospace: 'ui-monospace, monospace', Handwriting: 'cursive' };
+  let byName = new Map<string, Row>(), bySlug = new Map<string, Row>();
+  const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+
+  function apply() {
+    const hr = byName.get(h.value.trim().toLowerCase()), br = byName.get(b.value.trim().toLowerCase());
+    for (const [el, r, e] of [[h, hr, 'hErr'], [b, br, 'bErr']] as const) {
+      if (!r && byName.size) { el.setAttribute('aria-invalid', 'true'); document.getElementById(e)!.textContent = 'Not in the Google Fonts list. Pick a name from the suggestions.'; }
+      else { el.removeAttribute('aria-invalid'); document.getElementById(e)!.textContent = ''; }
+    }
+    if (hr) { ph.style.fontFamily = `'${hr[0]}', ${FB[hr[2]] ?? 'system-ui, sans-serif'}`; loadFace(hr[0], ph.textContent || '', [Number(hw.value)]); }
+    if (br) { pb.style.fontFamily = `'${br[0]}', ${FB[br[2]] ?? 'system-ui, sans-serif'}`; loadFace(br[0], pb.textContent || '', [400]); }
+    ph.style.fontWeight = hw.value;
+    pm.textContent = `${hr?.[0] ?? h.value} / ${br?.[0] ?? b.value}`;
+    if (hr) {
+      const list = pairs[hr[1]];
+      sugg.innerHTML = list?.length
+        ? `<p class="kicker">Suggested body fonts for ${esc(hr[0])}</p><p>${list.map((s) => { const r = bySlug.get(s); return r ? `<button type="button" class="ghost pick" data-f="${esc(r[0])}">${esc(r[0])}</button>` : ''; }).join(' ')}</p>`
+        : `<p class="mono small">No computed suggestions for ${esc(hr[0])}: suggestions cover the 200 families with their own page.</p>`;
+      sugg.querySelectorAll<HTMLButtonElement>('.pick').forEach((btn) => btn.addEventListener('click', () => { b.value = btn.dataset.f!; apply(); }));
+    }
+    if (hr && br) {
+      const u = new URL(location.href); u.searchParams.set('h', hr[1]); u.searchParams.set('b', br[1]); history.replaceState(null, '', u);
+      (window as any).fwTrack?.('tool_used', { tool: 'pairing' });
+    }
+  }
+
+  async function init() {
+    try {
+      const res = await fetch('/data/fonts-index.json');
+      const data = await res.json();
+      const rows: Row[] = data.rows;
+      byName = new Map(rows.map((r) => [r[0].toLowerCase(), r]));
+      bySlug = new Map(rows.map((r) => [r[1], r]));
+      (document.getElementById('pl') as HTMLDataListElement).innerHTML = rows.map((r) => `<option value="${esc(r[0])}"></option>`).join('');
+      const p = new URLSearchParams(location.search);
+      const hs = bySlug.get(p.get('h') ?? ''), bsl = bySlug.get(p.get('b') ?? '');
+      if (hs) h.value = hs[0];
+      if (bsl) b.value = bsl[0];
+    } catch {
+      sugg.innerHTML = '<p class="stale">The family list could not be loaded; you can still type exact family names.</p>';
+    }
+    apply();
+  }
+  h.addEventListener('change', apply); b.addEventListener('change', apply); hw.addEventListener('change', apply);
+  bs.addEventListener('input', () => { pb.style.fontSize = bs.value + 'px'; document.getElementById('bsOut')!.textContent = bs.value; });
+  document.getElementById('swap')!.addEventListener('click', () => { const t = h.value; h.value = b.value; b.value = t; apply(); });
+  let tm: number | undefined;
+  for (const el of [ph, pb]) el.addEventListener('input', () => { clearTimeout(tm); tm = window.setTimeout(apply, 500); });
+  init();
+</script>
+
+<style>
+  .pt { display: grid; gap: 0.6rem 1rem; grid-template-columns: 1fr; border-top: 2px solid var(--ink); padding-top: 1rem; margin-top: 1.4rem; }
+  @media (min-width: 900px) { .pt { grid-template-columns: 2fr 1fr 2fr 1.4fr auto; align-items: start; } .swap { padding-top: 1.3rem; } }
+  .proof { border: 1px solid var(--ink); background: #fbf9f3; padding: clamp(1rem, 3vw, 2.4rem); margin-top: 0.6rem; }
+  .proof-meta { font-size: 0.74rem; color: var(--proof); text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 0.6rem; }
+  .ph { font-size: clamp(2rem, 1.2rem + 3.4vw, 3.6rem); line-height: 1.1; margin: 0 0 1rem; max-width: 20ch; min-height: 2.2em; font-variation-settings: normal; letter-spacing: 0; font-synthesis: none; }
+  .pb { font-size: 18px; line-height: 1.6; max-width: 62ch; margin: 0; min-height: 6.4em; }
+  .ph:focus-visible, .pb:focus-visible { outline: 2px dashed var(--pencil); outline-offset: 4px; }
+  .hint { color: var(--ink-2); }
+  .sugg { min-height: 4.5rem; }
+  .sugg :global(.pick) { margin: 0 0.4rem 0.4rem 0; text-transform: none; font-family: var(--serif); font-size: 1rem; letter-spacing: 0; }
+</style>

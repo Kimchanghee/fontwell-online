@@ -1,0 +1,102 @@
+---
+import Base from '../../layouts/Base.astro';
+import CodeBlock from '../../components/CodeBlock.astro';
+import { RATIOS, typeScale, fluidClamp } from '../../lib/core.mjs';
+import { fitTitle, fitDesc, abs } from '../../lib/seo';
+import { site } from '../../site.config';
+import { RELEASE } from '../../lib/pages';
+
+const title = fitTitle(['Type scale generator with fluid clamp() values | Fontwell', 'Type-scale generator: modular scale and fluid clamp()']);
+const description = fitDesc([
+  'Generate a modular type scale from a base size and ratio, with px and rem values and fluid CSS clamp() sizes between two viewport widths. Copy the custom properties.',
+  'Generate a modular type scale from a base size and a ratio, with px and rem values and fluid CSS clamp() sizes between two viewport widths. Copy the custom properties.',
+]);
+// default: 16px at 390px, 18px at 1440px, major third, 5 up 2 down
+const D = { minBase: 16, maxBase: 18, ratio: 1.25, up: 5, down: 2, minVw: 390, maxVw: 1440 };
+const small = typeScale(D.minBase, D.ratio, D.up, D.down);
+const large = typeScale(D.maxBase, D.ratio, D.up, D.down);
+const rows = small.map((s, i) => ({ step: s.step, min: s.px, max: large[i].px, clamp: fluidClamp(s.px, large[i].px, D.minVw, D.maxVw).css }));
+const css = `:root {\n${rows.map((r) => `  --step-${r.step < 0 ? 'm' + -r.step : r.step}: ${r.clamp};`).join('\n')}\n}`;
+const crumbs = [{ name: 'Desk', path: '/' }, { name: 'Tools', path: '/tools/' }, { name: 'Type-scale generator', path: '/tools/type-scale/' }];
+const ld = [{ '@type': 'WebApplication', name: 'Fontwell type-scale generator', url: abs('/tools/type-scale/'), applicationCategory: 'DesignApplication', operatingSystem: 'Any (web browser)', isAccessibleForFree: true, publisher: { '@id': `${site.url}/#organization` }, dateModified: RELEASE }];
+const stepName = (s: number) => (s === 0 ? 'base' : s > 0 ? `+${s}` : `${s}`);
+---
+<Base title={title} description={description} path="/tools/type-scale/" og="/og/tools/type-scale.png" ld={ld} crumbs={crumbs}>
+  <p class="kicker">Tool · type-scale generator</p>
+  <h1>What font sizes should my headings be?</h1>
+  <p class="lede" data-answer>Multiply a base size by a fixed ratio for each step up (and divide for each step down). With a 16 px base and a 1.25 ratio the steps are 20, 25, 31.25, 39.06 and 48.83 px. The generator also turns each step into a fluid <code>clamp()</code> value.</p>
+
+  <form class="ts" id="ts" onsubmit="return false" novalidate>
+    <div><label for="minBase">Base at small screen (px)</label><input id="minBase" type="number" inputmode="decimal" min="8" max="40" step="0.5" value={D.minBase} /></div>
+    <div><label for="maxBase">Base at large screen (px)</label><input id="maxBase" type="number" inputmode="decimal" min="8" max="40" step="0.5" value={D.maxBase} /></div>
+    <div><label for="ratio">Ratio</label><select id="ratio">{RATIOS.map((r) => <option value={r.value} selected={r.value === D.ratio}>{r.label} ({r.value})</option>)}</select></div>
+    <div><label for="up">Steps up</label><input id="up" type="number" min="0" max="10" step="1" value={D.up} /></div>
+    <div><label for="down">Steps down</label><input id="down" type="number" min="0" max="5" step="1" value={D.down} /></div>
+    <div><label for="minVw">Small viewport (px)</label><input id="minVw" type="number" min="240" max="1200" step="1" value={D.minVw} /></div>
+    <div><label for="maxVw">Large viewport (px)</label><input id="maxVw" type="number" min="480" max="3000" step="1" value={D.maxVw} /></div>
+    <p class="err" id="tsErr" aria-live="polite"></p>
+  </form>
+
+  <div class="tbl-wrap">
+    <table class="scale" id="scale">
+      <caption id="cap">Major third (1.25), base 16 → 18 px, 390 → 1440 px viewport</caption>
+      <thead><tr><th scope="col">Step</th><th class="num" scope="col">Small (px)</th><th class="num" scope="col">Large (px)</th><th scope="col">Fluid size</th><th scope="col">Preview</th></tr></thead>
+      <tbody id="rows">
+        {rows.map((r) => <tr><th scope="row">{stepName(r.step)}</th><td class="num">{r.min}</td><td class="num">{r.max}</td><td><code>{r.clamp}</code></td><td class="pv"><span style={`font-size:${Math.min(r.max, 64)}px`}>Ag</span></td></tr>)}
+      </tbody>
+    </table>
+  </div>
+  <div id="cssOut"><CodeBlock label="Type scale CSS custom properties" code={css} /></div>
+
+  <h2>How the numbers are computed</h2>
+  <p>Each step is <code>size = base × ratio<sup>step</sup></code>, rounded to two decimals for display. For the fluid value, the generator draws a straight line between the small-screen size at the small viewport and the large-screen size at the large viewport: the slope is (large − small) ÷ (large viewport − small viewport), expressed in <code>vw</code>, and the intercept is converted to <code>rem</code> assuming a 16 px root. <code>clamp()</code> then holds the size within the two endpoints outside that range.</p>
+  <p>Worked check for step +2 with the defaults: small = 16 × 1.25² = 25 px, large = 18 × 1.25² = 28.125 px; slope = 3.125 ÷ 1050 = 0.2976 vw; intercept = 25 − 0.002976 × 390 = 23.84 px = 1.49 rem. The tool prints <code>clamp(1.5625rem, 1.49rem + 0.2976vw, 1.7578rem)</code>.</p>
+  <p>Ratios below 1.2 suit dense interfaces with many heading levels; 1.25 to 1.333 is a common middle ground for articles; larger ratios create dramatic headlines but run out of room after three or four steps on small screens. Users can still zoom: <code>clamp()</code> with a rem component keeps text resizable. Pair the scale with a family that has enough weights, as explained in <a href="/guides/how-to-choose-a-ui-font/">choosing a UI font</a>, and see <a href="/guides/variable-fonts-explained/">variable fonts</a> for in-between weights.</p>
+
+  <h2>Sources</h2>
+  <ul class="sources">
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clamp">MDN: clamp()</a></li>
+    <li><a href="https://www.w3.org/TR/css-values-4/#calc-notation">W3C CSS Values and Units Level 4: mathematical expressions</a></li>
+    <li><a href="https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html">WCAG 2.2: Understanding Resize Text (1.4.4)</a></li>
+  </ul>
+</Base>
+
+<script>
+  import { typeScale, fluidClamp, RATIOS } from '../../lib/core.mjs';
+  const ids = ['minBase', 'maxBase', 'ratio', 'up', 'down', 'minVw', 'maxVw'] as const;
+  const el = Object.fromEntries(ids.map((i) => [i, document.getElementById(i) as HTMLInputElement])) as Record<(typeof ids)[number], HTMLInputElement>;
+  const err = document.getElementById('tsErr')!, body = document.getElementById('rows')!, cap = document.getElementById('cap')!;
+  const code = document.querySelector('#cssOut code')!;
+  const stepName = (s: number) => (s === 0 ? 'base' : s > 0 ? `+${s}` : `${s}`);
+  let tracked = false;
+  function run() {
+    const v = Object.fromEntries(ids.map((i) => [i, Number(el[i].value)])) as Record<(typeof ids)[number], number>;
+    const bad: string[] = [];
+    const chk = (k: (typeof ids)[number], ok: boolean, msg: string) => { el[k].toggleAttribute('aria-invalid', !ok); if (!ok) { el[k].setAttribute('aria-invalid', 'true'); bad.push(msg); } else el[k].removeAttribute('aria-invalid'); };
+    chk('minBase', v.minBase >= 8 && v.minBase <= 40, 'Small-screen base must be 8–40 px.');
+    chk('maxBase', v.maxBase >= 8 && v.maxBase <= 40, 'Large-screen base must be 8–40 px.');
+    chk('up', Number.isInteger(v.up) && v.up >= 0 && v.up <= 10, 'Steps up must be a whole number from 0 to 10.');
+    chk('down', Number.isInteger(v.down) && v.down >= 0 && v.down <= 5, 'Steps down must be a whole number from 0 to 5.');
+    chk('minVw', v.minVw >= 240 && v.minVw < v.maxVw, 'Small viewport must be at least 240 px and below the large viewport.');
+    chk('maxVw', v.maxVw > v.minVw && v.maxVw <= 3000, 'Large viewport must be above the small one (max 3000).');
+    err.textContent = bad.join(' ');
+    if (bad.length) return;
+    const s = typeScale(v.minBase, v.ratio, v.up, v.down), l = typeScale(v.maxBase, v.ratio, v.up, v.down);
+    const rows = s.map((x: any, i: number) => ({ step: x.step, min: x.px, max: l[i].px, clamp: fluidClamp(x.px, l[i].px, v.minVw, v.maxVw).css }));
+    body.innerHTML = rows.map((r: any) => `<tr><th scope="row">${stepName(r.step)}</th><td class="num">${r.min}</td><td class="num">${r.max}</td><td><code>${r.clamp}</code></td><td class="pv"><span style="font-size:${Math.min(r.max, 64)}px">Ag</span></td></tr>`).join('');
+    code.textContent = `:root {\n${rows.map((r: any) => `  --step-${r.step < 0 ? 'm' + -r.step : r.step}: ${r.clamp};`).join('\n')}\n}`;
+    const rl = RATIOS.find((r: any) => r.value === v.ratio);
+    cap.textContent = `${rl?.label ?? 'Custom'} (${v.ratio}), base ${v.minBase} → ${v.maxBase} px, ${v.minVw} → ${v.maxVw} px viewport`;
+    if (!tracked) { tracked = true; (window as any).fwTrack?.('tool_used', { tool: 'type_scale' }); }
+  }
+  ids.forEach((i) => el[i].addEventListener('input', run));
+</script>
+
+<style>
+  .ts { display: grid; gap: 0.8rem 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 2px solid var(--ink); padding-top: 1rem; margin: 1.4rem 0 1rem; }
+  @media (min-width: 900px) { .ts { grid-template-columns: repeat(7, minmax(0, 1fr)); align-items: end; } }
+  .ts .err { grid-column: 1 / -1; }
+  .scale code { font-size: 0.78rem; white-space: nowrap; }
+  .pv { line-height: 1; white-space: nowrap; overflow: hidden; max-width: 6rem; }
+  .pv span { display: inline-block; height: 64px; line-height: 64px; }
+</style>
