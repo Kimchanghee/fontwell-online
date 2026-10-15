@@ -1,0 +1,139 @@
+---
+import '@fontsource-variable/source-serif-4/opsz.css';
+import '@fontsource-variable/source-serif-4/opsz-italic.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/500.css';
+import '../styles/global.css';
+import { site } from '../site.config';
+import { abs, orgLd, websiteLd, breadcrumbLd } from '../lib/seo';
+import { fontsData, asOfHuman, fmtInt } from '../lib/data';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  og?: string;
+  ogType?: 'website' | 'article';
+  ld?: Record<string, unknown>[];
+  crumbs?: { name: string; path: string }[];
+  wide?: boolean;
+}
+const { title, description, path, og = '/og/home.png', ogType = 'website', ld = [], crumbs = [], wide = false } = Astro.props;
+const canonical = abs(path);
+const graph = [orgLd(), websiteLd(), ...(crumbs.length ? [breadcrumbLd(crumbs)] : []), ...ld];
+const ldJson = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c');
+const nav = [
+  { href: '/', label: 'Desk' },
+  { href: '/fonts/', label: 'Fonts' },
+  { href: '/tools/', label: 'Tools' },
+  { href: '/guides/', label: 'Guides' },
+  { href: '/about/', label: 'About' },
+];
+const cur = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
+const consentDefaults = JSON.stringify(site.consentRegions);
+const commit = fontsData.licenseCommit?.slice(0, 7) ?? 'n/a';
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#f3efe4" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/rss+xml" title="Fontwell guides" href="/guides/rss.xml" />
+  <meta property="og:site_name" content={site.name} />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={abs(og)} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={abs(og)} />
+  <meta name="google-adsense-account" content={site.adsenseClient} />
+  {site.gscVerification && <meta name="google-site-verification" content={site.gscVerification} />}
+  {site.naverVerification && <meta name="naver-site-verification" content={site.naverVerification} />}
+  {site.bingVerification && <meta name="msvalidate.01" content={site.bingVerification} />}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <script is:inline type="application/ld+json" set:html={ldJson} />
+  <script is:inline define:vars={{ regions: consentDefaults, ga: site.ga4Id }}>
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', region: JSON.parse(regions), wait_for_update: 500 });
+    gtag('consent', 'default', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted', wait_for_update: 500 });
+    window.fwTrack = function (name, params) { if (ga) gtag('event', name, params || {}); };
+  </script>
+  {site.ga4Id && <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${site.ga4Id}`}></script>}
+  {site.ga4Id && <script is:inline define:vars={{ ga: site.ga4Id }}>gtag('js', new Date()); gtag('config', ga);</script>}
+  <script is:inline async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${site.adsenseClient}`} crossorigin="anonymous"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="sheet">
+    <header class="mast">
+      <div class="mast-row">
+        <a class="mark" href="/" aria-label="Fontwell, home">Fontwell</a>
+        <p class="mast-sub">Specimen &amp; licence desk for open fonts</p>
+        <nav aria-label="Primary">
+          <ul>
+            {nav.map((n) => <li><a href={n.href} aria-current={cur(n.href) ? 'page' : undefined}>{n.label}</a></li>)}
+          </ul>
+        </nav>
+      </div>
+      <p class="slug mono">
+        <span>Sheet of {fmtInt(fontsData.count)} families</span>
+        <span>Proofed {asOfHuman}</span>
+        <span>google/fonts @ <a href={`https://github.com/google/fonts/commit/${fontsData.licenseCommit ?? 'main'}`}>{commit}</a></span>
+      </p>
+    </header>
+    {crumbs.length > 1 && (
+      <nav class="crumbs mono" aria-label="Breadcrumb">
+        <ol>
+          {crumbs.map((c, i) => i < crumbs.length - 1 ? <li><a href={c.path}>{c.name}</a></li> : <li aria-current="page">{c.name}</li>)}
+        </ol>
+      </nav>
+    )}
+    <main id="main" class:list={['main', { wide }]}>
+      <slot />
+    </main>
+    <footer class="foot">
+      <div class="foot-cols">
+        <div>
+          <p class="foot-h mono">Fontwell</p>
+          <p>An independent reference for open-licensed fonts. Licence summaries are plain-English readings of the licence text, <strong>not legal advice</strong>.</p>
+          <p class="mono small">Data: <a href={fontsData.sourceUrl}>Google Fonts metadata</a> + <a href={fontsData.licenseSourceUrl}>google/fonts</a>, as of {asOfHuman}.</p>
+        </div>
+        <div>
+          <p class="foot-h mono">Reference</p>
+          <ul>
+            <li><a href="/methodology/">Methodology &amp; data</a></li>
+            <li><a href="/tools/license-checker/">Licence checker</a></li>
+            <li><a href="/guides/">Guides</a></li>
+            <li><a href="/guides/rss.xml">RSS feed</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="foot-h mono">Site</p>
+          <ul>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/privacy/">Privacy</a></li>
+            <li><a href="/terms/">Terms</a></li>
+            <li><a href="/disclaimer/">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="small disclose">Disclosure: Fontwell is supported by advertising. Some links to paid font services may become affiliate links; when they do, they are labelled next to the link. Google Fonts links are never paid placements.</p>
+    </footer>
+  </div>
+</body>
+</html>
