@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import { fitTitle, fitDesc, abs } from '../lib/seo';
+import { site } from '../site.config';
+import { RELEASE } from '../lib/pages';
+import { fmtDate } from '../lib/data';
+
+const title = fitTitle(['Privacy policy: analytics, ads, cookies and fonts | Fontwell', 'Fontwell privacy policy: analytics, ads and cookies']);
+const description = fitDesc([
+  'What Fontwell collects and why: Google Analytics 4, Google AdSense and third-party cookies, consent for EEA and UK visitors, Google Fonts specimen requests, and how to opt out.',
+  'What Fontwell collects and why: Google Analytics 4, AdSense and third-party cookies, consent for EEA and UK visitors, Google Fonts specimen requests and how to opt out.',
+]);
+const crumbs = [{ name: 'Desk', path: '/' }, { name: 'Privacy', path: '/privacy/' }];
+const ld = [{ '@type': 'WebPage', name: 'Privacy policy', url: abs('/privacy/'), dateModified: RELEASE }];
+---
+<Base title={title} description={description} path="/privacy/" og="/og/about.png" ld={ld} crumbs={crumbs}>
+  <article class="prose">
+    <p class="kicker">Privacy policy · effective {fmtDate(RELEASE)}</p>
+    <h1>What data does Fontwell collect?</h1>
+    <p class="lede" data-answer>Fontwell has no accounts and no forms that store personal data. Pages may use Google Analytics 4 to measure visits and Google AdSense to show ads, both of which can use cookies, and specimen previews load font files from Google Fonts. Here is what each does and how to opt out.</p>
+
+    <h2>Who is responsible</h2>
+    <p>Fontwell ({site.domain}) is responsible for this website. Contact: <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>.</p>
+
+    <h2>Server and hosting logs</h2>
+    <p>The site is served as static files through Cloudflare. Like any web host, Cloudflare processes your IP address and request details to deliver pages and protect against abuse. We do not run our own application server or database and do not combine these records with other data.</p>
+
+    <h2>Google Analytics 4</h2>
+    <p>When enabled, we use Google Analytics 4 to understand which pages and tools are used (for example page views and the events “tool_used” and “outbound_affiliate_click”, which records only the destination website’s host name). Analytics may set first-party cookies such as <code>_ga</code>. We do not send names, email addresses or the text you type into tools to Google Analytics. You can opt out with Google’s <a href="https://tools.google.com/dlpage/gaoptout">browser add-on</a> or by blocking cookies.</p>
+
+    <h2>Advertising: Google AdSense and third-party cookies</h2>
+    <p>Fontwell shows ads served by Google AdSense. Third-party vendors, including Google, use cookies to serve ads based on a user’s prior visits to this website or other websites. Google’s use of advertising cookies enables it and its partners to serve ads based on your visits to this and/or other sites on the Internet.</p>
+    <ul>
+      <li>Opt out of personalised advertising in Google’s <a href="https://adssettings.google.com/">Ads Settings</a>.</li>
+      <li>Opt out of some third-party vendors’ cookies for personalised advertising at <a href="https://www.aboutads.info/choices/">aboutads.info</a> (US) or <a href="https://www.youronlinechoices.eu/">youronlinechoices.eu</a> (EU).</li>
+      <li>How Google uses data from sites that use its services: <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>.</li>
+    </ul>
+
+    <h2>Consent in the EEA, UK and Switzerland</h2>
+    <p>For visitors in the European Economic Area, the United Kingdom and Switzerland, Google consent mode is configured so that advertising and analytics storage are denied by default. Where required, a Google-certified consent management platform (Google’s own consent message) asks for your choice before personalised ads or analytics cookies are used, and you can change that choice later through the same message. Outside these regions consent defaults to granted, and you can opt out with the links above.</p>
+
+    <h2>Google Fonts specimens</h2>
+    <p>Fontwell’s own text fonts are self-hosted. The live specimens on the <a href="/">proofing desk</a>, family pages and the <a href="/tools/pairing/">pairing tester</a> are loaded by your browser from the Google Fonts CSS API (<code>fonts.googleapis.com</code> and <code>fonts.gstatic.com</code>). Those requests send Google your IP address, browser user agent, the referring page and the characters being previewed. Google states that the Fonts API does not set or log cookies and that it does not use this information to create profiles or target ads. You can switch specimens off with the “Load live specimens from Google Fonts” checkbox on the desk or the button on a family page; the choice is stored in your browser’s local storage, not on our servers. Background: <a href="/guides/self-hosting-google-fonts-gdpr/">self-hosting Google Fonts and GDPR</a>.</p>
+
+    <h2>Email</h2>
+    <p>If you email us, we use your message and address only to reply, and keep correspondence only as long as needed for that purpose.</p>
+
+    <h2>Your rights</h2>
+    <p>Depending on where you live (for example under the GDPR or UK GDPR, or US state privacy laws), you may have rights to access, correct or delete personal data, to object to processing, and to complain to a supervisory authority. Because we hold almost no personal data ourselves, most requests concern Google’s processing, which you can manage through the links above; for anything else, email us.</p>
+
+    <h2>Children</h2>
+    <p>Fontwell is a general-audience reference and is not directed at children under 13.</p>
+
+    <h2>Changes</h2>
+    <p>We update this page when our use of data changes and show the effective date at the top.</p>
+  </article>
+</Base>

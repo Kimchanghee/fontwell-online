@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import { fitTitle, fitDesc, abs } from '../lib/seo';
+import { site } from '../site.config';
+import { fontsData, fmtInt, asOfHuman } from '../lib/data';
+
+const title = fitTitle(['About Fontwell: an independent open-font licence reference', 'About Fontwell, an independent open-font reference desk']);
+const description = fitDesc([
+  'Fontwell is an independent, ad-supported reference for open-licensed fonts: what it covers, who it is for, its editorial standards and how it is funded and corrected.',
+  'Fontwell is an independent, ad-supported reference for open-licensed fonts: what it covers, who it is for, its editorial standards, and how it is funded and corrected.',
+]);
+const crumbs = [{ name: 'Desk', path: '/' }, { name: 'About', path: '/about/' }];
+const ld = [{ '@type': 'AboutPage', name: 'About Fontwell', url: abs('/about/'), about: { '@id': `${site.url}/#organization` } }];
+---
+<Base title={title} description={description} path="/about/" og="/og/about.png" ld={ld} crumbs={crumbs}>
+  <article class="prose">
+    <p class="kicker">About</p>
+    <h1>What is Fontwell?</h1>
+    <p class="lede" data-answer>{site.description}</p>
+    <h2>Why it exists</h2>
+    <p>“Free font” is a slippery phrase. Some free fonts allow anything; some forbid commercial use; some are pirated copies of paid fonts. The fonts in the Google Fonts library are the exception: every one of the {fmtInt(fontsData.count)} families is published under an open licence. Fontwell exists to make that library easy to search by what matters in real projects (licence, scripts, weights, variable axes) and to explain each licence in plain English, with the clause behind every answer.</p>
+    <h2>Who it is for</h2>
+    <p>Designers and developers choosing type for client work, products and apps; small businesses checking whether a font can go on a logo or a T-shirt; and anyone who needs Korean, Japanese, Chinese or other non-Latin coverage and wants to know quickly which open families have it.</p>
+    <h2>Editorial standards</h2>
+    <ul>
+      <li><strong>Sources first.</strong> Every figure comes from Google Fonts’ public metadata or the google/fonts repository, with the snapshot date shown (currently {asOfHuman}). Guides cite licence texts, standards bodies and official documentation.</li>
+      <li><strong>No guessing.</strong> When a family cannot be matched to a licence, we say so. When a question depends on law beyond the licence text (trademarks, privacy), we say that too.</li>
+      <li><strong>No invented experience.</strong> We do not publish fake reviews, testimonials, rankings or usage statistics.</li>
+      <li><strong>Not legal advice.</strong> Our licence summaries are readings of public licence texts. See the <a href="/disclaimer/">disclaimer</a>.</li>
+      <li><strong>Corrections.</strong> Errors reported to <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a> are fixed in the next build. The <a href="/methodology/">methodology page</a> documents how the data is built.</li>
+    </ul>
+    <h2>Independence and funding</h2>
+    <p>Fontwell is an independent publication. It is not affiliated with or endorsed by Google, SIL International, Canonical, the Apache Software Foundation or any font foundry. The site is funded by advertising (Google AdSense). Links to paid font services may in future be affiliate links; if so, they are labelled next to the link and never change a licence verdict.</p>
+    <h2>Contact</h2>
+    <p>Write to <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a> or see the <a href="/contact/">contact page</a>.</p>
+  </article>
+</Base>

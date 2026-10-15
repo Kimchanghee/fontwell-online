@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Page not found (404): this sheet is missing | Fontwell" description="This page does not exist on Fontwell. Search the proofing desk for a font, browse the font index, or read the guides on open font licensing, CJK subsetting and pairing." path="/404/" og="/og/home.png">
+  <section class="nf">
+    <p class="kicker">Error 404 · missing sheet</p>
+    <h1>This page isn’t on the desk.</h1>
+    <p class="lede">The address may be mistyped, or the page may have moved. Font pages live at <code>/fonts/family-name/</code>; only the 200 most-used families have one.</p>
+    <ul class="nf-links">
+      <li><a href="/">Search all families on the proofing desk</a></li>
+      <li><a href="/fonts/">Browse the font index</a></li>
+      <li><a href="/tools/license-checker/">Check a font’s licence</a></li>
+      <li><a href="/guides/">Read the guides</a></li>
+    </ul>
+  </section>
+</Base>
+<style>
+  .nf { min-height: 50vh; }
+  .nf h1 { text-decoration: line-through; text-decoration-color: var(--proof); text-decoration-thickness: 3px; }
+  .nf-links li { margin-bottom: 0.4rem; }
+</style>

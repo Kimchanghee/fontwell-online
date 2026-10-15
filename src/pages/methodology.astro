@@ -1,0 +1,74 @@
+---
+import Base from '../layouts/Base.astro';
+import { fontsData, asOfHuman, fmtInt, stats, curated, details } from '../lib/data';
+import { CURATED_COUNT } from '../lib/core.mjs';
+import { fitTitle, fitDesc, abs } from '../lib/seo';
+import { site } from '../site.config';
+
+const st = stats();
+const detailCount = Object.keys(details).length;
+const title = fitTitle(['Methodology and data sources for licence verdicts | Fontwell', 'How Fontwell checks font licences: data and methods']);
+const description = fitDesc([
+  'Where Fontwell’s data comes from (Google Fonts metadata and the google/fonts repository), how licences are matched, how pairings are scored and what we refuse to guess.',
+  'Where Fontwell’s data comes from (Google Fonts metadata and the google/fonts repository), how licences are matched, how pairings are scored, and what we will not guess.',
+]);
+const crumbs = [{ name: 'Desk', path: '/' }, { name: 'Methodology', path: '/methodology/' }];
+const ld = [{
+  '@type': 'TechArticle', headline: 'How does Fontwell check font licences?', description, url: abs('/methodology/'),
+  dateModified: fontsData.asOf, author: { '@id': `${site.url}/#organization` }, publisher: { '@id': `${site.url}/#organization` },
+}];
+---
+<Base title={title} description={description} path="/methodology/" og="/og/methodology.png" ld={ld} crumbs={crumbs}>
+  <article class="prose">
+    <p class="kicker">Methodology · data as of {asOfHuman}</p>
+    <h1>How does Fontwell check font licences?</h1>
+    <p class="lede" data-answer>We read the licence folder each family sits in on the official google/fonts repository, join it to Google Fonts’ public family metadata, and apply a fixed table of plain-English rules written from the licence texts. Nothing is scraped from third-party sites and nothing is estimated.</p>
+
+    <h2>Data sources</h2>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th scope="col">Source</th><th scope="col">What we use</th><th scope="col">As of</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><a href={fontsData.sourceUrl}>Google Fonts family metadata</a></th><td>Family names, categories, subsets, styles, variable axes, designers, dates added and modified, Google’s popularity and trending order, default metrics</td><td>{fontsData.asOf.slice(0, 16).replace('T', ' ')} UTC</td></tr>
+          <tr><th scope="row"><a href={fontsData.licenseSourceUrl}>google/fonts repository</a></th><td>The licence folder of each family (<code>ofl/</code>, <code>apache/</code>, <code>ufl/</code>), read from a tree-only clone at commit <a href={`https://github.com/google/fonts/commit/${fontsData.licenseCommit}`}><code>{fontsData.licenseCommit?.slice(0, 7)}</code></a></td><td>{fontsData.licenseAsOf?.slice(0, 10)}</td></tr>
+          <tr><th scope="row">Family <code>METADATA.pb</code> files</th><td>Licence field, copyright line and upstream repository for the {fmtInt(detailCount)} families with their own page</td><td>same commit</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>A refresh script fetches these sources with a descriptive user agent. If any fetch fails or looks incomplete (for example fewer than 1,000 families), the last good snapshot is kept and every page keeps showing that snapshot’s real date. The snapshot is rebuilt into the static site; there is no live database.</p>
+
+    <h2>Matching families to licences</h2>
+    <p>Folder names in google/fonts are the family name in lower case without spaces or punctuation (for example <code>ofl/notosanskr</code>). We normalise each metadata family name the same way and look it up. In the current snapshot {fmtInt(st.total - st.lic.none)} of {fmtInt(st.total)} families match; {st.lic.none} do not, and are labelled “licence unmatched” everywhere instead of being assigned a guess. The licence checker answers “we will not guess” for them.</p>
+
+    <h2>Licence verdicts</h2>
+    <p>Each of the eight uses in the <a href="/tools/license-checker/">licence checker</a> has one verdict per licence: <em>yes</em>, <em>with conditions</em> or <em>no</em>, with a plain-English answer and the clause it rests on. The rules were written from the official texts of the SIL Open Font License 1.1, the Apache License 2.0 and the Ubuntu Font Licence 1.0, and are covered by automated tests. They describe the licence, not your situation: they are not legal advice, and a font’s own licence file always wins.</p>
+
+    <h2 id="pairing">How pairings are scored</h2>
+    <p>Pairing suggestions use only Google’s metadata. For a heading family H and a candidate body family B:</p>
+    <ol>
+      <li>B must be serif, sans serif or monospace, and offer a text weight range (400 and 700 among at least three static weights, or a <code>wght</code> axis spanning 400 to 700). Otherwise it is excluded.</li>
+      <li>H and B must share the Latin subset or the same primary script. Otherwise excluded.</li>
+      <li>Score +3 if their categories differ, +1 if H is display or handwriting, −2 if B is monospace.</li>
+      <li>Score +2 × the share of subsets they have in common.</li>
+      <li>Score −0.4 × the difference in Google’s width metric and −3 × the difference in default line-height.</li>
+      <li>Score +1.5 ÷ log10(10 + B’s popularity rank), a small preference for well-tested families.</li>
+    </ol>
+    <p>The three highest-scoring bodies from the {CURATED_COUNT} curated families are shown. The score is a shortlist generator, not a judgement of beauty; always proof the pair in the <a href="/tools/pairing/">pairing tester</a>.</p>
+
+    <h2>Which families get their own page</h2>
+    <p>The {fmtInt(curated.length)} highest-ranked families in Google’s popularity order that have a matched licence. We keep this number deliberately limited so each page carries a full licence matrix, coverage comparison, pairings and source links rather than thin templated text. Every other family remains searchable on the <a href="/">desk</a>.</p>
+
+    <h2>Specimens</h2>
+    <p>Specimens are drawn by your browser from the Google Fonts CSS API using the <code>text=</code> parameter, so only the characters shown are downloaded. Each specimen has a fixed height, so fonts arriving late do not shift the page. You can switch specimens off; see the <a href="/privacy/">privacy policy</a>.</p>
+
+    <h2>Corrections</h2>
+    <p>If a verdict, date or figure is wrong, email <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>. We correct errors in the next build and note material changes on the affected guide.</p>
+
+    <h2>Sources</h2>
+    <ul class="sources">
+      <li><a href={fontsData.sourceUrl}>Google Fonts family metadata</a></li>
+      <li><a href={fontsData.licenseSourceUrl}>google/fonts on GitHub</a></li>
+      <li><a href="https://openfontlicense.org/open-font-license-official-text/">SIL Open Font License 1.1</a> · <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a> · <a href="https://canonical.com/legal/font-licence">Ubuntu Font Licence 1.0</a></li>
+    </ul>
+  </article>
+</Base>

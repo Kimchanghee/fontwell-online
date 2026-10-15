@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+import { fitTitle, fitDesc, abs } from '../lib/seo';
+import { site } from '../site.config';
+import { RELEASE } from '../lib/pages';
+import { fmtDate } from '../lib/data';
+
+const title = fitTitle(['Terms of use for the Fontwell font reference site', 'Fontwell terms of use: content, tools and links']);
+const description = fitDesc([
+  'The terms for using Fontwell: information only, no warranty, your responsibility to read each font’s licence, how our data and text may be reused, and links to other sites.',
+  'The terms for using Fontwell: information only, no warranty, your duty to read each font’s own licence, how our data and text may be reused, and links to other sites.',
+]);
+const crumbs = [{ name: 'Desk', path: '/' }, { name: 'Terms', path: '/terms/' }];
+const ld = [{ '@type': 'WebPage', name: 'Terms of use', url: abs('/terms/'), dateModified: RELEASE }];
+---
+<Base title={title} description={description} path="/terms/" og="/og/about.png" ld={ld} crumbs={crumbs}>
+  <article class="prose">
+    <p class="kicker">Terms · effective {fmtDate(RELEASE)}</p>
+    <h1>What are the terms for using Fontwell?</h1>
+    <p class="lede" data-answer>You may use Fontwell freely for information. Our licence summaries and tools are provided as-is, without warranty, and do not replace the licence that ships with each font. By using the site you accept these terms.</p>
+    <h2>Information, not advice</h2>
+    <p>Content on Fontwell is general information about publicly available fonts and licences. It is not legal advice. The licence distributed with a font is the binding document; read it before relying on any use. See the <a href="/disclaimer/">disclaimer</a>.</p>
+    <h2>Fonts are not ours</h2>
+    <p>Fontwell does not host, sell or license fonts. Fonts belong to their copyright holders and are licensed to you by them under the licences named on each page. Specimens are rendered by your browser from Google Fonts.</p>
+    <h2>Reusing our content</h2>
+    <p>You may quote short passages with a link to the source page. The aggregated index at <code>/data/fonts-index.json</code> is derived from Google’s public metadata and the google/fonts repository and may be reused with attribution to Fontwell and those sources. Do not republish whole guides without permission.</p>
+    <h2>Accuracy and availability</h2>
+    <p>We work to keep data accurate and dated (see the <a href="/methodology/">methodology</a>), but we do not guarantee that the site is complete, current or always available, and we may change or remove content.</p>
+    <h2>Links and advertising</h2>
+    <p>Fontwell links to other websites and shows ads from Google AdSense. We are not responsible for the content or practices of other sites. Any affiliate links are labelled.</p>
+    <h2>Limitation of liability</h2>
+    <p>To the extent permitted by law, Fontwell is not liable for any loss arising from use of the site or reliance on its content.</p>
+    <h2>Contact</h2>
+    <p>Questions about these terms: <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>.</p>
+  </article>
+</Base>
