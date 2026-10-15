@@ -12,7 +12,7 @@ sources:
   - title: "SIL Open Font License 1.1, official text"
     url: "https://openfontlicense.org/open-font-license-official-text/"
   - title: "Google Fonts FAQ"
-    url: "https://developers.google.com/fonts/faq"
+    url: "https://fonts.google.com/faq"
   - title: "MDN: @font-face"
     url: "https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face"
   - title: "W3C WOFF File Format 2.0"

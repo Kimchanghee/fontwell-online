@@ -36,8 +36,8 @@ export const LICENSES = {
     name: 'Ubuntu Font Licence 1.0',
     short: 'UFL 1.0',
     spdx: 'Ubuntu-font-1.0',
-    url: 'https://ubuntu.com/legal/font-licence',
-    faqUrl: 'https://ubuntu.com/legal/font-licence/faq',
+    url: 'https://canonical.com/legal/font-licence',
+    faqUrl: 'https://canonical.com/legal/font-licence/faq',
   },
 };
 

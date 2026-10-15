@@ -14,7 +14,7 @@ sources:
   - title: "OFL FAQ (openfontlicense.org)"
     url: "https://openfontlicense.org/ofl-faq/"
   - title: "Google Fonts FAQ"
-    url: "https://developers.google.com/fonts/faq"
+    url: "https://fonts.google.com/faq"
   - title: "Apache License 2.0, section 6 (trademarks)"
     url: "https://www.apache.org/licenses/LICENSE-2.0"
   - title: "USPTO: Trademark basics"
@@ -32,7 +32,7 @@ faq:
 
 The SIL Open Font License, which covers 1,904 of the 1,950 Google Fonts families (snapshot 15 October 2026), separates the font from what you make with it. Condition 5 says the requirement to stay under the OFL "does not apply to any document created using the Font Software". A logo, wordmark, letterhead or sign is such a document. You can use it commercially, register it, sell products bearing it and license it to others without the OFL following it.
 
-Apache 2.0 and the Ubuntu Font Licence reach the same result by a different route: their conditions apply to redistributing the font itself, and a logo does not redistribute the font. Google's FAQ also confirms that its fonts may be used commercially in print and digital products.
+Apache 2.0 and the Ubuntu Font Licence reach the same result by a different route: their conditions apply to redistributing the font itself, and a logo does not redistribute the font. Google's own FAQ is blunter still: asked whether its fonts can be used in a logo, it answers that you can use Google Fonts within any logo.
 
 So the licence question has a short answer. The harder questions are about distinctiveness and trademarks.
 

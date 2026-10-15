@@ -10,13 +10,13 @@ order: 1
 related: ["what-is-the-sil-open-font-license", "can-i-use-a-free-font-in-a-logo", "ofl-vs-apache-vs-ubuntu-font-licence"]
 sources:
   - title: "Google Fonts FAQ (licensing and commercial use)"
-    url: "https://developers.google.com/fonts/faq"
+    url: "https://fonts.google.com/faq"
   - title: "SIL Open Font License 1.1, official text"
     url: "https://openfontlicense.org/open-font-license-official-text/"
   - title: "Apache License 2.0"
     url: "https://www.apache.org/licenses/LICENSE-2.0"
   - title: "Ubuntu Font Licence 1.0"
-    url: "https://ubuntu.com/legal/font-licence"
+    url: "https://canonical.com/legal/font-licence"
   - title: "google/fonts repository (licence folders)"
     url: "https://github.com/google/fonts"
 faq:
@@ -45,7 +45,7 @@ The practical takeaway is that the OFL governs almost everything you will pick f
 
 ## What "commercial use" actually covers
 
-Google's own FAQ answers the question directly: the fonts are open source, and you can use them commercially in products and projects, in print or digital. In licence terms, "using" a font splits into two very different activities:
+Google's own FAQ answers the question directly: you can use the fonts commercially, and even include them within a product that is sold commercially, with usage and redistribution conditions set by each font's licence. In licence terms, "using" a font splits into two very different activities:
 
 1. **Making things with the font.** Websites, PDFs, packaging, video titles, ads, logos, book covers, T-shirts. The OFL calls these "documents created using the Font Software" and its condition 5 says the licence's requirements do not apply to them. Apache 2.0 and the UFL have no conditions on output either.
 2. **Passing the font file itself to someone else.** Self-hosting web fonts, bundling a font in an app, sending files to a printer or a client. This is redistribution, and it is where the licences attach conditions.

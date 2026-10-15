@@ -10,7 +10,7 @@ order: 7
 related: ["subset-korean-cjk-web-fonts", "font-display-and-layout-shift", "web-vs-desktop-font-licenses"]
 sources:
   - title: "Google Fonts FAQ: privacy and data collection"
-    url: "https://developers.google.com/fonts/faq/privacy"
+    url: "https://fonts.google.com/faq#privacy"
   - title: "LG München I, judgment of 20 January 2022, 3 O 17493/20 (Bavarian court database)"
     url: "https://www.gesetze-bayern.de/Content/Document/Y-300-Z-BECKRS-B-2022-N-612"
   - title: "General Data Protection Regulation (EU) 2016/679, Article 6"
@@ -23,7 +23,7 @@ faq:
   - q: "Is using the Google Fonts API illegal in the EU?"
     a: "No law bans it. The 2022 Munich judgment found that one website's undisclosed transfer of a visitor's IP address to Google lacked a legal basis under the GDPR. The decision binds only that case, but it led many EU site owners to self-host or ask for consent."
   - q: "Does the Google Fonts API set cookies?"
-    a: "Google's privacy FAQ says the Google Fonts Web API does not set or log cookies. It does receive the visitor's IP address and request headers, because the browser fetches files from Google's servers."
+    a: "Google's Fonts FAQ says the Google Fonts Web API does not set or log cookies. It does receive the visitor's IP address and request headers, because the browser fetches files from Google's servers."
   - q: "Am I allowed to self-host Google Fonts?"
     a: "Yes. The open licences used by Google Fonts allow redistribution, so you may serve the files from your own server, as long as the licence and copyright notice stay with the font files."
 ---
@@ -32,7 +32,7 @@ faq:
 
 A typical embed loads a stylesheet from `fonts.googleapis.com`, which in turn points at font files on `fonts.gstatic.com`. The visitor's browser makes both requests directly. Like any HTTP request, that reveals the visitor's IP address, user agent and the referring page to Google.
 
-Google's privacy FAQ for the Fonts API states that the API does not set cookies, that requests are not used to build user profiles or for targeted advertising, and that it logs limited request data for operating and improving the service. Those assurances describe Google's handling; they do not change the fact that personal data (an IP address) leaves the visitor's browser for a third party.
+Google's Fonts FAQ confirms this: the API is unauthenticated and does not set or log cookies, and each request carries the visitor's IP address, the requested URL and HTTP headers including the user agent and referer. Google states that it does not use information collected by Google Fonts to create profiles of end users or for targeted advertising. Those assurances describe Google's handling; they do not change the fact that personal data (an IP address) leaves the visitor's browser for a third party.
 
 ## The 2022 Munich ruling
 
