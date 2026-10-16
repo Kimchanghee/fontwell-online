@@ -14,7 +14,8 @@ for(const commit of ['main','HEAD',null,'','a'.repeat(39),'A'.repeat(40),A+'/../
 for(const d of ['ofl/../apache/inter','ofl/inter/METADATA.pb','ofl/inter?ref=main','ofl/inter#main','unknown/inter','ofl/Inter']) test('reject unsafe directory '+d,()=>assert.throws(()=>metadataUrls(A,d)));
 test('unchanged known licensing is retained',()=>assert.deepEqual(preserveLicense({lic:'ofl',dir},'ofl','inter'),{lic:'ofl',dir}));
 test('unknown stays null for existing and new unmapped families',()=>{assert.deepEqual(preserveLicense({lic:null,dir:null},null,'newfont'),{lic:null,dir:null});assert.deepEqual(preserveLicense(undefined,null,'newfont'),{lic:null,dir:null});});
-test('unknown/new family cannot promote to known',()=>{for(const prior of [undefined,{lic:null,dir:null}]) assert.throws(()=>preserveLicense(prior,'ofl','inter'),/trusted review/);});
+test('official folder observation retains unknown, not license approval',()=>{for(const prior of [undefined,{lic:null,dir:null}]) for(const observed of ['ofl','apache','ufl']) assert.deepEqual(preserveLicense(prior,observed,'inter'),{lic:null,dir:null});});
+test('new unknown family does not change licensed curated universe',()=>{const existing=[family];const added={f:'New Font',...preserveLicense(undefined,'ofl','newfont')};assert.deepEqual([...existing,added].filter(f=>f.lic).slice(0,200),existing);assert.equal(added.lic,null);assert.equal(added.dir,null);});
 test('changed or missing known license and directory reject',()=>{for(const lic of ['apache',null]) assert.throws(()=>preserveLicense({lic:'ofl',dir},lic,'inter'));assert.throws(()=>preserveLicense({lic:'ofl',dir:'ofl/wrong'},'ofl','inter'));});
 test('parse METADATA preserves missing evidence as null',()=>assert.deepEqual(parseMetadata('name: "Inter"'),{license:null,copyright:null,repo:null}));
 test('empty response rejects',()=>assert.throws(()=>parseMetadata('')));

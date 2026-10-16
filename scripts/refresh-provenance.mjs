@@ -14,8 +14,9 @@ export function metadataUrls(commit, dir) {
 export function preserveLicense(previous, observedLicense, normalizedName) {
   requireThat(observedLicense === null || Object.hasOwn(LICENSES, observedLicense), 'unknown repository license class');
   const oldLicense = previous?.lic ?? null;
-  requireThat(oldLicense === observedLicense, 'new or changed license needs separate trusted review');
+  // A newly observed folder is not approval to promote an unknown license.
   if (oldLicense === null) return { lic: null, dir: null };
+  requireThat(oldLicense === observedLicense, 'changed known license needs separate trusted review');
   const dir = `${oldLicense}/${normalizedName}`;
   requireThat(previous.dir === dir, 'license directory changed');
   return { lic: oldLicense, dir };
