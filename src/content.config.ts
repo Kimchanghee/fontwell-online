@@ -12,7 +12,7 @@ const guides = defineCollection({
     published: z.coerce.date(),
     updated: z.coerce.date(),
     data_asof: z.string(),
-    sources: z.array(z.object({ title: z.string(), url: z.string().url() })).min(1),
+    sources: z.array(z.object({ title: z.string(), url: z.url() })).min(1),
     faq: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
     related: z.array(z.string()).default([]),
     order: z.number().default(50),

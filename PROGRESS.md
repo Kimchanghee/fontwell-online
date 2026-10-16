@@ -7,13 +7,15 @@ Branch: `v2-cloudflare-static` (push after every milestone). Contract: `../CONTR
 - [x] M1 Data snapshot committed (`pnpm refresh` -> src/data/fonts.json, axes.json, details.json)
 - [x] M2 Astro skeleton: astro.config, site.config.ts, wrangler.jsonc, layout (proofing-desk design), ads.txt/robots/llms, OG script
 - [x] M3 Home live search/filter + per-font pages (curated ~200)
-- [ ] M4 Tools: pairing tester, license checker, type-scale generator (+ node:test)
-- [ ] M5 Guides x10+ (content collection) + RSS + backlog
-- [ ] M6 Legal/About/Methodology/Contact/404
-- [ ] M7 gate.mjs, refresh-build.ps1, `pnpm build/check/gate` pass
-- [ ] M8 QA: curl crawler checks, Playwright 390/1440 screenshots, scorecard.md, measure.md, DESIGN_REFERENCES.md
+- [x] M4 Tools: pairing tester, license checker, type-scale generator (+ node:test, 12 pass)  (commit d32c1d1)
+- [x] M5 Guides x11 (content collection) + RSS (commit 55cfd13)
+- [x] M6 Legal/About/Methodology/Contact/404 + tools index (commit b6ee781)
+- [x] M7 gate.mjs passes 224 pages; `astro check` 0 errors (TypeScript pinned to 6.x: astro check refuses TS 7); scripts/refresh-build.ps1
+- [x] M7b Typography made distinct from raterunner/stockmarketnews (which share Source Serif 4 + Plex Mono): Fraunces (display) + Public Sans (text) + Red Hat Mono (labels); footer links 44 px
+- [ ] M8 QA: content/backlog.md, curl crawler checks on preview, Playwright 390/1440 screenshots, seo/scorecard.md, seo/measure.md, DESIGN_REFERENCES.md
+- [ ] M9 Final report
 
 ## Notes
 - Metaphor: type-foundry specimen sheet / proofing desk.
-
-- 2026-10-16 00:10 KST: home desk, 200 font pages, font index built OK (Astro 7.3.8 = latest stable). Next: guides, tools, legal, gate, OG.
+- Build: `node node_modules/astro/bin/astro.mjs build` (Astro 7.3.8), ASTRO_TELEMETRY_DISABLED=1. ~30-45 s, 225 pages.
+- Unbounded's designer is the foundry "NaN" (real data): rendered "NaN (type foundry)", LD creator Organization; gate allows that exact phrase.

@@ -223,6 +223,10 @@ export function explainPair(head, body) {
 // ---------------------------------------------------------------------------
 // Google Fonts CSS API URL for a specimen (text= keeps downloads tiny).
 // ---------------------------------------------------------------------------
+/**
+ * @param {string} family
+ * @param {{ weights?: number[], text?: string, display?: string, ital?: boolean }} [opts]
+ */
 export function cssApiUrl(family, { weights = [], text = '', display = 'swap', ital = false } = {}) {
   const fam = family.trim().replace(/ /g, '+');
   let spec = fam;
