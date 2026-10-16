@@ -266,5 +266,13 @@ const axisName = (t: string) => axesRegistry.find((a) => a.tag === t)?.name ?? t
   .matrix th[scope='row'] { font-weight: 600; min-width: 13rem; }
   .matrix .ans { display: block; font-weight: 400; font-size: 0.92rem; margin-top: 0.25rem; }
   .matrix td.small { min-width: 11rem; color: var(--ink-2); }
+  @media (max-width: 600px) {
+    .matrix thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    .matrix, .matrix tbody, .matrix tr, .matrix th[scope='row'], .matrix td { display: block; min-width: 0; }
+    .matrix tr { padding: 0.75rem 0; border-top: 1px solid var(--hair); }
+    .matrix th[scope='row'], .matrix td { border: 0; padding: 0; }
+    .matrix td { margin-top: 0.4rem; }
+    .matrix td.small { min-width: 0; font-size: 0.82rem; }
+  }
   .pairs li { margin-bottom: 0.6rem; }
 </style>
