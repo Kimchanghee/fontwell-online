@@ -12,10 +12,12 @@ Branch: `v2-cloudflare-static` (push after every milestone). Contract: `../CONTR
 - [x] M6 Legal/About/Methodology/Contact/404 + tools index (commit b6ee781)
 - [x] M7 gate.mjs passes 224 pages; `astro check` 0 errors (TypeScript pinned to 6.x: astro check refuses TS 7); scripts/refresh-build.ps1
 - [x] M7b Typography made distinct from raterunner/stockmarketnews (which share Source Serif 4 + Plex Mono): Fraunces (display) + Public Sans (text) + Red Hat Mono (labels); footer links 44 px
-- [ ] M8 QA: content/backlog.md, curl crawler checks on preview, Playwright 390/1440 screenshots, seo/scorecard.md, seo/measure.md, DESIGN_REFERENCES.md
-- [ ] M9 Final report
+- [ ] M8 QA (documentation/crawl complete; remaining final check reconciliation and CLS finding in seo/scorecard.md): content/backlog.md, curl crawler checks on preview, Playwright 390/1440 screenshots, seo/scorecard.md, seo/measure.md, DESIGN_REFERENCES.md
+- [x] M9 Final local handoff report: seo/scorecard.md (not a deployment or full QA approval)
 
 ## Notes
 - Metaphor: type-foundry specimen sheet / proofing desk.
 - Build: `node node_modules/astro/bin/astro.mjs build` (Astro 7.3.8), ASTRO_TELEMETRY_DISABLED=1. ~30-45 s, 225 pages.
 - Unbounded's designer is the foundry "NaN" (real data): rendered "NaN (type foundry)", LD creator Organization; gate allows that exact phrase.
+## 2026-10-16 continuation
+Preserved existing implementation. Added design reference/license audit, question inventory/backlog, measurement plan, evidence scorecard and fail-closed screenshot runner. Build 225 pages; gate 224/224; tests 12/12. Remaining M8 gaps are explicitly documented, not marked complete.
