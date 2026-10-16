@@ -1,0 +1,29 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { metadataUrls, preserveLicense, parseMetadata, mergeDetails } from '../scripts/refresh-provenance.mjs';
+const A='a'.repeat(40), B='b'.repeat(40), dir='ofl/inter';
+const family={f:'Inter',lic:'ofl',dir};
+const pb='name: "Inter"\nlicense: "OFL"\nfonts { copyright: "Copyright Authors" }\nsource { repository_url: "https://github.com/example/inter" }';
+function proposal(commit=B) {
+ const urls=metadataUrls(commit,dir);
+ return {commit,curated:[family],previous:{commit:A,items:{Inter:{license:'OFL',copyright:'OLD',metadataUrl:metadataUrls(A,dir).page}}},results:[{family:'Inter',dir,commit,rawUrl:urls.raw,metadataUrl:urls.page,pb}]};
+}
+test('both raw and displayed URLs pin the same observed commit',()=>{const u=metadataUrls(A,dir);assert.equal(u.raw,`https://raw.githubusercontent.com/google/fonts/${A}/ofl/inter/METADATA.pb`);assert.equal(u.page,`https://github.com/google/fonts/blob/${A}/ofl/inter/METADATA.pb`);assert.ok(!u.page.includes('/main/'));});
+for(const commit of ['main','HEAD',null,'','a'.repeat(39),'A'.repeat(40),A+'/../main']) test('reject mutable/invalid commit '+commit,()=>assert.throws(()=>metadataUrls(commit,dir)));
+for(const d of ['ofl/../apache/inter','ofl/inter/METADATA.pb','ofl/inter?ref=main','ofl/inter#main','unknown/inter','ofl/Inter']) test('reject unsafe directory '+d,()=>assert.throws(()=>metadataUrls(A,d)));
+test('unchanged known licensing is retained',()=>assert.deepEqual(preserveLicense({lic:'ofl',dir},'ofl','inter'),{lic:'ofl',dir}));
+test('unknown stays null for existing and new unmapped families',()=>{assert.deepEqual(preserveLicense({lic:null,dir:null},null,'newfont'),{lic:null,dir:null});assert.deepEqual(preserveLicense(undefined,null,'newfont'),{lic:null,dir:null});});
+test('unknown/new family cannot promote to known',()=>{for(const prior of [undefined,{lic:null,dir:null}]) assert.throws(()=>preserveLicense(prior,'ofl','inter'),/trusted review/);});
+test('changed or missing known license and directory reject',()=>{for(const lic of ['apache',null]) assert.throws(()=>preserveLicense({lic:'ofl',dir},lic,'inter'));assert.throws(()=>preserveLicense({lic:'ofl',dir:'ofl/wrong'},'ofl','inter'));});
+test('parse METADATA preserves missing evidence as null',()=>assert.deepEqual(parseMetadata('name: "Inter"'),{license:null,copyright:null,repo:null}));
+test('empty response rejects',()=>assert.throws(()=>parseMetadata('')));
+test('fresh complete new-commit batch emits pinned URLs and new bytes only',()=>{const p=proposal(), old=structuredClone(p.previous);const out=mergeDetails(p);assert.equal(out.Inter.copyright,'Copyright Authors');assert.equal(out.Inter.metadataUrl,metadataUrls(B,dir).page);assert.deepEqual(p.previous,old);});
+test('partial new-commit batch cannot reuse old detail bytes',()=>{const p=proposal();p.results=[];assert.throws(()=>mergeDetails(p),/incomplete/);assert.equal(p.previous.items.Inter.copyright,'OLD');});
+test('partial same-commit batch also rejects without fallback',()=>{const p=proposal(A);p.results=[];assert.throws(()=>mergeDetails(p),/incomplete/);});
+test('mixed commit, raw URL, display URL or directory rejects',()=>{for(const patch of [{commit:A},{rawUrl:metadataUrls(A,dir).raw},{metadataUrl:metadataUrls(A,dir).page},{metadataUrl:'https://github.com/google/fonts/blob/main/ofl/inter/METADATA.pb'},{dir:'ofl/other'}]) {const p=proposal();Object.assign(p.results[0],patch);assert.throws(()=>mergeDetails(p));}});
+test('missing or unknown previous detail license cannot promote',()=>{for(const prior of [undefined,{license:null}]) {const p=proposal();p.previous.items.Inter=prior;assert.throws(()=>mergeDetails(p),/trusted review/);}});
+test('unknown detail evidence remains null, never inferred from folder',()=>{const p=proposal();p.results[0].pb='name: "Inter"';assert.equal(mergeDetails(p).Inter.license,null);});
+test('detail license mismatch rejects',()=>{const p=proposal();p.results[0].pb='license: "APACHE2"';assert.throws(()=>mergeDetails(p),/mismatch/);});
+test('duplicate and unexpected result families reject',()=>{const p=proposal();p.curated.push({f:'Other',lic:'ofl',dir:'ofl/other'});p.results.push({...p.results[0]});assert.throws(()=>mergeDetails(p),/duplicate/);const q=proposal();q.results[0].family='Unknown';assert.throws(()=>mergeDetails(q),/unexpected/);});
+test('refresh source guards all three writes behind complete provenance merge',async()=>{const source=await readFile(new URL('../scripts/refresh.mjs',import.meta.url),'utf8');const merge=source.indexOf('const items = mergeDetails(');assert.ok(merge>0);for(const file of ['fonts.json','axes.json','details.json']) assert.ok(source.indexOf(`writeFileSync(join(dataDir, '${file}')`)>merge);assert.ok(source.indexOf('if (failures.length) throw')<merge);assert.ok(!source.includes("licenseCommit || 'main'"));assert.ok(!source.includes('/blob/main/'));assert.match(source,/git\('ls-tree', '-d', '--name-only', commit,/);assert.match(source,/git\('log', '-1', '--format=%cI', commit\)/);});

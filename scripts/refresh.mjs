@@ -9,6 +9,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CURATED_COUNT, slugify } from '../src/lib/core.mjs';
+import { metadataUrls, preserveLicense, mergeDetails } from './refresh-provenance.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dataDir = join(root, 'src', 'data');
@@ -48,8 +49,8 @@ function licenseDirs() {
     git('update-ref', 'HEAD', 'FETCH_HEAD');
   }
   const commit = git('rev-parse', 'HEAD').trim();
-  const commitDate = git('log', '-1', '--format=%cI', 'HEAD').trim();
-  const out = git('ls-tree', '-d', '--name-only', 'HEAD', 'ofl/', 'apache/', 'ufl/');
+  const commitDate = git('log', '-1', '--format=%cI', commit).trim();
+  const out = git('ls-tree', '-d', '--name-only', commit, 'ofl/', 'apache/', 'ufl/');
   const map = {};
   for (const line of out.split(/\r?\n/)) {
     const [lic, dir] = line.trim().split('/');
@@ -81,15 +82,12 @@ async function main() {
   const list = md.familyMetadataList;
   if (!Array.isArray(list) || list.length < 1000) { warn('metadata looks incomplete', list?.length, '- keeping snapshot'); return; }
 
-  let lic = null;
-  try { lic = licenseDirs(); } catch (e) { warn('license tree failed; reusing previous license mapping', String(e)); }
-  const prevLic = Object.fromEntries((prev?.families || []).map((f) => [f.f, { lic: f.lic, dir: f.dir }]));
+  const lic = licenseDirs(); // Failure aborts before any snapshot writes.
+  const prevLic = new Map((prev?.families || []).map((f) => [f.f, { lic: f.lic, dir: f.dir }]));
 
   const families = list.map((x) => {
     const n = norm(x.family);
-    let licName = null, dir = null;
-    if (lic) { licName = lic.map[n] || null; dir = licName ? `${licName}/${n}` : null; }
-    else if (prevLic[x.family]) { licName = prevLic[x.family].lic; dir = prevLic[x.family].dir; }
+    const { lic: licName, dir } = preserveLicense(prevLic.get(x.family), lic.map[n] || null, n);
     const styles = Object.keys(x.fonts || {});
     const weights = [...new Set(styles.map((s) => parseInt(s, 10)).filter(Number.isFinite))].sort((a, b) => a - b);
     return {
@@ -125,45 +123,38 @@ async function main() {
     sourceUrl: METADATA_URL,
     licenseSource: 'google/fonts GitHub repository (ofl/, apache/, ufl/ folders)',
     licenseSourceUrl: REPO_URL,
-    licenseCommit: lic?.commit ?? prev?.licenseCommit ?? null,
-    licenseAsOf: lic?.commitDate ?? prev?.licenseAsOf ?? null,
+    licenseCommit: lic.commit,
+    licenseAsOf: lic.commitDate,
     latestFamilyUpdate: families.reduce((m, f) => (f.lm > m ? f.lm : m), ''),
     count: families.length,
     families,
   };
-  writeFileSync(join(dataDir, 'fonts.json'), JSON.stringify(out));
-  writeFileSync(join(dataDir, 'axes.json'), JSON.stringify({ asOf, source: 'Google Fonts axis registry (in family metadata)', sourceUrl: METADATA_URL, axes }, null, 1));
-  log('families', families.length, 'license mapped', families.filter((f) => f.lic).length, 'commit', out.licenseCommit);
-
-  // ---------- METADATA.pb for the curated set ----------
-  const prevDetails = readJson(join(dataDir, 'details.json'))?.items || {};
+  // Collect all commit-bound details before writing ANY of the three files.
+  const prevDetails = readJson(join(dataDir, 'details.json'));
   const curated = families.filter((f) => f.lic).slice(0, CURATED_COUNT);
-  const items = {};
-  let ok = 0, kept = 0;
+  const results = [];
+  const failures = [];
   const queue = [...curated];
   async function worker() {
     while (queue.length) {
       const f = queue.shift();
-      const url = `https://raw.githubusercontent.com/google/fonts/${out.licenseCommit || 'main'}/${f.dir}/METADATA.pb`;
       try {
-        const pb = await fetchText(url, 30000);
-        const get = (re) => (pb.match(re) || [])[1] || null;
-        items[f.f] = {
-          license: get(/^license:\s*"([^"]+)"/m),
-          copyright: get(/copyright:\s*"((?:[^"\\]|\\.)*)"/),
-          repo: get(/repository_url:\s*"([^"]+)"/),
-          metadataUrl: `${REPO_URL}/blob/main/${f.dir}/METADATA.pb`,
-        };
-        ok++;
+        const urls = metadataUrls(out.licenseCommit, f.dir);
+        const pb = await fetchText(urls.raw, 30000);
+        results.push({ family: f.f, dir: f.dir, commit: out.licenseCommit, rawUrl: urls.raw, metadataUrl: urls.page, pb });
       } catch (e) {
-        if (prevDetails[f.f]) { items[f.f] = prevDetails[f.f]; kept++; }
-        else warn('METADATA.pb missing', f.f, String(e));
+        failures.push(f.f);
+        warn('METADATA.pb missing; entire snapshot will be retained', f.f, String(e));
       }
     }
   }
   await Promise.all(Array.from({ length: 8 }, worker));
+  if (failures.length) throw new Error(`Incomplete METADATA.pb batch (${failures.length} failed); no snapshot writes`);
+  const items = mergeDetails({ commit: out.licenseCommit, curated, previous: prevDetails, results });
+  writeFileSync(join(dataDir, 'fonts.json'), JSON.stringify(out));
+  writeFileSync(join(dataDir, 'axes.json'), JSON.stringify({ asOf, source: 'Google Fonts axis registry (in family metadata)', sourceUrl: METADATA_URL, axes }, null, 1));
   writeFileSync(join(dataDir, 'details.json'), JSON.stringify({ asOf, source: 'google/fonts METADATA.pb files', sourceUrl: REPO_URL, commit: out.licenseCommit, items }, null, 1));
-  log('details fetched', ok, 'kept from previous', kept);
+  log('families', families.length, 'details fetched', results.length, 'commit', out.licenseCommit);
 }
 
-main().catch((e) => { warn('unexpected', e); process.exitCode = 0; });
+main().catch((e) => { warn('refresh rejected; retain last good snapshot', e); process.exitCode = 1; });
