@@ -68,6 +68,7 @@ for (const file of walk(dist)) {
   if (title.length < 50 || title.length > 60) fail(path, `title length ${title.length}: "${title}"`);
   const desc = norm((html.match(/<meta name="description" content="([^"]*)"/) || [])[1] || '');
   if (desc.length < 150 || desc.length > 160) fail(path, `description length ${desc.length}`);
+  if (/…$/.test(desc) || /…$/.test(title)) fail(path, 'title/description was truncated with an ellipsis');
   const canon = (html.match(/<link rel="canonical" href="([^"]+)"/) || [])[1];
   if (canon !== ORIGIN + path) fail(path, `canonical ${canon}`);
   if (/<meta[^>]+name="robots"[^>]+noindex/i.test(html) || /noindex/i.test((html.match(/<meta name="robots"[^>]*>/) || [''])[0])) fail(path, 'noindex');

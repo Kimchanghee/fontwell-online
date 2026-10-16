@@ -18,8 +18,9 @@ interface Props {
   ld?: Record<string, unknown>[];
   crumbs?: { name: string; path: string }[];
   wide?: boolean;
+  notFound?: boolean;
 }
-const { title, description, path, og = '/og/home.png', ogType = 'website', ld = [], crumbs = [], wide = false } = Astro.props;
+const { title, description, path, og = '/og/home.png', ogType = 'website', ld = [], crumbs = [], wide = false, notFound = false } = Astro.props;
 const canonical = abs(path);
 const graph = [orgLd(), websiteLd(), ...(crumbs.length ? [breadcrumbLd(crumbs)] : []), ...ld];
 const ldJson = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c');
@@ -41,8 +42,8 @@ const commit = fontsData.licenseCommit?.slice(0, 7) ?? 'n/a';
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title}</title>
   <meta name="description" content={description} />
-  <link rel="canonical" href={canonical} />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
+  {!notFound && <link rel="canonical" href={canonical} />}
+  <meta name="robots" content={notFound ? 'noindex' : 'index, follow, max-image-preview:large'} />
   <meta name="theme-color" content="#f3efe4" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="alternate" type="application/rss+xml" title="Fontwell guides" href="/guides/rss.xml" />

@@ -7,6 +7,7 @@ import { fmtDate } from '../../lib/data';
 const guides = (await getCollection('guides')).sort((a, b) => a.data.order - b.data.order);
 const title = fitTitle(['Font licensing and web type guides, sourced | Fontwell', 'Font licensing and web typography guides | Fontwell']);
 const description = fitDesc([
+  `${guides.length} plain-English guides on open font licences, logos, self-hosting and GDPR, variable fonts, CJK subsetting and pairing, sourced to SIL, Google and W3C.`,
   `${guides.length} plain-English guides on open font licences, logos, self-hosting and GDPR, variable fonts, CJK subsetting and pairing, each sourced to SIL, Google, W3C or MDN.`,
   `${guides.length} plain-English guides on open font licences, logos, self-hosting and GDPR, variable fonts, CJK subsetting and font pairing, each sourced to SIL, Google, W3C and MDN.`,
 ]);
