@@ -43,8 +43,11 @@ export function mergeDetails({ commit, curated, previous, results }) {
     requireThat(result.rawUrl === urls.raw && result.metadataUrl === urls.page, 'detail URL does not pin observed commit');
     const item = parseMetadata(result.pb), prior = previous?.items?.[family.f];
     requireThat(item.license === null || item.license === LICENSES[family.lic], 'detail/folder license mismatch');
-    requireThat(item.license === null || prior?.license === item.license, 'new or promoted detail license needs separate trusted review');
-    items[family.f] = { ...item, metadataUrl: urls.page };
+    // A popularity change can introduce a previously uncurated family. Fresh
+    // metadata is not trusted approval of its detail license: retain unknown
+    // instead of rejecting the complete batch or promoting the observed claim.
+    const license = prior?.license === item.license ? item.license : null;
+    items[family.f] = { ...item, license, metadataUrl: urls.page };
   }
   // Never substitute any prior detail bytes, even on a same-commit failure.
   // A complete freshly fetched batch is necessary before any data-file write.
