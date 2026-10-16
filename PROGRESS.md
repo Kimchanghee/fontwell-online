@@ -24,3 +24,9 @@ Preserved existing implementation. Added design reference/license audit, questio
 
 ## Bounded QA follow-up
 Font-loading stability and default-off advertising corrected; direct typecheck clean (45 files), initial complete build/gate/tests and Edge 10-case QA passed. Added standalone 44px target fixes and reusable `node scripts/qa-local.cjs`; detailed evidence in scorecard. Final build after the last home-link rule was interrupted (server restart, then 180s timeout); dist currently incomplete. M8 remains open pending one clean direct build + gate + strict QA run. No deploy/accounts; Astro 7 versus contract 5 documented, unchanged.
+
+## Parent reconciliation 2026-10-16 23:47 KST
+- Parent corrected remaining breadcrumb/footer link width to 44px, keeping prior 44px height.
+- Fresh direct Astro build: 225 pages; gate224/224; same-process Edge QA at1440/390 all10cases passed; max observed CLS0.0004, no document overflow, standalone touch-target check now passes. Exact final log: ../_refs/fontwell-final-fixed.log and final result marker.
+- Public deployment verified: version8aac8aee-ffa3-4cbf-b3c0-0387fac62c71, home200/missing404, GA4 tag present, advertising loader OFF. GSC domain verified and sitemap success reported by account child; account evidence ../_refs/gsc-batch-20261016.
+- Astro7 is retained as an internal implementation exception after complete static-output QA; no claim this build uses Astro5. AdSense approval, revenue, indexing and recurring refresh remain unverified/not started.
