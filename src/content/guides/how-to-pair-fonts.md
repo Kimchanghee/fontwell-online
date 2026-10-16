@@ -1,6 +1,6 @@
 ---
 title: "How to pair fonts: a repeatable method for heading and body"
-description: "A practical font-pairing method: start from the body text, contrast one property, match script coverage and proportions, then test at real sizes. With worked examples."
+description: "A practical font-pairing method: start from body text, contrast one property, match script coverage and proportions, then test at real sizes. Worked examples."
 question: "How do you pair two fonts?"
 answer: "Choose the body font first for reading comfort and script coverage, then pick a heading font that contrasts in one clear way (classification, weight or width) while sharing proportions such as x-height and line spacing. Test the pair at real sizes with real text before committing."
 published: 2026-10-16

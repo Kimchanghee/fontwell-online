@@ -1,6 +1,6 @@
 ---
 title: "How to subset Korean and CJK web fonts without breaking text"
-description: "Korean, Japanese and Chinese fonts hold thousands of glyphs. How unicode-range slicing works, what Google Fonts does (124 slices for Noto Sans KR), and how to subset your own files."
+description: "Korean, Japanese and Chinese fonts hold thousands of glyphs. How unicode-range slicing works, what Google Fonts does for Noto Sans KR, and how to subset files."
 question: "How do I make Korean or CJK web fonts load fast?"
 answer: "Split the font into many small files by Unicode range and let the browser download only the slices a page uses. Google Fonts already does this: on 16 October 2026 one weight of Noto Sans KR was served as 124 unicode-range slices. When self-hosting, subset with fontTools and declare unicode-range."
 published: 2026-10-16

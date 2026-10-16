@@ -1,6 +1,6 @@
 ---
 title: "Self-hosting Google Fonts: GDPR, privacy and how to do it"
-description: "Why EU site owners self-host Google Fonts after the 2022 Munich court ruling, what Google says it logs, and a step-by-step self-hosting setup with correct @font-face rules."
+description: "Why EU site owners self-host Google Fonts after the 2022 Munich ruling, what Google says it logs, and a step-by-step self-hosting setup with @font-face rules."
 question: "Should I self-host Google Fonts for GDPR?"
 answer: "If your site serves visitors in the EU or UK, self-hosting is the low-risk choice. Linking to the Google Fonts API sends each visitor's IP address to Google, and a Munich court held in January 2022 that doing so without consent breached the GDPR. Self-hosting sends nothing to Google."
 published: 2026-10-16

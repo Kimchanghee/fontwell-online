@@ -1,6 +1,6 @@
 ---
 title: "Can I use a free font in a logo? OFL, Apache and trademarks"
-description: "Open-licensed fonts can be used in logos, but you cannot stop others using the same font. What the OFL says, how trademark protection works, and how to make a mark your own."
+description: "Open-licensed fonts can be used in logos, but anyone can use the same font. What the OFL says, how trademarks protect a mark, and how to make a logo your own."
 question: "Can I use a free font in a logo?"
 answer: "Yes, if the font is under an open licence such as the OFL, Apache 2.0 or the Ubuntu Font Licence. A logo is a document made with the font, which these licences do not restrict. What you cannot get is exclusivity: anyone else may use the same font."
 published: 2026-10-16

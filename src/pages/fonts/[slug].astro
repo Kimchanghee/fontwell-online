@@ -61,9 +61,11 @@ const description = fitDesc([
   `${f.f} is ${lic.short}-licensed: ${vf ? 'a variable' : `a ${styles}-style`} ${f.c.toLowerCase()} family. See what the licence allows for logos, apps and resale, plus pairings and CSS.`,
   `${f.f} is ${lic.short}-licensed: ${vf ? 'a variable' : `a ${styles}-style`} ${f.c.toLowerCase()} family. See what its licence allows for logos, apps and resale, with pairings and CSS.`,
   `${f.f} is ${lic.short}: ${vf ? 'a variable' : `a ${styles}-style`} ${f.c.toLowerCase()} family. What the licence allows for logos, apps and resale, plus pairings and CSS.`,
+  `${f.f} is ${lic.short}-licensed: ${vf ? 'a variable' : `a ${styles}-style`} ${f.c.toLowerCase()} family. See exactly what the licence allows for logos, apps and resale, plus pairings and CSS.`,
   `Can you use ${f.f} commercially? It is ${lic.short}. Logo, app and resale verdicts with clauses, ${f.sub.length} subsets, pairings and CSS.`,
   `Can you use ${f.f} commercially? It is ${lic.short}-licensed. Logo, app and resale verdicts with clauses, plus ${f.sub.length} subsets, pairings and copy-ready CSS.`,
   `Can you use ${f.f} commercially? It is ${lic.short}-licensed. See logo, app and resale verdicts with the clause behind each, its ${f.sub.length} subsets, pairings and CSS.`,
+  `Can you use ${f.f} commercially? It is ${lic.short}-licensed. See logo, app and resale verdicts with the clause behind each, all its ${f.sub.length} subsets, pairings and CSS.`,
 ]);
 
 const logo = checkUse(f.lic, 'logo');
@@ -104,7 +106,7 @@ const ld = [
     author: { '@id': `${site.url}/#organization` },
     publisher: { '@id': `${site.url}/#organization` },
     image: abs(`/og/fonts/${f.s}.png`),
-    about: { '@type': 'CreativeWork', name: f.f, creator: f.d.map((n) => ({ '@type': 'Person', name: n })), license: lic.url, url: gfUrl },
+    about: { '@type': 'CreativeWork', name: f.f, creator: f.d.map((n) => ({ '@type': n === 'NaN' ? 'Organization' : 'Person', name: n })), license: lic.url, url: gfUrl },
     isBasedOn: [fontsData.sourceUrl, det?.metadataUrl ?? fontsData.licenseSourceUrl],
   },
   faqLd(faq),
@@ -203,7 +205,7 @@ const axisName = (t: string) => axesRegistry.find((a) => a.tag === t)?.name ?? t
       <aside class="margin-note sticky" aria-label="Family facts">
         <dl>
           <dt>Family</dt><dd>{f.f}</dd>
-          <dt>Designer</dt><dd>{f.d.length ? f.d.join(', ') : 'Not listed'}</dd>
+          <dt>Designer</dt><dd>{f.d.length ? f.d.map((n) => (n === 'NaN' ? 'NaN (type foundry)' : n)).join(', ') : 'Not listed'}</dd>
           <dt>Licence</dt><dd><a href={lic.url}>{lic.short}</a></dd>
           <dt>Category</dt><dd>{f.c}</dd>
           <dt>Styles</dt><dd>{styles}{f.i ? ' (incl. italics)' : ''}</dd>

@@ -1,6 +1,6 @@
 ---
 title: "OFL vs Apache 2.0 vs Ubuntu Font Licence: what's different?"
-description: "The three open licences in Google Fonts compared use by use: resale, renaming, notices and modification. Based on the licence texts, with counts from the google/fonts repository."
+description: "The three open licences in Google Fonts compared use by use: resale, renaming, notices and modification, from the licence texts and google/fonts repo counts."
 question: "What is the difference between the OFL, Apache 2.0 and the Ubuntu Font Licence?"
 answer: "All three let you use fonts commercially, embed them and modify them. The OFL bans selling the font by itself and protects Reserved Font Names; Apache 2.0 is a general software licence that asks you to keep notices and mark changes; the Ubuntu Font Licence adds strict renaming rules for modified versions."
 published: 2026-10-16

@@ -1,6 +1,6 @@
 ---
 title: "Can I use Google Fonts commercially? Licences explained"
-description: "Yes: every Google Fonts family is under an open licence (OFL, Apache 2.0 or Ubuntu Font Licence). What that allows for client work, products and apps, and the limits."
+description: "Yes: every Google Fonts family is under an open licence (OFL, Apache 2.0 or Ubuntu). What that allows for client work, products and apps, and where it stops."
 question: "Can I use Google Fonts commercially?"
 answer: "Yes. Every family in the Google Fonts library is published under an open licence: the SIL Open Font License, Apache 2.0 or the Ubuntu Font Licence. All three allow commercial websites, print, logos, client work and apps. The main limit is that OFL fonts cannot be sold on their own."
 published: 2026-10-16

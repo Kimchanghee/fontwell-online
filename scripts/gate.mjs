@@ -50,7 +50,7 @@ for (const n of readdirSync(dist).filter((n) => /^sitemap-.*\.xml$/.test(n) && n
 }
 if (sitemapUrls.size === 0) fail('sitemap', 'no URLs');
 
-const PLACEHOLDER = /lorem ipsum|\bTODO\b|\bTBD\b|\bFIXME\b|\{\{|\[object Object\]|\bundefined\b|\bNaN\b|placeholder text/i;
+const PLACEHOLDER = /lorem ipsum|\bTODO\b|\bTBD\b|\bFIXME\b|\{\{|\[object Object\]|\bundefined\b|\bNaN\b(?! \(type foundry\))|placeholder text/i;
 const SOURCED = /^\/(fonts\/[^/]+|guides\/[^/]+|tools\/[^/]+|methodology)\/$/;
 
 let pages = 0;

@@ -1,6 +1,6 @@
 ---
 title: "What is the SIL Open Font License? OFL 1.1 in plain English"
-description: "The SIL Open Font License 1.1 explained clause by clause: what it permits, its five conditions, Reserved Font Names, and why documents made with OFL fonts stay yours."
+description: "The SIL Open Font License 1.1 explained clause by clause: what it permits, its five conditions, Reserved Font Names, and why documents made with it stay yours."
 question: "What is the SIL Open Font License?"
 answer: "The SIL Open Font License (OFL) 1.1 is a free licence for fonts published by SIL International in 2007. It lets anyone use, modify, embed and redistribute a font, including commercially, on five conditions; the best known is that the font may not be sold by itself."
 published: 2026-10-16

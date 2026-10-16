@@ -1,6 +1,6 @@
 ---
 title: "font-display and layout shift: loading web fonts without CLS"
-description: "How font-display swap, fallback and optional behave, why web fonts cause layout shift, and how size-adjust and metric overrides make the fallback match. With CSS you can copy."
+description: "How font-display swap, fallback and optional behave, why web fonts shift layout, and how size-adjust and metric overrides make the fallback match. With CSS."
 question: "How do I stop web fonts from causing layout shift?"
 answer: "Use font-display: swap or optional, preload only the one or two critical font files, and make the fallback font occupy the same space with the size-adjust, ascent-override and descent-override descriptors. Then the swap from fallback to web font barely moves anything."
 published: 2026-10-16

@@ -1,6 +1,6 @@
 ---
 title: "What are variable fonts? Axes, CSS and when to use them"
-description: "Variable fonts pack a range of weights, widths or optical sizes into one file. How axes work, the CSS to use them, how many Google Fonts are variable, and when static files win."
+description: "Variable fonts pack a range of weights, widths or optical sizes into one file. How axes work, the CSS to use, how many Google Fonts are variable, and limits."
 question: "What is a variable font?"
 answer: "A variable font is a single font file that contains a continuous range of styles along one or more axes, such as weight (wght) from 100 to 900, instead of one file per style. On 15 October 2026, 561 of the 1,950 Google Fonts families shipped as variable fonts."
 published: 2026-10-16

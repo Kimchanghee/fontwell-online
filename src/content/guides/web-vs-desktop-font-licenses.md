@@ -1,6 +1,6 @@
 ---
-title: "Web vs desktop font licences: what changes and why it matters"
-description: "Commercial fonts are licensed per use: desktop seats, web pageviews, apps, ebooks. Open fonts are not. How the models differ and what to check before you buy or embed a font."
+title: "Web vs desktop font licences: what changes and why it counts"
+description: "Commercial fonts are licensed per use: desktop seats, web pageviews, apps, ebooks. Open fonts are not. How the models differ and what to check before you buy."
 question: "What is the difference between a web font licence and a desktop font licence?"
 answer: "A desktop licence lets you install a font on a set number of computers to make documents; a web licence lets you serve the font file to visitors' browsers, often capped by pageviews. Open licences such as the OFL make no such split: one licence covers every use."
 published: 2026-10-16

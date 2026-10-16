@@ -1,6 +1,6 @@
 ---
 title: "How to choose a font for UI and brand: a working checklist"
-description: "What makes a font work in interfaces: legible shapes, tabular numerals, weights, language coverage and licence. A checklist with examples from the open Google Fonts library."
+description: "What makes a font work in interfaces: legible shapes, tabular numerals, weights, language coverage and licence. A checklist using the open Google Fonts library."
 question: "How do I choose a font for a user interface?"
 answer: "Pick a font that stays legible at 12 to 16 px, distinguishes look-alike characters (I, l, 1, O, 0), offers tabular numerals and at least four weights, covers every language you ship, and has a licence that allows embedding in apps. Then test it with your real interface text."
 published: 2026-10-16
