@@ -1,9 +1,8 @@
 ---
-import '@fontsource-variable/fraunces/opsz.css';
-import '@fontsource-variable/public-sans/wght.css';
-import '@fontsource-variable/public-sans/wght-italic.css';
-import '@fontsource/red-hat-mono/400.css';
-import '@fontsource/red-hat-mono/500.css';
+import '../styles/fonts.css';
+import displayFont from '@fontsource-variable/fraunces/files/fraunces-latin-opsz-normal.woff2?url';
+import bodyFont from '@fontsource-variable/public-sans/files/public-sans-latin-wght-normal.woff2?url';
+import monoFont from '@fontsource/red-hat-mono/files/red-hat-mono-latin-400-normal.woff2?url';
 import '../styles/global.css';
 import { site } from '../site.config';
 import { abs, orgLd, websiteLd, breadcrumbLd } from '../lib/seo';
@@ -45,6 +44,7 @@ const commit = fontsData.licenseCommit?.slice(0, 7) ?? 'n/a';
   {!notFound && <link rel="canonical" href={canonical} />}
   <meta name="robots" content={notFound ? 'noindex' : 'index, follow, max-image-preview:large'} />
   <meta name="theme-color" content="#f3efe4" />
+  {[displayFont, bodyFont, monoFont].map(href => <link rel="preload" href={href} as="font" type="font/woff2" crossorigin="anonymous" />)}
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="alternate" type="application/rss+xml" title="Fontwell guides" href="/guides/rss.xml" />
   <meta property="og:site_name" content={site.name} />
@@ -76,7 +76,7 @@ const commit = fontsData.licenseCommit?.slice(0, 7) ?? 'n/a';
   </script>
   {site.ga4Id && <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${site.ga4Id}`}></script>}
   {site.ga4Id && <script is:inline define:vars={{ ga: site.ga4Id }}>gtag('js', new Date()); gtag('config', ga);</script>}
-  <script is:inline async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${site.adsenseClient}`} crossorigin="anonymous"></script>
+  {site.adsEnabled && <script is:inline async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${site.adsenseClient}`} crossorigin="anonymous"></script>}
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -134,7 +134,7 @@ const commit = fontsData.licenseCommit?.slice(0, 7) ?? 'n/a';
           </ul>
         </div>
       </div>
-      <p class="small disclose">Disclosure: Fontwell is supported by advertising. Some links to paid font services may become affiliate links; when they do, they are labelled next to the link. Google Fonts links are never paid placements.</p>
+      <p class="small disclose">Disclosure: Fontwell may display advertising when enabled. Some links to paid font services may become affiliate links; when they do, they are labelled next to the link. Google Fonts links are never paid placements.</p>
     </footer>
   </div>
 </body>

@@ -15,6 +15,7 @@ export const site = {
   gscVerification: (env.PUBLIC_GSC_VERIFICATION as string | undefined) ?? '',
   naverVerification: (env.PUBLIC_NAVER_VERIFICATION as string | undefined) ?? '',
   bingVerification: (env.PUBLIC_BING_VERIFICATION as string | undefined) ?? '',
+  adsEnabled: env.PUBLIC_ADS_ENABLED === 'true',
   adsenseClient: 'ca-pub-4490818204529253',
   indexNowKey: '097dadd6ab3d29cc7bf4c5337ec7038f',
   /** Affiliate destinations. Empty = render neutral official links only (no rel=sponsored). */

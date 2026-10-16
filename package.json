@@ -11,7 +11,8 @@
     "preview": "astro preview --port 4321",
     "check": "astro check",
     "gate": "node scripts/gate.mjs",
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "qa:local": "node scripts/qa-local.cjs"
   },
   "dependencies": {
     "astro": "^7.3.8"

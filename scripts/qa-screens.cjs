@@ -26,8 +26,8 @@ const launchOptions = process.env.PW_CHROME ? { executablePath: process.env.PW_C
       const m = await page.evaluate(() => {
         const de = document.documentElement;
         const wide = [...document.querySelectorAll('body *')].filter((el) => { const r = el.getBoundingClientRect(); return r.right > de.clientWidth + 1 && getComputedStyle(el).position !== 'fixed'; }).slice(0, 5).map((el) => el.tagName + '.' + el.className);
-        const small = [...document.querySelectorAll('a, button, input, select, textarea, summary')].filter((el) => { const r = el.getBoundingClientRect(); const cs = getComputedStyle(el); return r.width > 0 && r.height > 0 && cs.visibility !== 'hidden' && r.height < 24 && !el.closest('p, li p, td, .prose, article p'); }).length;
-        return { scrollW: de.scrollWidth, clientW: de.clientWidth, overflow: de.scrollWidth > de.clientWidth, wide, cls: +window.__cls.toFixed(4), shifts: window.__shifts.slice(0, 4), smallTargets: small, h: document.body.scrollHeight };
+        const small = [...document.querySelectorAll('a, button, input, select, textarea, summary')].filter((el) => { const r = el.getBoundingClientRect(); const cs = getComputedStyle(el); return r.width > 0 && r.height > 0 && cs.visibility !== 'hidden' && (r.height < 44 || r.width < 44) && !el.closest('p, li p, td, .prose, article p') && !(el.matches('input[type=checkbox],input[type=radio]') && el.closest('label')?.getBoundingClientRect().height >= 44); }).map(el=>({tag:el.tagName,text:(el.textContent||el.id).trim().slice(0,60),height:el.getBoundingClientRect().height}));
+        return { scrollW: de.scrollWidth, clientW: de.clientWidth, overflow: de.scrollWidth > de.clientWidth, wide, cls: +window.__cls.toFixed(4), shifts: window.__shifts.slice(0, 4), smallTargets: small.length, smallTargetDetails: small, h: document.body.scrollHeight };
       });
       // keyboard focus visibility: tab 3 times, check outline/box-shadow on active element
       const focus = [];
@@ -46,6 +46,6 @@ const launchOptions = process.env.PW_CHROME ? { executablePath: process.env.PW_C
   }
   await browser.close();
   fs.writeFileSync(path.join(out, 'report.json'), JSON.stringify(report, null, 2));
-  if (report.some(r => r.status !== (r.path.includes('does-not-exist') ? 404 : 200) || r.overflow || r.errors.some(e => e.includes('page.goto:')))) process.exitCode = 1;
+  if (report.some(r => r.status !== (r.path.includes('does-not-exist') ? 404 : 200) || r.overflow || r.cls > 0.1 || r.smallTargets > 0 || r.errors.some(e => e.includes('page.goto:')))) process.exitCode = 1;
   for (const r of report) console.log(`${r.width} ${r.path} status=${r.status} overflow=${r.overflow}(${r.scrollW}/${r.clientW}) cls=${r.cls} small=${r.smallTargets} h=${r.h} focus=${r.focus.join(' | ')} ${r.wide.length ? 'WIDE:' + r.wide.join(',') : ''} ${r.errors.length ? 'ERR:' + r.errors.join(' ;; ') : ''}`);
 })().catch((e) => { console.error(e); process.exit(1); });

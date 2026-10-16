@@ -21,3 +21,6 @@ Branch: `v2-cloudflare-static` (push after every milestone). Contract: `../CONTR
 - Unbounded's designer is the foundry "NaN" (real data): rendered "NaN (type foundry)", LD creator Organization; gate allows that exact phrase.
 ## 2026-10-16 continuation
 Preserved existing implementation. Added design reference/license audit, question inventory/backlog, measurement plan, evidence scorecard and fail-closed screenshot runner. Build 225 pages; gate 224/224; tests 12/12. Remaining M8 gaps are explicitly documented, not marked complete.
+
+## Bounded QA follow-up
+Font-loading stability and default-off advertising corrected; direct typecheck clean (45 files), initial complete build/gate/tests and Edge 10-case QA passed. Added standalone 44px target fixes and reusable `node scripts/qa-local.cjs`; detailed evidence in scorecard. Final build after the last home-link rule was interrupted (server restart, then 180s timeout); dist currently incomplete. M8 remains open pending one clean direct build + gate + strict QA run. No deploy/accounts; Astro 7 versus contract 5 documented, unchanged.
