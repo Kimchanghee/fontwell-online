@@ -1,24 +1,30 @@
-# Question inventory and backlog
+# Question queue and backlog
 
-Baseline 2026-10-16. Existing guides are built locally, not deployed by this task. All traffic and query-demand metrics are unmeasured.
+Updated 2026-10-20. Statuses reflect the live site at https://fontwell.online. Traffic and query-demand metrics are unmeasured (not zero).
 
-## Existing question inventory
-- can-i-use-a-free-font-in-a-logo: "Can I use a free font in a logo?" | /guides/can-i-use-a-free-font-in-a-logo/ | local-built
-- can-i-use-google-fonts-commercially: "Can I use Google Fonts commercially?" | /guides/can-i-use-google-fonts-commercially/ | local-built
-- font-display-and-layout-shift: "How do I stop web fonts from causing layout shift?" | /guides/font-display-and-layout-shift/ | local-built
-- how-to-choose-a-ui-font: "How do I choose a font for a user interface?" | /guides/how-to-choose-a-ui-font/ | local-built
-- how-to-pair-fonts: "How do you pair two fonts?" | /guides/how-to-pair-fonts/ | local-built
-- ofl-vs-apache-vs-ubuntu-font-licence: "What is the difference between the OFL, Apache 2.0 and the Ubuntu Font Licence?" | /guides/ofl-vs-apache-vs-ubuntu-font-licence/ | local-built
-- self-hosting-google-fonts-gdpr: "Should I self-host Google Fonts for GDPR?" | /guides/self-hosting-google-fonts-gdpr/ | local-built
-- subset-korean-cjk-web-fonts: "How do I make Korean or CJK web fonts load fast?" | /guides/subset-korean-cjk-web-fonts/ | local-built
-- variable-fonts-explained: "What is a variable font?" | /guides/variable-fonts-explained/ | local-built
-- web-vs-desktop-font-licenses: "What is the difference between a web font licence and a desktop font licence?" | /guides/web-vs-desktop-font-licenses/ | local-built
-- what-is-the-sil-open-font-license: "What is the SIL Open Font License?" | /guides/what-is-the-sil-open-font-license/ | local-built
+| Question | Basis | Type | Status | URL |
+|---|---|---|---|---|
+| Can I use a free font in a logo? | Licence texts / standards cited in the guide | guide | live | https://fontwell.online/guides/can-i-use-a-free-font-in-a-logo/ |
+| Can I use Google Fonts commercially? | Licence texts / standards cited in the guide | guide | live | https://fontwell.online/guides/can-i-use-google-fonts-commercially/ |
+| How do I stop web fonts from causing layout shift? | Licence texts / standards cited in the guide | guide | live | https://fontwell.online/guides/font-display-and-layout-shift/ |
+| How do I choose a font for a user interface? | Licence texts / standards cited in the guide | guide | live | https://fontwell.online/guides/how-to-choose-a-ui-font/ |
+| How do you pair two fonts? | Licence texts / standards cited in the guide | guide | live | https://fontwell.online/guides/how-to-pair-fonts/ |
+| What is the difference between the OFL, Apache 2.0 and the Ubuntu Font Licence? | Licence texts / standards cited in the guide | guide | live | https://fontwell.online/guides/ofl-vs-apache-vs-ubuntu-font-licence/ |
+| Should I self-host Google Fonts for GDPR? | Licence texts / standards cited in the guide | guide | live | https://fontwell.online/guides/self-hosting-google-fonts-gdpr/ |
+| How do I make Korean or CJK web fonts load fast? | Licence texts / standards cited in the guide | guide | live | https://fontwell.online/guides/subset-korean-cjk-web-fonts/ |
+| What is a variable font? | Licence texts / standards cited in the guide | guide | live | https://fontwell.online/guides/variable-fonts-explained/ |
+| What is the difference between a web font licence and a desktop font licence? | Licence texts / standards cited in the guide | guide | live | https://fontwell.online/guides/web-vs-desktop-font-licenses/ |
+| What is the SIL Open Font License? | Licence texts / standards cited in the guide | guide | live | https://fontwell.online/guides/what-is-the-sil-open-font-license/ |
+| How many Google Fonts use each licence? | Licence folder per family, google/fonts (data snapshot) | data page | live (2026-10-20 release) | https://fontwell.online/licenses/ |
+| Which Google Fonts support Korean? | Google Fonts metadata subsets field | data page | live (2026-10-20 release) | https://fontwell.online/fonts/korean/ |
+| Which Google Fonts are variable fonts? | Google Fonts metadata axes field | data page | live (2026-10-20 release) | https://fontwell.online/fonts/variable/ |
+| How do I audit fallback metrics before swapping fonts? | CSS Fonts specification; reproducible before/after measurement (extend layout-shift guide if duplicate) | guide | queued | - |
+| Which font files must accompany an app redistribution? | Exact OFL/Apache/Ubuntu licence text | guide | queued | - |
+| How can I verify a font supports a specific writing system? | Google Fonts subset metadata and specimen testing | guide | queued | - |
+| How should I document a modified OFL font with a reserved name? | SIL FAQ and upstream licence (merge into OFL guide if overlapping) | guide | queued | - |
 
-## Backlog, editorial hypotheses only
-- How do I audit fallback metrics before swapping fonts? Sources: CSS Fonts specification and reproducible before/after measurement; extend layout-shift guide if duplicate.
-- Which font files must accompany an app redistribution? Sources: exact OFL/Apache/Ubuntu licence text; link licence checker and current OFL guide.
-- How can I verify a font supports a specific writing system? Sources: Google Fonts subset metadata and specimen testing; link CJK guide and font detail pages.
-- How should I document a modified OFL font with a reserved name? Sources: SIL FAQ and exact upstream licence; merge into current OFL guide if intent overlaps.
-
-Prioritize observed GSC queries and user questions after launch over these unmeasured hypotheses. Each new item needs question, answer, dated primary evidence, three subquestions and hub + related links. Re-run gate and source review; no bulk automatic publication. Review at deployment +14 days.
+## Rules
+- Queued items are unmeasured editorial hypotheses; prioritize observed GSC/Bing queries after they exist.
+- Each new item needs a question, a short dated answer, primary sources, FAQ that matches visible text, and hub + related links; re-run the gate.
+- Refresh when the source data changes or impressions drop 30% or more over equal windows; change dateModified only on a real content change.
+- Same-question duplicates: 301 to the canonical page; 410 only as a last resort.

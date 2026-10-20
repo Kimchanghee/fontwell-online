@@ -26,9 +26,9 @@ const ld = [
 const short = (l: string) => (l === 'conditions' ? 'with conditions' : l);
 ---
 <Base title={title} description={description} path="/tools/license-checker/" og="/og/tools/license-checker.png" ld={ld} crumbs={crumbs}>
-  <p class="kicker">Tool · licence checker</p>
+  <div class="kicker">Tool · licence checker</div>
   <h1>Can I use this font for that?</h1>
-  <p class="lede" data-answer>Choose a Google Fonts family and what you want to do with it. You get a verdict (yes, with conditions, or no), a plain-English explanation and the clause of the {LICENSES.ofl.short}, {LICENSES.apache.short} or {LICENSES.ufl.short} it rests on.</p>
+  <p class="lede" data-answer>As of {asOfHuman}, this checker covers {fmtInt(st.total)} Google Fonts families ({fmtInt(st.lic.ofl)} OFL, {fmtInt(st.lic.apache)} Apache 2.0, {fmtInt(st.lic.ufl)} Ubuntu Font Licence). Pick a family and a use to get a verdict (yes, with conditions, or no) and the licence clause it rests on.</p>
 
   <form class="lc" id="lc" onsubmit="return false" novalidate>
     <div>

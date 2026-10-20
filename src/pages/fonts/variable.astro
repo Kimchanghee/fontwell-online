@@ -1,0 +1,37 @@
+---
+import Base from '../../layouts/Base.astro';
+import { families, fontsData, asOfHuman, fmtInt, curatedSet, CATEGORIES } from '../../lib/data';
+import { fitTitle, fitDesc, abs } from '../../lib/seo';
+
+const list = families.filter((f) => f.ax.length);
+const axisCount = new Map<string, number>();
+for (const f of list) for (const a of f.ax) axisCount.set(a.t, (axisCount.get(a.t) ?? 0) + 1);
+const topAxes = [...axisCount.entries()].sort((a, b) => b[1] - a[1]).slice(0, 6);
+const groups = CATEGORIES.map((c) => ({ c, list: list.filter((f) => f.c === c).sort((a, b) => a.f.localeCompare(b.f)) })).filter((g) => g.list.length);
+const title = fitTitle(['Which Google Fonts are variable fonts? Full list | Fontwell', 'Variable Google Fonts: full list with axes | Fontwell']);
+const description = fitDesc([
+  `All ${list.length} variable families among ${fmtInt(fontsData.count)} Google Fonts, grouped by category with their axes (weight, width, optical size and more), from Google’s metadata.`,
+  `All ${list.length} variable families among the ${fmtInt(fontsData.count)} Google Fonts, grouped by category with their axes, generated from Google’s own family metadata.`,
+]);
+const crumbs = [{ name: 'Desk', path: '/' }, { name: 'Fonts', path: '/fonts/' }, { name: 'Variable', path: '/fonts/variable/' }];
+const ld = [{
+  '@type': 'CollectionPage', name: 'Variable fonts in Google Fonts', url: abs('/fonts/variable/'), dateModified: fontsData.asOf,
+  mainEntity: { '@type': 'ItemList', numberOfItems: list.length },
+}];
+---
+<Base title={title} description={description} path="/fonts/variable/" og="/og/fonts.png" ld={ld} crumbs={crumbs}>
+  <div class="kicker">Variable fonts · {list.length} families · {asOfHuman}</div>
+  <h1>Which Google Fonts are variable fonts?</h1>
+  <p class="lede" data-answer>As of {asOfHuman}, {list.length} of the {fmtInt(fontsData.count)} Google Fonts families are variable fonts, meaning their metadata lists at least one design axis; the most common axes are {topAxes.slice(0, 3).map(([t, n]) => `${t} (${n})`).join(', ')}.</p>
+  <p>Axis counts: {topAxes.map(([t, n], i) => <>{i > 0 && ' · '}<code>{t}</code> {n}</>)}. What the axes mean is explained in <a href="/guides/variable-fonts-explained/">what is a variable font?</a>; to filter variable families by script or licence, use the <a href="/">proofing desk</a>.</p>
+  {groups.map((g) => (
+    <section>
+      <h2>{g.c} ({g.list.length})</h2>
+      <p class="small">{g.list.map((f, i) => <>{i > 0 && ' · '}{curatedSet.has(f.s) ? <a href={`/fonts/${f.s}/`}>{f.f}</a> : f.f} <span class="mono">{f.ax.map((a) => a.t).join('/')}</span></>)}</p>
+    </section>
+  ))}
+  <h2>Sources</h2>
+  <ul>
+    <li><a href={fontsData.sourceUrl}>Google Fonts family metadata</a> (axes field), {fontsData.asOf.slice(0, 10)}</li>
+  </ul>
+</Base>

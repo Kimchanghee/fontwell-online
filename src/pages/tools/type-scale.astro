@@ -23,7 +23,7 @@ const ld = [{ '@type': 'WebApplication', name: 'Fontwell type-scale generator', 
 const stepName = (s: number) => (s === 0 ? 'base' : s > 0 ? `+${s}` : `${s}`);
 ---
 <Base title={title} description={description} path="/tools/type-scale/" og="/og/tools/type-scale.png" ld={ld} crumbs={crumbs}>
-  <p class="kicker">Tool · type-scale generator</p>
+  <div class="kicker">Tool · type-scale generator</div>
   <h1>What font sizes should my headings be?</h1>
   <p class="lede" data-answer>Multiply a base size by a fixed ratio for each step up (and divide for each step down). With a 16 px base and a 1.25 ratio the steps are 20, 25, 31.25, 39.06 and 48.83 px. The generator also turns each step into a fluid <code>clamp()</code> value.</p>
 

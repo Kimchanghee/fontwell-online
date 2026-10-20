@@ -1,0 +1,35 @@
+---
+import Base from '../../layouts/Base.astro';
+import { families, fontsData, asOfHuman, fmtInt, curatedSet, licenseOf } from '../../lib/data';
+import { fitTitle, fitDesc, abs } from '../../lib/seo';
+
+const list = families.filter((f) => f.sub.includes('korean'));
+const varCount = list.filter((f) => f.ax.length).length;
+const title = fitTitle(['Which Google Fonts support Korean? Full list | Fontwell', 'Google Fonts with the Korean subset: full list | Fontwell']);
+const description = fitDesc([
+  `Every Google Fonts family whose metadata lists the Korean subset (${list.length} of ${fmtInt(fontsData.count)}), with category, licence, weights and variable axes, dated to the data snapshot.`,
+  `Every Google Fonts family whose official metadata lists the Korean subset (${list.length} of ${fmtInt(fontsData.count)}), with category, licence and variable axes, dated.`,
+]);
+const crumbs = [{ name: 'Desk', path: '/' }, { name: 'Fonts', path: '/fonts/' }, { name: 'Korean', path: '/fonts/korean/' }];
+const ld = [{
+  '@type': 'CollectionPage', name: 'Google Fonts families with Korean support', url: abs('/fonts/korean/'), dateModified: fontsData.asOf,
+  mainEntity: { '@type': 'ItemList', numberOfItems: list.length, itemListElement: list.map((f, i) => ({ '@type': 'ListItem', position: i + 1, name: f.f })) },
+}];
+---
+<Base title={title} description={description} path="/fonts/korean/" og="/og/fonts.png" ld={ld} crumbs={crumbs}>
+  <div class="kicker">Script · Korean · {asOfHuman}</div>
+  <h1>Which Google Fonts support Korean?</h1>
+  <p class="lede" data-answer>As of {asOfHuman}, {list.length} of the {fmtInt(fontsData.count)} Google Fonts families list the Korean subset in Google’s own metadata, and {varCount} of those are variable fonts. The list below is generated from that metadata only.</p>
+  <table>
+    <thead><tr><th scope="col">Family</th><th scope="col">Category</th><th scope="col">Licence</th><th scope="col">Weights</th></tr></thead>
+    <tbody>
+      {list.map((f) => <tr><th scope="row">{curatedSet.has(f.s) ? <a href={`/fonts/${f.s}/`}>{f.f}</a> : f.f}</th><td>{f.c}</td><td>{licenseOf(f)?.short ?? 'Unmatched'}</td><td>{f.ax.length ? `variable ${f.ax.map((a) => a.t).join(', ')}` : f.w.join(', ')}</td></tr>)}
+    </tbody>
+  </table>
+  <p>Listing the subset means Google serves Korean glyph files for the family; it does not grade design quality or Hangul completeness beyond that. For loading speed, read <a href="/guides/subset-korean-cjk-web-fonts/">how to make Korean or CJK web fonts load fast</a>; to filter by other scripts, use the <a href="/">proofing desk</a>.</p>
+  <h2>Sources</h2>
+  <ul>
+    <li><a href={fontsData.sourceUrl}>Google Fonts family metadata</a> (subsets field), {fontsData.asOf.slice(0, 10)}</li>
+    <li><a href={fontsData.licenseSourceUrl}>google/fonts repository</a> licence folders</li>
+  </ul>
+</Base>

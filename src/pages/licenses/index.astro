@@ -1,0 +1,41 @@
+---
+import Base from '../../layouts/Base.astro';
+import { families, fontsData, asOfHuman, fmtInt, stats, curatedSet } from '../../lib/data';
+import { LICENSES } from '../../lib/core.mjs';
+import { fitTitle, fitDesc, abs } from '../../lib/seo';
+
+const st = stats();
+const title = fitTitle(['How many Google Fonts use each licence? | Fontwell', 'Google Fonts licence counts: OFL, Apache, Ubuntu | Fontwell']);
+const description = fitDesc([
+  `Licence counts for all ${fmtInt(st.total)} Google Fonts families, read from the licence folder each family sits in on the official google/fonts repository, with dates.`,
+  `Licence counts for all ${fmtInt(st.total)} Google Fonts families, read from the licence folder each family sits in on the official google/fonts GitHub repository.`,
+]);
+const keys = ['ofl', 'apache', 'ufl'] as const;
+const rows = keys.map((k) => ({ k, l: LICENSES[k], n: st.lic[k], top: families.filter((f) => f.lic === k && curatedSet.has(f.s)).slice(0, 8) }));
+const crumbs = [{ name: 'Desk', path: '/' }, { name: 'Licences', path: '/licenses/' }];
+const ld = [{
+  '@type': 'Dataset', name: 'Google Fonts families by licence', url: abs('/licenses/'), dateModified: fontsData.asOf,
+  description: `Count of Google Fonts families per licence folder (ofl, apache, ufl) on google/fonts, snapshot ${asOfHuman}.`,
+  isBasedOn: [fontsData.sourceUrl, fontsData.licenseSourceUrl], creator: { '@id': abs('/') + '#organization' },
+  variableMeasured: keys.map((k) => ({ '@type': 'PropertyValue', name: LICENSES[k].name, value: st.lic[k] })),
+}];
+---
+<Base title={title} description={description} path="/licenses/" og="/og/fonts.png" ld={ld} crumbs={crumbs}>
+  <div class="kicker">Licences · {fmtInt(st.total)} families · {asOfHuman}</div>
+  <h1>How many Google Fonts use each licence?</h1>
+  <p class="lede" data-answer>As of {asOfHuman}, {fmtInt(st.lic.ofl)} of the {fmtInt(st.total)} Google Fonts families sit under the {LICENSES.ofl.name}, {fmtInt(st.lic.apache)} under the {LICENSES.apache.name}, {fmtInt(st.lic.ufl)} under the {LICENSES.ufl.name} and {fmtInt(st.lic.none)} could not be matched to a licence folder.</p>
+  <table>
+    <thead><tr><th scope="col">Licence</th><th scope="col">Families</th><th scope="col">Most-used examples with a Fontwell page</th></tr></thead>
+    <tbody>
+      {rows.map((r) => <tr><th scope="row"><a href={r.l.url}>{r.l.name}</a></th><td>{fmtInt(r.n)}</td><td>{r.top.map((f, i) => <>{i > 0 && ', '}<a href={`/fonts/${f.s}/`}>{f.f}</a></>)}</td></tr>)}
+      <tr><th scope="row">Unmatched</th><td>{fmtInt(st.lic.none)}</td><td>Shown as unmatched rather than guessed</td></tr>
+    </tbody>
+  </table>
+  <p>The count is the licence folder (<code>ofl/</code>, <code>apache/</code>, <code>ufl/</code>) each family sits in on the google/fonts repository, joined by family name to Google Fonts’ public metadata. It is a plain-English summary, not legal advice; read the licence shipped with the font for high-stakes uses. See <a href="/guides/ofl-vs-apache-vs-ubuntu-font-licence/">how the three licences differ</a>, <a href="/guides/what-is-the-sil-open-font-license/">what the OFL allows</a>, or check one family in the <a href="/tools/license-checker/">licence checker</a>.</p>
+  <h2>Sources</h2>
+  <ul>
+    <li><a href={fontsData.sourceUrl}>Google Fonts family metadata</a>, {fontsData.asOf.slice(0, 10)}</li>
+    <li><a href={fontsData.licenseSourceUrl}>google/fonts repository</a> licence folders{fontsData.licenseAsOf ? `, ${fontsData.licenseAsOf.slice(0, 10)}` : ''}</li>
+  </ul>
+  <p class="small">Method: <a href="/methodology/">methodology and data sources</a>.</p>
+</Base>

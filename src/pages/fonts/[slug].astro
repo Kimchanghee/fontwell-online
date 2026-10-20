@@ -117,7 +117,7 @@ const axisName = (t: string) => axesRegistry.find((a) => a.tag === t)?.name ?? t
 ---
 <Base title={title} description={description} path={`/fonts/${f.s}/`} og={`/og/fonts/${f.s}.png`} ogType="article" ld={ld} crumbs={crumbs}>
   <article>
-    <p class="kicker">{f.c} · {lic.short} · No. {String(rank).padStart(4, '0')}</p>
+    <div class="kicker">{f.c} · {lic.short} · No. {String(rank).padStart(4, '0')}</div>
     <h1>Is {f.f} free for commercial use?</h1>
     <p class="lede" data-answer>{answer}</p>
 

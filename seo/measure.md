@@ -12,3 +12,9 @@ If deployed 2026-10-16, target 2026-10-30; otherwise shift to actual release +14
 
 ## Decisions
 Zero exposure: inspect indexing, robots, canonical and discovery before rewriting. Impressions up/clicks down: inspect intent and snippets. Position 5–15: improve source-specific answers/internal links. Source/licence changes: refresh actual facts and date, rebuild/gate. Never change dates merely for freshness. Quarterly: entity consistency and model recall; no ranking, approval or revenue guarantees.
+
+## 2026-10-20 five-lane pass
+- Re-measure date: 2026-11-03 (+14 days from this source release).
+- Numeric baseline: pending console data (GSC/Bing exports are owner-held). Values are unknown, not zero.
+- Citation probes (record engine, date, answer, cited URL as O/X): Which Google Fonts are under the SIL Open Font License? / Which Google Fonts support Korean? / Which Google Fonts are variable fonts? / How many Google Fonts use each licence? / What is Fontwell?
+- Leading indicator: AI-crawler visits (GPTBot, OAI-SearchBot, ClaudeBot, Claude-SearchBot, PerplexityBot, Perplexity-User) in Cloudflare analytics where available.

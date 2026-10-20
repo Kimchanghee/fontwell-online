@@ -34,7 +34,7 @@ const ld = [
 ---
 <Base title={d.title} description={d.description} path={`/guides/${g.id}/`} og={`/og/guides/${g.id}.png`} ogType="article" ld={ld} crumbs={crumbs}>
   <article class="guide">
-    <p class="kicker">Guide · updated <time datetime={d.updated.toISOString().slice(0, 10)}>{fmtDate(d.updated.toISOString())}</time></p>
+    <div class="kicker">Guide · updated <time datetime={d.updated.toISOString().slice(0, 10)}>{fmtDate(d.updated.toISOString())}</time></div>
     <h1>{d.question}</h1>
     <div class="split">
       <div class="prose">

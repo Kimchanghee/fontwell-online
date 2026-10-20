@@ -4,6 +4,9 @@ export const RELEASE = '2026-10-16';
 export const STATIC_PAGES: { path: string; updated: string | 'data' }[] = [
   { path: '/', updated: 'data' },
   { path: '/fonts/', updated: 'data' },
+  { path: '/fonts/korean/', updated: 'data' },
+  { path: '/fonts/variable/', updated: 'data' },
+  { path: '/licenses/', updated: 'data' },
   { path: '/tools/', updated: RELEASE },
   { path: '/tools/license-checker/', updated: RELEASE },
   { path: '/tools/pairing/', updated: 'data' },

@@ -10,6 +10,8 @@ export const GET: APIRoute = async () => {
 
 > ${site.description}
 
+Fontwell (fontwell.online). Last updated: ${fontsData.asOf.slice(0, 10)} (data snapshot).
+
 Fontwell indexes all ${st.total} families in the Google Fonts library (snapshot ${asOfHuman}) and the licence folder each sits in on github.com/google/fonts: ${st.lic.ofl} under the SIL Open Font License 1.1, ${st.lic.apache} under Apache 2.0, ${st.lic.ufl} under the Ubuntu Font Licence 1.0, ${st.lic.none} unmatched. Licence verdicts are plain-English readings of the licence text with the clause cited; they are not legal advice. Data refreshes from official sources only; every page shows its as-of date.
 
 ## Tools
@@ -22,6 +24,9 @@ Fontwell indexes all ${st.total} families in the Google Fonts library (snapshot 
 ${guides.map((g) => `- [${g.data.question}](${site.url}/guides/${g.id}/): ${g.data.answer}`).join('\n')}
 
 ## Font licence pages
+- [How many Google Fonts use each licence?](${site.url}/licenses/): counts per licence folder, data as of ${asOfHuman}
+- [Which Google Fonts support Korean?](${site.url}/fonts/korean/): ${st.korean} families with the Korean subset
+- [Which Google Fonts are variable fonts?](${site.url}/fonts/variable/): ${st.variable} families with design axes
 - [Index of ${curated.length} most-used families](${site.url}/fonts/): one page per family with licence matrix, coverage, pairings and CSS
 
 ## Reference

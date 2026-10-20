@@ -3,7 +3,7 @@ import { site } from '../site.config';
 
 export const GET: APIRoute = () => new Response(
 `# ${site.name} — all crawlers welcome, including AI crawlers.
-${['Googlebot', 'Bingbot', 'Yeti', 'GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-User', 'PerplexityBot', 'Google-Extended', 'Applebot-Extended'].map((a) => `User-agent: ${a}\nAllow: /\n`).join('\n')}
+${['Googlebot', 'Bingbot', 'Yeti', 'GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-User', 'Claude-SearchBot', 'PerplexityBot', 'Perplexity-User', 'Google-Extended', 'Applebot-Extended'].map((a) => `User-agent: ${a}\nAllow: /\n`).join('\n')}
 User-agent: *
 Allow: /
 

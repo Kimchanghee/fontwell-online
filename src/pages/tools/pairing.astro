@@ -23,9 +23,9 @@ const crumbs = [{ name: 'Desk', path: '/' }, { name: 'Tools', path: '/tools/' },
 const ld = [{ '@type': 'WebApplication', name: 'Fontwell pairing tester', url: abs('/tools/pairing/'), applicationCategory: 'DesignApplication', operatingSystem: 'Any (web browser)', isAccessibleForFree: true, publisher: { '@id': `${site.url}/#organization` }, dateModified: fontsData.asOf }];
 ---
 <Base title={title} description={description} path="/tools/pairing/" og="/og/tools/pairing.png" ld={ld} crumbs={crumbs} wide>
-  <p class="kicker">Tool · pairing tester</p>
+  <div class="kicker">Tool · pairing tester</div>
   <h1>Do these two fonts work together?</h1>
-  <p class="lede" data-answer>Set any two of the {fontsData.count.toLocaleString('en-US')} Google Fonts families as heading and body, type your own copy and judge them at real sizes. For the 200 families with their own page, three body partners are suggested from shared scripts, weights and metrics.</p>
+  <p class="lede" data-answer>As of {asOfHuman}, you can set any two of the {fontsData.count.toLocaleString('en-US')} Google Fonts families as heading and body, type your own copy and judge them at real sizes. For the 200 families with their own page, three body partners are suggested from shared scripts, weights and metrics.</p>
 
   <form class="pt" id="pt" onsubmit="return false">
     <div><label for="h">Heading font</label><input id="h" type="text" list="pl" value={defHead.f} autocomplete="off" aria-describedby="hErr" /><p class="err" id="hErr"></p></div>
