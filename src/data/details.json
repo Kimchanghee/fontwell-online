@@ -1,116 +1,14 @@
 {
- "asOf": "2026-10-21T17:56:32.470Z",
+ "asOf": "2026-10-22T18:06:13.774Z",
  "source": "google/fonts METADATA.pb files",
  "sourceUrl": "https://github.com/google/fonts",
  "commit": "45e3d5269e4a17d823f6d84470bc084dc5ae46f6",
  "items": {
-  "Inter": {
-   "license": "OFL",
-   "copyright": "Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter)",
-   "repo": "https://www.github.com/rsms/inter",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/inter/METADATA.pb"
-  },
-  "Work Sans": {
-   "license": "OFL",
-   "copyright": "Copyright 2019 The Work Sans Project Authors (https://github.com/weiweihuanghuang/Work-Sans)",
-   "repo": "https://github.com/weiweihuanghuang/Work-Sans",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/worksans/METADATA.pb"
-  },
-  "Space Grotesk": {
-   "license": "OFL",
-   "copyright": "Copyright 2020 The Space Grotesk Project Authors (https://github.com/floriankarsten/space-grotesk)",
-   "repo": "https://github.com/floriankarsten/space-grotesk",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/spacegrotesk/METADATA.pb"
-  },
-  "Mulish": {
-   "license": "OFL",
-   "copyright": "Copyright 2016 The Mulish Project Authors (https://github.com/googlefonts/mulish)",
-   "repo": "https://github.com/googlefonts/mulish",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/mulish/METADATA.pb"
-  },
-  "Roboto Condensed": {
-   "license": "OFL",
-   "copyright": "Copyright 2011 Google Inc. All Rights Reserved.",
-   "repo": "https://github.com/googlefonts/roboto-classic",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/robotocondensed/METADATA.pb"
-  },
-  "Google Sans": {
-   "license": "OFL",
-   "copyright": "Copyright 2025 The Google Sans Project Authors (github.com/googlefonts/googlesans)",
-   "repo": "https://github.com/googlefonts/googlesans",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/googlesans/METADATA.pb"
-  },
   "Open Sans": {
    "license": "OFL",
    "copyright": "Copyright 2020 The Open Sans Project Authors (https://github.com/googlefonts/opensans)",
    "repo": "https://github.com/googlefonts/opensans",
    "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/opensans/METADATA.pb"
-  },
-  "Roboto": {
-   "license": "OFL",
-   "copyright": "Copyright 2011 The Roboto Project Authors (https://github.com/googlefonts/roboto-classic)",
-   "repo": "https://github.com/googlefonts/roboto-classic",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/roboto/METADATA.pb"
-  },
-  "Libre Baskerville": {
-   "license": "OFL",
-   "copyright": "Copyright 2012 The Libre Baskerville Project Authors (https://github.com/impallari/Libre-Baskerville)",
-   "repo": "https://github.com/impallari/Libre-Baskerville",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/librebaskerville/METADATA.pb"
-  },
-  "PT Sans": {
-   "license": "OFL",
-   "copyright": "Copyright © 2009 ParaType Ltd (yakupov@paratype.com). All rights reserved.",
-   "repo": null,
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/ptsans/METADATA.pb"
-  },
-  "Montserrat": {
-   "license": "OFL",
-   "copyright": "Copyright 2011 The Montserrat Project Authors (https://github.com/JulietaUla/Montserrat)",
-   "repo": "https://github.com/JulietaUla/Montserrat",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/montserrat/METADATA.pb"
-  },
-  "Arimo": {
-   "license": "OFL",
-   "copyright": "Copyright 2020 The Arimo Project Authors (https://github.com/googlefonts/arimo)",
-   "repo": "https://github.com/googlefonts/arimo",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/arimo/METADATA.pb"
-  },
-  "IBM Plex Sans": {
-   "license": "OFL",
-   "copyright": "Copyright 2019 IBM Corp. All rights reserved.",
-   "repo": "https://github.com/googlefonts/plex",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/ibmplexsans/METADATA.pb"
-  },
-  "Slabo 27px": {
-   "license": "OFL",
-   "copyright": "Copyright (c) 2013, Tiro Typeworks Ltd (www.tiro.com).",
-   "repo": "https://github.com/TiroTypeworks/Slabo",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/slabo27px/METADATA.pb"
-  },
-  "Zeyada": {
-   "license": null,
-   "copyright": "Copyright (c) 2010, Kimberly Geswein (kimberlygeswein.com kimberlygeswein@gmail.com)",
-   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/zeyada/METADATA.pb"
-  },
-  "Inconsolata": {
-   "license": "OFL",
-   "copyright": "Copyright 2006 The Inconsolata Project Authors (https://github.com/cyrealtype/Inconsolata)",
-   "repo": "https://github.com/googlefonts/Inconsolata",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/inconsolata/METADATA.pb"
-  },
-  "Playfair": {
-   "license": null,
-   "copyright": "Copyright 2005 The Playfair Project Authors (https://github.com/clauseggers/Playfair)",
-   "repo": "https://github.com/googlefonts/Playfair",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/playfair/METADATA.pb"
-  },
-  "Roboto Mono": {
-   "license": "OFL",
-   "copyright": "Copyright 2015 The Roboto Mono Project Authors (https://github.com/googlefonts/robotomono)",
-   "repo": "https://github.com/googlefonts/RobotoMono",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/robotomono/METADATA.pb"
   },
   "Poppins": {
    "license": "OFL",
@@ -118,17 +16,17 @@
    "repo": "https://github.com/itfoundry/Poppins",
    "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/poppins/METADATA.pb"
   },
-  "Noto Sans JP": {
+  "Roboto": {
    "license": "OFL",
-   "copyright": "(c) 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'.",
-   "repo": "https://github.com/notofonts/noto-cjk",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notosansjp/METADATA.pb"
+   "copyright": "Copyright 2011 The Roboto Project Authors (https://github.com/googlefonts/roboto-classic)",
+   "repo": "https://github.com/googlefonts/roboto-classic",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/roboto/METADATA.pb"
   },
-  "Karla": {
+  "Inter": {
    "license": "OFL",
-   "copyright": "Copyright 2019 The Karla Project Authors (https://github.com/googlefonts/karla)",
-   "repo": "https://github.com/googlefonts/karla",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/karla/METADATA.pb"
+   "copyright": "Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter)",
+   "repo": "https://www.github.com/rsms/inter",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/inter/METADATA.pb"
   },
   "Lato": {
    "license": "OFL",
@@ -136,245 +34,41 @@
    "repo": "https://github.com/googlefonts/LatoGFVersion",
    "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/lato/METADATA.pb"
   },
-  "Unna": {
-   "license": null,
-   "copyright": "Copyright 2016 The Unna Project Authors (omnibus.type@gmail.com)",
-   "repo": "https://github.com/Omnibus-Type/Unna",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/unna/METADATA.pb"
-  },
-  "Gloria Hallelujah": {
-   "license": null,
-   "copyright": "Copyright (c) 2010, Kimberly Geswein (kimberlygeswein.com kimberlygeswein@gmail.com)",
-   "repo": "https://github.com/librefonts/gloriahallelujah",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/gloriahallelujah/METADATA.pb"
-  },
-  "Titillium Web": {
+  "Arimo": {
    "license": "OFL",
-   "copyright": "Copyright (c) 2009-2011 by Accademia di Belle Arti di Urbino and students of MA course of Visual design. Some rights reserved.",
-   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/titilliumweb/METADATA.pb"
+   "copyright": "Copyright 2020 The Arimo Project Authors (https://github.com/googlefonts/arimo)",
+   "repo": "https://github.com/googlefonts/arimo",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/arimo/METADATA.pb"
   },
-  "IBM Plex Mono": {
+  "Montserrat": {
    "license": "OFL",
-   "copyright": "Copyright 2017 IBM Corp. All rights reserved.",
-   "repo": "https://github.com/googlefonts/plex",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/ibmplexmono/METADATA.pb"
+   "copyright": "Copyright 2011 The Montserrat Project Authors (https://github.com/JulietaUla/Montserrat)",
+   "repo": "https://github.com/JulietaUla/Montserrat",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/montserrat/METADATA.pb"
   },
-  "DM Sans": {
+  "Google Sans": {
    "license": "OFL",
-   "copyright": "Copyright 2014 The DM Sans Project Authors (https://github.com/googlefonts/dm-fonts)",
-   "repo": "https://github.com/googlefonts/dm-fonts",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/dmsans/METADATA.pb"
+   "copyright": "Copyright 2025 The Google Sans Project Authors (github.com/googlefonts/googlesans)",
+   "repo": "https://github.com/googlefonts/googlesans",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/googlesans/METADATA.pb"
   },
-  "Pangolin": {
-   "license": null,
-   "copyright": "Copyright 2016 The Pangolin Project Authors (https://github.com/googlefonts/pangolin)",
-   "repo": "https://github.com/googlefonts/pangolin",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/pangolin/METADATA.pb"
-  },
-  "Noto Sans Georgian": {
-   "license": null,
-   "copyright": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/georgian)",
-   "repo": "https://github.com/notofonts/georgian",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notosansgeorgian/METADATA.pb"
-  },
-  "Anton": {
+  "Roboto Mono": {
    "license": "OFL",
-   "copyright": "Copyright 2020 The Anton Project Authors (https://github.com/googlefonts/AntonFont.git)",
-   "repo": "https://github.com/googlefonts/AntonFont",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/anton/METADATA.pb"
+   "copyright": "Copyright 2015 The Roboto Mono Project Authors (https://github.com/googlefonts/robotomono)",
+   "repo": "https://github.com/googlefonts/RobotoMono",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/robotomono/METADATA.pb"
   },
-  "Coda": {
-   "license": null,
-   "copyright": "Copyright (c) 2010-2012, Vernon Adams (vern@newtypography.co.uk), with Reserved Font Names \\\"Coda\\\"",
-   "repo": "https://github.com/vernnobile/CodaFont",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/coda/METADATA.pb"
-  },
-  "Raleway": {
+  "Roboto Condensed": {
    "license": "OFL",
-   "copyright": "Copyright 2010 The Raleway Project Authors (impallari@gmail.com), with Reserved Font Name \\\"Raleway\\\".",
-   "repo": "https://github.com/theleagueof/raleway",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/raleway/METADATA.pb"
+   "copyright": "Copyright 2011 Google Inc. All Rights Reserved.",
+   "repo": "https://github.com/googlefonts/roboto-classic",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/robotocondensed/METADATA.pb"
   },
-  "Instrument Serif": {
+  "Noto Sans JP": {
    "license": "OFL",
-   "copyright": "Copyright 2022 The Instrument Serif Project Authors (https://github.com/Instrument/instrument-serif)",
-   "repo": "https://github.com/Instrument/instrument-serif",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/instrumentserif/METADATA.pb"
-  },
-  "Manrope": {
-   "license": "OFL",
-   "copyright": "Copyright 2019 The Manrope Project Authors (https://github.com/googlefonts/manrope)",
-   "repo": "https://github.com/googlefonts/manrope",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/manrope/METADATA.pb"
-  },
-  "Share Tech": {
-   "license": "OFL",
-   "copyright": "Copyright 2012 The Share Tech Project Authors (post@carrois.com), with Reserved Font Name \\'Share.",
-   "repo": "https://github.com/m4rc1e/ShareTech",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/sharetech/METADATA.pb"
-  },
-  "REM": {
-   "license": null,
-   "copyright": "Copyright 2019 The REM Project Authors (https://github.com/octaviopardo/REM)",
-   "repo": "https://github.com/octaviopardo/REM",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/rem/METADATA.pb"
-  },
-  "Anuphan": {
-   "license": null,
-   "copyright": "Copyright 2019 The Anuphan Project Authors (https://github.com/cadsondemak/Anuphan)",
-   "repo": "https://github.com/cadsondemak/Anuphan",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/anuphan/METADATA.pb"
-  },
-  "Noto Color Emoji": {
-   "license": "OFL",
-   "copyright": "Copyright 2021 Google Inc. All Rights Reserved.",
-   "repo": null,
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notocoloremoji/METADATA.pb"
-  },
-  "Dancing Script": {
-   "license": "OFL",
-   "copyright": "Copyright 2016 The Dancing Script Project Authors (https://github.com/googlefonts/DancingScript), with Reserved Font Name \\'Dancing Script\\'.",
-   "repo": "https://github.com/googlefonts/DancingScript",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/dancingscript/METADATA.pb"
-  },
-  "Rozha One": {
-   "license": null,
-   "copyright": "Copyright (c) 2014 Indian Type Foundry (info@indiantypefoundry.com)",
-   "repo": "https://github.com/itfoundry/rozhaone",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/rozhaone/METADATA.pb"
-  },
-  "Ubuntu": {
-   "license": "UFL",
-   "copyright": "Copyright 2011 Canonical Ltd. Licensed under the Ubuntu Font Licence 1.0",
-   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ufl/ubuntu/METADATA.pb"
-  },
-  "Changa One": {
-   "license": "OFL",
-   "copyright": "Copyright (c) 2011, Eduardo Tunni (http://www.tipo.net.ar edu@tipo.net.ar), with Reserved Font Name \\\"Changa\\\"",
-   "repo": "https://github.com/etunni/changa-one",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/changaone/METADATA.pb"
-  },
-  "Chonburi": {
-   "license": null,
-   "copyright": "Copyright (c) 2015, Cadson Demak (info@cadsondemak.com)",
-   "repo": "https://github.com/cadsondemak/chonburi",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/chonburi/METADATA.pb"
-  },
-  "Archivo Black": {
-   "license": "OFL",
-   "copyright": "Copyright 2017 The Archivo Black Project Authors (https://github.com/Omnibus-Type/ArchivoBlack)",
-   "repo": "https://github.com/Omnibus-Type/ArchivoBlack",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/archivoblack/METADATA.pb"
-  },
-  "Kanit": {
-   "license": "OFL",
-   "copyright": "Copyright 2020 The Kanit Project Authors (https://github.com/cadsondemak/kanit)",
-   "repo": "https://github.com/cadsondemak/kanit",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/kanit/METADATA.pb"
-  },
-  "Corinthia": {
-   "license": null,
-   "copyright": "Copyright 2010 The Corinthia Project Authors (https://github.com/googlefonts/corinthia)",
-   "repo": "https://github.com/googlefonts/corinthia",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/corinthia/METADATA.pb"
-  },
-  "Newsreader": {
-   "license": "OFL",
-   "copyright": "Copyright 2020 The Newsreader Project Authors (http://github.com/productiontype/Newsreader)",
-   "repo": "https://github.com/productiontype/NewsReader",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/newsreader/METADATA.pb"
-  },
-  "Oswald": {
-   "license": "OFL",
-   "copyright": "Copyright 2016 The Oswald Project Authors (https://github.com/googlefonts/OswaldFont)",
-   "repo": "https://github.com/googlefonts/OswaldFont",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/oswald/METADATA.pb"
-  },
-  "Kadwa": {
-   "license": null,
-   "copyright": "Copyright (c) 2014-2015, Sol Matas (sol@sonnenshine.com.ar)",
-   "repo": "https://github.com/solmatas/Kadwa",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/kadwa/METADATA.pb"
-  },
-  "Noto Sans": {
-   "license": "OFL",
-   "copyright": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/latin-greek-cyrillic)",
-   "repo": "https://github.com/notofonts/latin-greek-cyrillic",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notosans/METADATA.pb"
-  },
-  "Alfa Slab One": {
-   "license": "OFL",
-   "copyright": "Copyright 2016 The Alfa Slab One Project Authors (http://www.jmsole.cl | info@jmsole.cl), with Reserved Font Name \\\"Alfa Slab\\\".",
-   "repo": "https://github.com/librefonts/alfaslabone",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/alfaslabone/METADATA.pb"
-  },
-  "Happy Monkey": {
-   "license": null,
-   "copyright": "Copyright (c) 2011 by Brenda Gallo (gbrenda1987@gmail.com), with Reserved Font Name \\\"Happy Monkey\\\".",
-   "repo": "https://github.com/librefonts/happymonkey",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/happymonkey/METADATA.pb"
-  },
-  "Prompt": {
-   "license": "OFL",
-   "copyright": "Copyright (c) 2015, Cadson Demak (info@cadsondemak.com)",
-   "repo": "https://github.com/cadsondemak/prompt",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/prompt/METADATA.pb"
-  },
-  "M PLUS Rounded 1c": {
-   "license": "OFL",
-   "copyright": "Copyright 2016 The Rounded M+ Project Authors.",
-   "repo": "https://github.com/coz-m/MPLUS_FONTS",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/mplusrounded1c/METADATA.pb"
-  },
-  "Noto Sans Kharoshthi": {
-   "license": null,
-   "copyright": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/kharoshthi)",
-   "repo": "https://github.com/notofonts/kharoshthi",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notosanskharoshthi/METADATA.pb"
-  },
-  "Overpass": {
-   "license": "OFL",
-   "copyright": "Copyright 2021 The Overpass Project Authors (https://github.com/RedHatOfficial/Overpass)",
-   "repo": "https://github.com/RedHatOfficial/Overpass",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/overpass/METADATA.pb"
-  },
-  "Padauk": {
-   "license": null,
-   "copyright": "Copyright (c) 2002-2022 SIL International",
-   "repo": "https://github.com/silnrsi/font-padauk",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/padauk/METADATA.pb"
-  },
-  "Heebo": {
-   "license": "OFL",
-   "copyright": "Copyright 2014 The Heebo Project Authors (https://github.com/OdedEzer/heebo)",
-   "repo": "https://github.com/OdedEzer/heebo",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/heebo/METADATA.pb"
-  },
-  "Playfair Display": {
-   "license": "OFL",
-   "copyright": "Copyright 2017 The Playfair Display Project Authors (https://github.com/clauseggers/Playfair-Display), with Reserved Font Name \\\"Playfair Display\\\".",
-   "repo": "https://github.com/clauseggers/Playfair",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/playfairdisplay/METADATA.pb"
-  },
-  "Tajawal": {
-   "license": "OFL",
-   "copyright": "(c) 2017 by Boutros International. All rights reserved.",
-   "repo": "https://github.com/googlefonts/tajawal",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/tajawal/METADATA.pb"
-  },
-  "Teachers": {
-   "license": null,
-   "copyright": "Copyright 2023 The Teachers Project Authors (https://github.com/chankfonts/Teachers-fonts)",
-   "repo": "https://github.com/chankfonts/Teachers-fonts",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/teachers/METADATA.pb"
-  },
-  "Arvo": {
-   "license": "OFL",
-   "copyright": "Copyright 2010 Anton Koovit.",
-   "repo": "https://github.com/antonxheight/Arvo",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/arvo/METADATA.pb"
+   "copyright": "(c) 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'.",
+   "repo": "https://github.com/notofonts/noto-cjk",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notosansjp/METADATA.pb"
   },
   "Nunito": {
    "license": "OFL",
@@ -382,137 +76,35 @@
    "repo": "https://github.com/googlefonts/nunito",
    "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/nunito/METADATA.pb"
   },
-  "Averia Sans Libre": {
-   "license": null,
-   "copyright": "Copyright (c) 2011, Dan Sayers (i@iotic.com), with Reserved Font Name \\'Averia\\' and \\'Averia Libre\\'.",
-   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/averiasanslibre/METADATA.pb"
-  },
-  "Bodoni Moda": {
-   "license": "OFL",
-   "copyright": "Copyright 2020 The Bodoni Moda Project Authors (https://github.com/indestructible-type/Bodoni)",
-   "repo": "https://github.com/indestructible-type/Bodoni",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/bodonimoda/METADATA.pb"
-  },
   "Nunito Sans": {
    "license": "OFL",
    "copyright": "Copyright 2016 The Nunito Sans Project Authors (https://github.com/Fonthausen/NunitoSans)",
    "repo": "https://github.com/googlefonts/NunitoSans",
    "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/nunitosans/METADATA.pb"
   },
-  "Domine": {
+  "Raleway": {
    "license": "OFL",
-   "copyright": "Copyright 2020 The Domine Project Authors (https://github.com/googlefonts/domine)",
-   "repo": "https://github.com/googlefonts/Domine",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/domine/METADATA.pb"
+   "copyright": "Copyright 2010 The Raleway Project Authors (impallari@gmail.com), with Reserved Font Name \\\"Raleway\\\".",
+   "repo": "https://github.com/theleagueof/raleway",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/raleway/METADATA.pb"
   },
-  "PT Serif": {
+  "DM Sans": {
    "license": "OFL",
-   "copyright": "Copyright © 2010 ParaType Ltd (yakupov@paratype.com). All rights reserved.",
-   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/ptserif/METADATA.pb"
+   "copyright": "Copyright 2014 The DM Sans Project Authors (https://github.com/googlefonts/dm-fonts)",
+   "repo": "https://github.com/googlefonts/dm-fonts",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/dmsans/METADATA.pb"
   },
-  "Abel": {
+  "Noto Sans": {
    "license": "OFL",
-   "copyright": "Copyright (c) 2011, Matthew Desmond (http://www.madtype.com | mattdesmond@gmail.com), with Reserved Font Name Abel.",
-   "repo": "https://github.com/googlefonts/abel",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/abel/METADATA.pb"
+   "copyright": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/latin-greek-cyrillic)",
+   "repo": "https://github.com/notofonts/latin-greek-cyrillic",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notosans/METADATA.pb"
   },
-  "Long Cang": {
-   "license": null,
-   "copyright": "Copyright 2018 The LongCang Project Authors (https://github.com/googlefonts/longcang)",
-   "repo": "https://github.com/m4rc1e/longcang",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/longcang/METADATA.pb"
-  },
-  "Josefin Sans": {
+  "Oswald": {
    "license": "OFL",
-   "copyright": "Copyright 2010 The Josefin Sans Project Authors (https://github.com/ThomasJockin/JosefinSansFont-master), with Reserved Font Name \\\"Josefin Sans\\\".",
-   "repo": "https://github.com/googlefonts/josefinsans",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/josefinsans/METADATA.pb"
-  },
-  "Playwrite AU SA": {
-   "license": null,
-   "copyright": "Copyright 2023 The Playwrite Project Authors (https://github.com/TypeTogether/Playwrite)",
-   "repo": "https://github.com/TypeTogether/Playwrite",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/playwriteausa/METADATA.pb"
-  },
-  "Rubik": {
-   "license": "OFL",
-   "copyright": "Copyright 2015 The Rubik Project Authors (https://github.com/googlefonts/rubik)",
-   "repo": "https://github.com/googlefonts/rubik",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/rubik/METADATA.pb"
-  },
-  "Roboto Slab": {
-   "license": "APACHE2",
-   "copyright": "Copyright 2018 The Roboto Slab Project Authors (https://github.com/googlefonts/robotoslab)",
-   "repo": "https://github.com/googlefonts/robotoslab",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/apache/robotoslab/METADATA.pb"
-  },
-  "M PLUS 1p": {
-   "license": "OFL",
-   "copyright": "Copyright 2016 The M+ Project Authors.",
-   "repo": "https://github.com/coz-m/MPLUS_FONTS",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/mplus1p/METADATA.pb"
-  },
-  "Space Mono": {
-   "license": "OFL",
-   "copyright": "Copyright 2016 The Space Mono Project Authors (https://github.com/googlefonts/spacemono)",
-   "repo": "https://github.com/googlefonts/spacemono",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/spacemono/METADATA.pb"
-  },
-  "Bahiana": {
-   "license": null,
-   "copyright": "Copyright 2016 The Bahiana Project Authors (omnibus.type@gmail.com)",
-   "repo": "https://github.com/Omnibus-Type/Bahiana",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/bahiana/METADATA.pb"
-  },
-  "M PLUS U": {
-   "license": null,
-   "copyright": "Copyright 2025 The M+ FONTS Project Authors (https://github.com/coz-m/MPLUS_FONTS)",
-   "repo": "https://github.com/coz-m/MPLUS_FONTS",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/mplusu/METADATA.pb"
-  },
-  "Edu AU VIC WA NT Pre": {
-   "license": null,
-   "copyright": "Copyright 2023 The VIC WA NT School Hand Australia Project Authors (https://github.com/SorkinType/VICWANTSchoolhandAustralia)",
-   "repo": "https://github.com/SorkinType/VICWANTSchoolhandAustralia",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/eduauvicwantpre/METADATA.pb"
-  },
-  "Noto Serif JP": {
-   "license": "OFL",
-   "copyright": "(c) 2017-2024 Adobe (http://www.adobe.com/).",
-   "repo": "https://www.github.com/notofonts/noto-cjk",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notoserifjp/METADATA.pb"
-  },
-  "Geist": {
-   "license": "OFL",
-   "copyright": "Copyright 2024 The Geist Project Authors (https://github.com/vercel/geist-font)",
-   "repo": "https://github.com/vercel/geist-font",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/geist/METADATA.pb"
-  },
-  "ABeeZee": {
-   "license": null,
-   "copyright": "Copyright 2011 The ABeeZee Project Authors (https://github.com/googlefonts/abeezee) with Reserved Font Name ABeeZee",
-   "repo": "https://github.com/googlefonts/abeezee",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/abeezee/METADATA.pb"
-  },
-  "Marcellus": {
-   "license": null,
-   "copyright": "Copyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \\\"Marcellus\\\"",
-   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/marcellus/METADATA.pb"
-  },
-  "Noto Sans Khojki": {
-   "license": null,
-   "copyright": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/khojki)",
-   "repo": "https://github.com/notofonts/khojki",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notosanskhojki/METADATA.pb"
-  },
-  "Cairo": {
-   "license": "OFL",
-   "copyright": "Copyright 2009 The Cairo Project Authors (https://github.com/Gue3bara/Cairo)",
-   "repo": "https://github.com/Gue3bara/Cairo",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/cairo/METADATA.pb"
+   "copyright": "Copyright 2016 The Oswald Project Authors (https://github.com/googlefonts/OswaldFont)",
+   "repo": "https://github.com/googlefonts/OswaldFont",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/oswald/METADATA.pb"
   },
   "Outfit": {
    "license": "OFL",
@@ -520,89 +112,23 @@
    "repo": "https://github.com/Outfitio/Outfit-Fonts",
    "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/outfit/METADATA.pb"
   },
-  "IBM Plex Sans Arabic": {
-   "license": "OFL",
-   "copyright": "Copyright 2019 IBM Corp. All rights reserved.",
-   "repo": "https://github.com/googlefonts/plex",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/ibmplexsansarabic/METADATA.pb"
-  },
-  "Merriweather": {
-   "license": "OFL",
-   "copyright": "Copyright 2024 The Merriweather Project Authors (https://github.com/EbenSorkin/Merriweather4) with Reserved Font Name \\\"Merriweather\\\".",
-   "repo": "https://github.com/EbenSorkin/Merriweather4",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/merriweather/METADATA.pb"
-  },
-  "Exo": {
-   "license": "OFL",
-   "copyright": "Copyright 2017 The Exo Project Authors (https://github.com/NDISCOVER/Exo-1.0)",
-   "repo": "https://github.com/NDISCOVER/Exo-1.0",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/exo/METADATA.pb"
-  },
-  "Fjalla One": {
-   "license": "OFL",
-   "copyright": "Copyright 2012 The Fjalla Project Authors (https://github.com/SorkinType/FjallaOne)",
-   "repo": "https://github.com/SorkinType/FjallaOne",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/fjallaone/METADATA.pb"
-  },
-  "Faustina": {
-   "license": null,
-   "copyright": "Copyright 2019 The Faustina Project Authors (https://github.com/Omnibus-Type/Faustina)",
-   "repo": "https://github.com/Omnibus-Type/Faustina",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/faustina/METADATA.pb"
-  },
-  "Lobster Two": {
-   "license": "OFL",
-   "copyright": "Copyright (c) 2011 by Pablo Impallari (www.impallari.com impallari@gmail.com). All rights reserved.",
-   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/lobstertwo/METADATA.pb"
-  },
   "Plus Jakarta Sans": {
    "license": "OFL",
    "copyright": "Copyright 2020 The Plus Jakarta Sans Project Authors (https://github.com/tokotype/PlusJakartaSans)",
    "repo": "https://github.com/tokotype/PlusJakartaSans",
    "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/plusjakartasans/METADATA.pb"
   },
-  "Nanum Gothic": {
+  "Work Sans": {
    "license": "OFL",
-   "copyright": "Copyright © 2010 NHN Corporation. All rights reserved. Font designed by Sandoll Communications Inc.",
-   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/nanumgothic/METADATA.pb"
+   "copyright": "Copyright 2019 The Work Sans Project Authors (https://github.com/weiweihuanghuang/Work-Sans)",
+   "repo": "https://github.com/weiweihuanghuang/Work-Sans",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/worksans/METADATA.pb"
   },
-  "Syne": {
-   "license": null,
-   "copyright": "Copyright 2019 The Syne Project Authors (https://gitlab.com/bonjour-monde/fonderie/syne-typeface)",
-   "repo": "https://gitlab.com/bonjour-monde/fonderie/syne-typeface",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/syne/METADATA.pb"
-  },
-  "Noto Sans KR": {
+  "Playfair Display": {
    "license": "OFL",
-   "copyright": "(c) 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'.",
-   "repo": "https://github.com/notofonts/noto-cjk",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notosanskr/METADATA.pb"
-  },
-  "Lora": {
-   "license": "OFL",
-   "copyright": "Copyright 2011 The Lora Project Authors (https://github.com/cyrealtype/Lora-Cyrillic), with Reserved Font Name \\\"Lora\\\".",
-   "repo": "https://github.com/cyrealtype/Lora-Cyrillic",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/lora/METADATA.pb"
-  },
-  "Nanum Myeongjo": {
-   "license": null,
-   "copyright": "Copyright © 2010 NHN Corporation. All rights reserved. Font designed by FONTRIX.",
-   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/nanummyeongjo/METADATA.pb"
-  },
-  "Sanchez": {
-   "license": null,
-   "copyright": "Copyright (c) 2012, LatinoType (luciano@latinotype.com), with Reserved Font Names \\'Sanchez\\'",
-   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/sanchez/METADATA.pb"
-  },
-  "Oleo Script": {
-   "license": null,
-   "copyright": "Copyright (c) 2012, Soytutype (contact@soytutype.com.ar|soytutype@gmail.com), with reserved fontname \\'Oleo\\'",
-   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/oleoscript/METADATA.pb"
+   "copyright": "Copyright 2017 The Playfair Display Project Authors (https://github.com/clauseggers/Playfair-Display), with Reserved Font Name \\\"Playfair Display\\\".",
+   "repo": "https://github.com/clauseggers/Playfair",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/playfairdisplay/METADATA.pb"
   },
   "Figtree": {
    "license": "OFL",
@@ -610,113 +136,41 @@
    "repo": "https://github.com/erikdkennedy/figtree",
    "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/figtree/METADATA.pb"
   },
-  "Kalam": {
-   "license": null,
-   "copyright": "Copyright (c) 2014 Indian Type Foundry (info@indiantypefoundry.com)",
-   "repo": "https://github.com/itfoundry/kalam",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/kalam/METADATA.pb"
+  "Roboto Slab": {
+   "license": "APACHE2",
+   "copyright": "Copyright 2018 The Roboto Slab Project Authors (https://github.com/googlefonts/robotoslab)",
+   "repo": "https://github.com/googlefonts/robotoslab",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/apache/robotoslab/METADATA.pb"
   },
-  "Bebas Neue": {
+  "Archivo Black": {
    "license": "OFL",
-   "copyright": "Copyright 2019 The Bebas Neue Project Authors (https://github.com/dharmatype/Bebas-Neue)",
-   "repo": "https://github.com/dharmatype/Bebas-Neue",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/bebasneue/METADATA.pb"
+   "copyright": "Copyright 2017 The Archivo Black Project Authors (https://github.com/Omnibus-Type/ArchivoBlack)",
+   "repo": "https://github.com/Omnibus-Type/ArchivoBlack",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/archivoblack/METADATA.pb"
   },
-  "Fira Code": {
-   "license": null,
-   "copyright": "Copyright 2014-2020 The Fira Code Project Authors (https://github.com/tonsky/FiraCode)",
-   "repo": "https://github.com/tonsky/FiraCode",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/firacode/METADATA.pb"
-  },
-  "Hind Siliguri": {
+  "Rubik": {
    "license": "OFL",
-   "copyright": "Copyright (c) 2015 Indian Type Foundry (info@indiantypefoundry.com)",
-   "repo": "https://github.com/itfoundry/hind-siliguri",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/hindsiliguri/METADATA.pb"
+   "copyright": "Copyright 2015 The Rubik Project Authors (https://github.com/googlefonts/rubik)",
+   "repo": "https://github.com/googlefonts/rubik",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/rubik/METADATA.pb"
   },
-  "JetBrains Mono": {
+  "Mulish": {
    "license": "OFL",
-   "copyright": "Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono)",
-   "repo": "https://github.com/JetBrains/JetBrainsMono",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/jetbrainsmono/METADATA.pb"
+   "copyright": "Copyright 2016 The Mulish Project Authors (https://github.com/googlefonts/mulish)",
+   "repo": "https://github.com/googlefonts/mulish",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/mulish/METADATA.pb"
   },
-  "Red Hat Display": {
+  "Manrope": {
    "license": "OFL",
-   "copyright": "Copyright 2024 The Red Hat Project Authors (https://github.com/RedHatOfficial/RedHatFont)",
-   "repo": "https://github.com/RedHatOfficial/RedHatFont",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/redhatdisplay/METADATA.pb"
+   "copyright": "Copyright 2019 The Manrope Project Authors (https://github.com/googlefonts/manrope)",
+   "repo": "https://github.com/googlefonts/manrope",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/manrope/METADATA.pb"
   },
-  "Quicksand": {
+  "Prompt": {
    "license": "OFL",
-   "copyright": "Copyright 2019 The Quicksand Project Authors (https://github.com/andrew-paglinawan/QuicksandFamily.git), with Reserved Font Name \\\"Quicksand\\\"",
-   "repo": "https://github.com/ThomasJockin/QuicksandFamily",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/quicksand/METADATA.pb"
-  },
-  "Righteous": {
-   "license": null,
-   "copyright": "Copyright (c) 2011 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \\\"Righteous\\\"",
-   "repo": "https://github.com/librefonts/righteous",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/righteous/METADATA.pb"
-  },
-  "Rethink Sans": {
-   "license": null,
-   "copyright": "Copyright 2022 The Rethink Sans Project Authors (https://github.com/hans-thiessen/Rethink-Sans)",
-   "repo": "https://github.com/hans-thiessen/Rethink-Sans",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/rethinksans/METADATA.pb"
-  },
-  "Archivo": {
-   "license": "OFL",
-   "copyright": "Copyright 2020 The Archivo Project Authors (https://github.com/Omnibus-Type/Archivo)",
-   "repo": "https://github.com/Omnibus-Type/Archivo",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/archivo/METADATA.pb"
-  },
-  "Noto Sans Tamil": {
-   "license": null,
-   "copyright": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/tamil)",
-   "repo": "https://github.com/notofonts/tamil",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notosanstamil/METADATA.pb"
-  },
-  "Oxygen": {
-   "license": "OFL",
-   "copyright": "Copyright (c) 2012, Vernon Adams (vern@newtypography.co.uk), with Reserved Font Names \\'Oxygen\\'",
-   "repo": "https://github.com/vernnobile/oxygenFont",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/oxygen/METADATA.pb"
-  },
-  "Catamaran": {
-   "license": null,
-   "copyright": "Copyright 2020 The Catamaran Project Authors (https://github.com/VanillaandCream/Catamaran-Tamil)",
-   "repo": "https://github.com/VanillaandCream/Catamaran-Tamil",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/catamaran/METADATA.pb"
-  },
-  "Barlow Semi Condensed": {
-   "license": "OFL",
-   "copyright": "Copyright 2017 The Barlow Project Authors (https://github.com/jpt/barlow)",
-   "repo": "https://github.com/jpt/barlow",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/barlowsemicondensed/METADATA.pb"
-  },
-  "Ramabhadra": {
-   "license": "OFL",
-   "copyright": "Copyright (c) 2012 Andhra Pradesh Society for Knowledge Networks (fonts.siliconandhra.org). Digitized data copyright (c) 2010-2012 Google Corporation.",
-   "repo": "https://github.com/appajid/ramabhadra",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/ramabhadra/METADATA.pb"
-  },
-  "Anek Telugu": {
-   "license": "OFL",
-   "copyright": "Copyright 2021 The Anek Project Authors (https://github.com/EkType/Anek)",
-   "repo": "https://github.com/EkType/Anek",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/anektelugu/METADATA.pb"
-  },
-  "DM Serif Text": {
-   "license": null,
-   "copyright": "Copyright 2014 - 2017 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name \\'Source\\'. Copyright 2019 Google LLC.",
-   "repo": "https://github.com/googlefonts/dm-fonts",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/dmseriftext/METADATA.pb"
-  },
-  "Source Sans 3": {
-   "license": "OFL",
-   "copyright": "© 2023 Adobe (http://www.adobe.com/), with Reserved Font Name ‘Source’",
-   "repo": "https://github.com/adobe-fonts/source-sans",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/sourcesans3/METADATA.pb"
+   "copyright": "Copyright (c) 2015, Cadson Demak (info@cadsondemak.com)",
+   "repo": "https://github.com/cadsondemak/prompt",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/prompt/METADATA.pb"
   },
   "Noto Sans TC": {
    "license": "OFL",
@@ -724,113 +178,35 @@
    "repo": "https://github.com/notofonts/noto-cjk",
    "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notosanstc/METADATA.pb"
   },
-  "Yellowtail": {
-   "license": null,
-   "copyright": "Copyright (c) 2011 by Brian J. Bonislawsky DBA Astigmatic (AOETI). All rights reserved. Available under the Apache 2.0 licence. http://www.apache.org/licenses/LICENSE-2.0.html",
-   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/apache/yellowtail/METADATA.pb"
-  },
-  "Hanken Grotesk": {
-   "license": "OFL",
-   "copyright": "Copyright 2021 The Hanken Grotesk Project Authors (https://github.com/marcologous/hanken-grotesk)",
-   "repo": "https://github.com/marcologous/hanken-grotesk",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/hankengrotesk/METADATA.pb"
-  },
-  "Barlow": {
-   "license": "OFL",
-   "copyright": "Copyright 2017 The Barlow Project Authors (https://github.com/jpt/barlow)",
-   "repo": "https://github.com/jpt/barlow",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/barlow/METADATA.pb"
-  },
-  "Montserrat Alternates": {
-   "license": null,
-   "copyright": "Copyright 2011 The Montserrat Project Authors (https://github.com/JulietaUla/Montserrat)",
-   "repo": "https://github.com/JulietaUla/Montserrat",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/montserratalternates/METADATA.pb"
-  },
   "Jost": {
    "license": "OFL",
    "copyright": "Copyright 2020 The Jost Project Authors (https://github.com/indestructible-type/Jost)",
    "repo": "https://github.com/indestructible-type/Jost",
    "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/jost/METADATA.pb"
   },
-  "Acme": {
-   "license": null,
-   "copyright": "Copyright (c) 2011 by Juan Pablo del Peral (info@htfonts.com), with Reserved Font Name \\\"Acme\\\"",
-   "repo": "https://github.com/googlefonts/acme",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/acme/METADATA.pb"
-  },
-  "Lobster": {
+  "Merriweather": {
    "license": "OFL",
-   "copyright": "Copyright 2010 The Lobster Project Authors (https://github.com/impallari/The-Lobster-Font), with Reserved Font Name \\\"Lobster\\\".",
-   "repo": "https://github.com/impallari/The-Lobster-Font",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/lobster/METADATA.pb"
+   "copyright": "Copyright 2024 The Merriweather Project Authors (https://github.com/EbenSorkin/Merriweather4) with Reserved Font Name \\\"Merriweather\\\".",
+   "repo": "https://github.com/EbenSorkin/Merriweather4",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/merriweather/METADATA.pb"
   },
-  "Chakra Petch": {
+  "Ubuntu": {
+   "license": "UFL",
+   "copyright": "Copyright 2011 Canonical Ltd. Licensed under the Ubuntu Font Licence 1.0",
+   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ufl/ubuntu/METADATA.pb"
+  },
+  "Kanit": {
    "license": "OFL",
-   "copyright": "Copyright 2018 The Chakra Petch Project Authors (https://github.com/m4rc1e/Chakra-Petch.git)",
-   "repo": "https://github.com/m4rc1e/Chakra-Petch",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/chakrapetch/METADATA.pb"
+   "copyright": "Copyright 2020 The Kanit Project Authors (https://github.com/cadsondemak/kanit)",
+   "repo": "https://github.com/cadsondemak/kanit",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/kanit/METADATA.pb"
   },
-  "Old Standard TT": {
-   "license": null,
-   "copyright": "Copyright 2011 The Old Standard Project Authors (amkryukov@gmail.com)",
-   "repo": "https://git.sr.ht/~ralessi/oldstandard",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/oldstandardtt/METADATA.pb"
-  },
-  "Epilogue": {
+  "Heebo": {
    "license": "OFL",
-   "copyright": "Copyright 2020 The Epilogue Project Authors (https://github.com/Etcetera-Type-Co/Epilogue)",
-   "repo": "https://github.com/Etcetera-Type-Co/Epilogue",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/epilogue/METADATA.pb"
-  },
-  "Quantico": {
-   "license": null,
-   "copyright": "Copyright (c) 2011 Matthew Desmond (http://www.madtype.com | mattdesmond@gmail.com), with Reserved Font Name \\\"Quantico\\\"",
-   "repo": "https://github.com/googlefonts/quantico",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/quantico/METADATA.pb"
-  },
-  "Noto Nastaliq Urdu": {
-   "license": null,
-   "copyright": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/nastaliq)",
-   "repo": "https://github.com/notofonts/nastaliq",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notonastaliqurdu/METADATA.pb"
-  },
-  "Amatic SC": {
-   "license": null,
-   "copyright": "Copyright 2015 The Amatic SC Project Authors (https://github.com/googlefonts/AmaticSC)",
-   "repo": "https://github.com/googlefonts/AmaticSC",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/amaticsc/METADATA.pb"
-  },
-  "BIZ UDPGothic": {
-   "license": null,
-   "copyright": "Copyright 2022 The BIZ UDGothic Project Authors (https://github.com/googlefonts/morisawa-biz-ud-gothic)",
-   "repo": "https://github.com/googlefonts/morisawa-biz-ud-gothic",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/bizudpgothic/METADATA.pb"
-  },
-  "Almarai": {
-   "license": null,
-   "copyright": "Copyright (c) 2019 by Almarai. All rights reserved.",
-   "repo": "https://github.com/JuergenWillrodt/Almarai",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/almarai/METADATA.pb"
-  },
-  "Maven Pro": {
-   "license": "OFL",
-   "copyright": "Copyright 2011 The Maven Pro Project Authors (https://github.com/m4rc1e/mavenproFont), with Reserved Font Name \\\"Maven Pro\\\".",
-   "repo": "https://www.github.com/m4rc1e/mavenproFont",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/mavenpro/METADATA.pb"
-  },
-  "Sawarabi Mincho": {
-   "license": null,
-   "copyright": "Copyright 2024 The Sawarabi Mincho Project Authors (https://github.com/googlefonts/sawarabi-mincho)",
-   "repo": "https://github.com/googlefonts/sawarabi-mincho",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/sawarabimincho/METADATA.pb"
-  },
-  "Zilla Slab": {
-   "license": null,
-   "copyright": "Copyright 2017, The Mozilla Foundation",
-   "repo": "https://github.com/mozilla/zilla-slab",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/zillaslab/METADATA.pb"
+   "copyright": "Copyright 2014 The Heebo Project Authors (https://github.com/OdedEzer/heebo)",
+   "repo": "https://github.com/OdedEzer/heebo",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/heebo/METADATA.pb"
   },
   "Saira": {
    "license": "OFL",
@@ -838,179 +214,11 @@
    "repo": "https://github.com/Omnibus-Type/Saira",
    "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/saira/METADATA.pb"
   },
-  "Archivo Narrow": {
+  "Noto Sans KR": {
    "license": "OFL",
-   "copyright": "Copyright 2019 The Archivo Narrow Project Authors (https://github.com/Omnibus-Type/ArchivoNarrow)",
-   "repo": "https://github.com/Omnibus-Type/ArchivoNarrow",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/archivonarrow/METADATA.pb"
-  },
-  "Audiowide": {
-   "license": null,
-   "copyright": "Copyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \\\"Audiowide\\\"",
-   "repo": "https://github.com/librefonts/audiowide",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/audiowide/METADATA.pb"
-  },
-  "Commissioner": {
-   "license": null,
-   "copyright": "Copyright 2019 The Commissioner Project Authors (github.com/kosbarts/Commissioner)",
-   "repo": "https://github.com/m4rc1e/Commissioner",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/commissioner/METADATA.pb"
-  },
-  "Fira Sans": {
-   "license": "OFL",
-   "copyright": "Digitized data copyright 2012-2016, The Mozilla Foundation and Telefonica S.A.",
-   "repo": "https://github.com/googlefonts/FiraGFVersion",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/firasans/METADATA.pb"
-  },
-  "Great Vibes": {
-   "license": null,
-   "copyright": "Copyright 2010 The Great Vibes Pro Project Authors (https://github.com/googlefonts/great-vibes)",
-   "repo": "https://github.com/googlefonts/great-vibes",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/greatvibes/METADATA.pb"
-  },
-  "Be Vietnam Pro": {
-   "license": null,
-   "copyright": "Copyright 2021 The Be Vietnam Pro Project Authors (https://github.com/bettergui/BeVietnamPro)",
-   "repo": "https://github.com/bettergui/BeVietnamPro",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/bevietnampro/METADATA.pb"
-  },
-  "Bricolage Grotesque": {
-   "license": "OFL",
-   "copyright": "Copyright 2022 The Bricolage Grotesque Project Authors (https://github.com/ateliertriay/bricolage)",
-   "repo": "https://github.com/ateliertriay/bricolage",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/bricolagegrotesque/METADATA.pb"
-  },
-  "Rubik Mono One": {
-   "license": null,
-   "copyright": "Copyright 2015 The Rubik Project Authors (mail@hubertfischer.com)",
-   "repo": "https://github.com/alexeiva/rubikmonoone",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/rubikmonoone/METADATA.pb"
-  },
-  "Onest": {
-   "license": null,
-   "copyright": "Copyright 2021 The Onest Project Authors (https://github.com/simpals/onest)",
-   "repo": "https://github.com/simpals/onest",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/onest/METADATA.pb"
-  },
-  "Didact Gothic": {
-   "license": null,
-   "copyright": "Copyright 2016 The Didact Gothic Project Authors (il.basso.buffo@gmail.com)",
-   "repo": "https://github.com/ossobuffo/didact-gothic",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/didactgothic/METADATA.pb"
-  },
-  "Yantramanav": {
-   "license": null,
-   "copyright": "Copyright 2014, Erin McLaughlin (hello@erinmclaughlin.com). Copyright 2010, Google Inc. All Rights Reserved.",
-   "repo": "https://github.com/erinmclaughlin/Yantramanav",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/yantramanav/METADATA.pb"
-  },
-  "Play": {
-   "license": null,
-   "copyright": "Copyright (c) 2011, Jonas Hecksher, Playtypes, e-types AS (lasse@e-types.com), with Reserved Font Name \\'Play\\', \\'Playtype\\', \\'Playtype Sans\\'.",
-   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/play/METADATA.pb"
-  },
-  "Noto Serif": {
-   "license": "OFL",
-   "copyright": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/latin-greek-cyrillic)",
-   "repo": "https://github.com/notofonts/latin-greek-cyrillic",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notoserif/METADATA.pb"
-  },
-  "Cormorant Garamond": {
-   "license": "OFL",
-   "copyright": "Copyright 2015 The Cormorant Project Authors (github.com/CatharsisFonts/Cormorant)",
-   "repo": "https://github.com/CatharsisFonts/Cormorant",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/cormorantgaramond/METADATA.pb"
-  },
-  "Unbounded": {
-   "license": "OFL",
-   "copyright": "Copyright 2022 The Unbounded Project Authors (https://github.com/googlefonts/unbounded)",
-   "repo": "https://github.com/googlefonts/unbounded",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/unbounded/METADATA.pb"
-  },
-  "IBM Plex Serif": {
-   "license": null,
-   "copyright": "Copyright 2020 IBM Corp. All rights reserved.",
-   "repo": "https://github.com/googlefonts/plex",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/ibmplexserif/METADATA.pb"
-  },
-  "Saira Extra Condensed": {
-   "license": null,
-   "copyright": "Copyright 2016 The Saira Project Authors (omnibus.type@gmail.com), with reserved font name \\\"Saira\\\".",
-   "repo": "https://github.com/Omnibus-Type/Saira",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/sairaextracondensed/METADATA.pb"
-  },
-  "Black Ops One": {
-   "license": "OFL",
-   "copyright": "Copyright 2022 The PinyonScript Project Authors (https://github.com/SorkinType/Black-Ops)",
-   "repo": "https://github.com/SorkinType/Black-Ops",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/blackopsone/METADATA.pb"
-  },
-  "Spectral": {
-   "license": null,
-   "copyright": "Copyright 2017 The Spectral Project Authors (https://github.com/productiontype/Spectral)",
-   "repo": "https://github.com/productiontype/Spectral",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/spectral/METADATA.pb"
-  },
-  "Source Code Pro": {
-   "license": "OFL",
-   "copyright": "© 2010 - 2020 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name ‘Source’.",
-   "repo": "https://github.com/adobe-fonts/source-code-pro",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/sourcecodepro/METADATA.pb"
-  },
-  "Homemade Apple": {
-   "license": null,
-   "copyright": "Copyright (c) 2010 by Font Diner, Inc. All rights reserved.",
-   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/apache/homemadeapple/METADATA.pb"
-  },
-  "Bai Jamjuree": {
-   "license": null,
-   "copyright": "Copyright 2018 Bai Jamjuree (https://github.com/cadsondemak/Bai-Jamjuree)",
-   "repo": "https://github.com/cadsondemak/Bai-Jamjuree",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/baijamjuree/METADATA.pb"
-  },
-  "Permanent Marker": {
-   "license": null,
-   "copyright": "Copyright (c) 2010 by Font Diner, Inc. All rights reserved.",
-   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/apache/permanentmarker/METADATA.pb"
-  },
-  "Baloo 2": {
-   "license": "OFL",
-   "copyright": "Copyright 2019 The Baloo 2 Project Authors (https://github.com/EkType/Baloo2)",
-   "repo": "https://github.com/yanone/Baloo2-Variable",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/baloo2/METADATA.pb"
-  },
-  "Damion": {
-   "license": null,
-   "copyright": "Copyright 2014 The Damion Project Authors (https://github.com/googlefonts/damionFont)",
-   "repo": "https://github.com/googlefonts/damionFont",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/damion/METADATA.pb"
-  },
-  "Abhaya Libre": {
-   "license": null,
-   "copyright": "Copyright (c) 1996-2015 Pushpananda Ekanayake (pushpanandae@gmail.com) Copyright (c) 2015 Sol Matas (sol@sonnenshine.com.ar) Copyright (c) 2015 Mooniak (hello@mooniak.com)",
-   "repo": "https://github.com/mooniak/abhaya-libre-font",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/abhayalibre/METADATA.pb"
-  },
-  "Barlow Condensed": {
-   "license": "OFL",
-   "copyright": "Copyright 2017 The Barlow Project Authors (https://github.com/jpt/barlow)",
-   "repo": "https://github.com/jpt/barlow",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/barlowcondensed/METADATA.pb"
-  },
-  "Varela Round": {
-   "license": "OFL",
-   "copyright": "Copyright 2023 The Varela Round Project Authors (https://github.com/alefalefalef/Varela-Round-Hebrew/), with Reserved Font Names Varela and Varela Round.",
-   "repo": "https://github.com/m4rc1e/Varela-Round-Hebrew",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/varelaround/METADATA.pb"
-  },
-  "Roboto Serif": {
-   "license": "OFL",
-   "copyright": "Copyright 2020 The Roboto Serif Project Authors (https://github.com/googlefonts/RobotoSerif)",
-   "repo": "https://github.com/googlefonts/roboto-serif",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/robotoserif/METADATA.pb"
+   "copyright": "(c) 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'.",
+   "repo": "https://github.com/notofonts/noto-cjk",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notosanskr/METADATA.pb"
   },
   "Smooch Sans": {
    "license": "OFL",
@@ -1018,149 +226,77 @@
    "repo": "https://github.com/googlefonts/smooch-sans",
    "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/smoochsans/METADATA.pb"
   },
+  "Libre Baskerville": {
+   "license": "OFL",
+   "copyright": "Copyright 2012 The Libre Baskerville Project Authors (https://github.com/impallari/Libre-Baskerville)",
+   "repo": "https://github.com/impallari/Libre-Baskerville",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/librebaskerville/METADATA.pb"
+  },
   "Inter Tight": {
    "license": "OFL",
    "copyright": "Copyright 2022 The Inter Project Authors (https://github.com/rsms/inter-tight)",
    "repo": "https://github.com/rsms/inter-gf-tight",
    "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/intertight/METADATA.pb"
   },
-  "Kosugi Maru": {
-   "license": null,
-   "copyright": "Copyright 2010 The Kosugi Maru Project Authors (https://github.com/googlefonts/kosugi-maru)",
-   "repo": "https://github.com/googlefonts/kosugi-maru",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/apache/kosugimaru/METADATA.pb"
-  },
-  "Amaranth": {
-   "license": null,
-   "copyright": "Copyright 2016 The Amaranth Project Authors (https://github.com/googlefonts/amaranth)",
-   "repo": "https://github.com/googlefonts/amaranth",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/amaranth/METADATA.pb"
-  },
-  "M PLUS 1": {
-   "license": null,
-   "copyright": "Copyright 2021 The M+ FONTS Project Authors (https://github.com/coz-m/MPLUS_FONTS)",
-   "repo": "https://github.com/coz-m/MPLUS_FONTS",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/mplus1/METADATA.pb"
-  },
-  "Noto Serif KR": {
-   "license": null,
-   "copyright": "(c) 2017-2024 Adobe (http://www.adobe.com/).",
-   "repo": "https://www.github.com/notofonts/noto-cjk",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notoserifkr/METADATA.pb"
-  },
-  "Nanum Pen Script": {
-   "license": null,
-   "copyright": "Copyright © 2010 NHN Corporation. All rights reserved. Font designed by Sandoll Communications Inc.",
-   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/nanumpenscript/METADATA.pb"
-  },
-  "Petrona": {
-   "license": null,
-   "copyright": "Copyright 2019 The Petrona Project Authors (https://github.com/RingoSeeber/Petrona)",
-   "repo": "https://github.com/RingoSeeber/Petrona",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/petrona/METADATA.pb"
-  },
-  "Doppio One": {
-   "license": null,
-   "copyright": "Copyright (c) 2011, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com), with Reserved Font Name \\\"Doppio\\\"",
-   "repo": "https://github.com/googlefonts/doppioone",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/doppioone/METADATA.pb"
-  },
-  "Michroma": {
-   "license": null,
-   "copyright": "Copyright 2011 The Michroma Project Authors (https://github.com/googlefonts/Michroma-font)",
-   "repo": "https://github.com/googlefonts/Michroma-font",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/michroma/METADATA.pb"
-  },
-  "Indie Flower": {
-   "license": null,
-   "copyright": "Copyright 2010 The Indie Flower Authors (kimberlygeswein.com)",
-   "repo": "https://github.com/googlefonts/indieflower",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/indieflower/METADATA.pb"
-  },
-  "Parisienne": {
-   "license": null,
-   "copyright": "Copyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \\\"Parisienne\\\"",
-   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/parisienne/METADATA.pb"
-  },
-  "Calistoga": {
-   "license": null,
-   "copyright": "Copyright 2019 The Calistoga Project Authors (https://github.com/SorkinType/Calistoga)",
-   "repo": "https://github.com/SorkinType/Calistoga",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/calistoga/METADATA.pb"
-  },
-  "Frank Ruhl Libre": {
-   "license": null,
-   "copyright": "Copyright 2015 The Frank Ruhl Libre Project Authors (https://github.com/fontef/frankruhllibre)",
-   "repo": "https://github.com/fontef/frankruhllibre",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/frankruhllibre/METADATA.pb"
-  },
-  "Saira Semi Condensed": {
-   "license": null,
-   "copyright": "Copyright 2016 The Saira Project Authors (omnibus.type@gmail.com), with reserved font name \\\"Saira\\\".",
-   "repo": "https://github.com/Omnibus-Type/Saira",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/sairasemicondensed/METADATA.pb"
-  },
-  "Libre Franklin": {
+  "Bebas Neue": {
    "license": "OFL",
-   "copyright": "Copyright 2020 The Libre Franklin Project Authors (https://github.com/googlefonts/Libre-Franklin)",
-   "repo": "https://github.com/googlefonts/Libre-Franklin",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/librefranklin/METADATA.pb"
+   "copyright": "Copyright 2019 The Bebas Neue Project Authors (https://github.com/dharmatype/Bebas-Neue)",
+   "repo": "https://github.com/dharmatype/Bebas-Neue",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/bebasneue/METADATA.pb"
   },
-  "Unica One": {
-   "license": null,
-   "copyright": "Copyright 2012 The Unica One Project Authors (https://github.com/etunni/unica)",
-   "repo": "https://github.com/etunni/unica",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/unicaone/METADATA.pb"
-  },
-  "Noto Serif SC": {
-   "license": null,
-   "copyright": "(c) 2017-2024 Adobe (http://www.adobe.com/).",
-   "repo": "https://www.github.com/notofonts/noto-cjk",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notoserifsc/METADATA.pb"
-  },
-  "News Cycle": {
-   "license": null,
-   "copyright": "Copyright (c) 2010-2011, Nathan Willis (nwillis@glyphography.com), with Reserved Font Name \\\"News Cycle.\\\"",
-   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/newscycle/METADATA.pb"
-  },
-  "Noto Sans SC": {
+  "PT Sans": {
    "license": "OFL",
-   "copyright": "(c) 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'.",
-   "repo": "https://github.com/notofonts/noto-cjk",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notosanssc/METADATA.pb"
+   "copyright": "Copyright © 2009 ParaType Ltd (yakupov@paratype.com). All rights reserved.",
+   "repo": null,
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/ptsans/METADATA.pb"
   },
-  "Syncopate": {
-   "license": null,
-   "copyright": "Copyright (c) 2010 by Brian J. Bonislawsky DBA Astigmatic (AOETI). All rights reserved. Available under the Apache 2.0 licence. http://www.apache.org/licenses/LICENSE-2.0.html",
+  "Barlow Condensed": {
+   "license": "OFL",
+   "copyright": "Copyright 2017 The Barlow Project Authors (https://github.com/jpt/barlow)",
+   "repo": "https://github.com/jpt/barlow",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/barlowcondensed/METADATA.pb"
+  },
+  "Source Sans 3": {
+   "license": "OFL",
+   "copyright": "© 2023 Adobe (http://www.adobe.com/), with Reserved Font Name ‘Source’",
+   "repo": "https://github.com/adobe-fonts/source-sans",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/sourcesans3/METADATA.pb"
+  },
+  "Titillium Web": {
+   "license": "OFL",
+   "copyright": "Copyright (c) 2009-2011 by Accademia di Belle Arti di Urbino and students of MA course of Visual design. Some rights reserved.",
    "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/apache/syncopate/METADATA.pb"
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/titilliumweb/METADATA.pb"
   },
-  "Comic Relief": {
-   "license": null,
-   "copyright": "Copyright 2013 The Comic Relief Project Authors (https://github.com/loudifier/Comic-Relief)",
-   "repo": "https://github.com/loudifier/Comic-Relief",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/comicrelief/METADATA.pb"
+  "Lora": {
+   "license": "OFL",
+   "copyright": "Copyright 2011 The Lora Project Authors (https://github.com/cyrealtype/Lora-Cyrillic), with Reserved Font Name \\\"Lora\\\".",
+   "repo": "https://github.com/cyrealtype/Lora-Cyrillic",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/lora/METADATA.pb"
   },
-  "Luckiest Guy": {
-   "license": null,
-   "copyright": "Copyright (c) 2010 by Brian J. Bonislawsky DBA Astigmatic (AOETI). All rights reserved. Available under the Apache 2.0 licence. http://www.apache.org/licenses/LICENSE-2.0.html",
-   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/apache/luckiestguy/METADATA.pb"
+  "JetBrains Mono": {
+   "license": "OFL",
+   "copyright": "Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono)",
+   "repo": "https://github.com/JetBrains/JetBrainsMono",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/jetbrainsmono/METADATA.pb"
   },
-  "Philosopher": {
-   "license": null,
-   "copyright": "Copyright 2011 The Philosopher Project Authors (https://github.com/alexeiva/philosopher)",
-   "repo": "https://github.com/alexeiva/philosopher",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/philosopher/METADATA.pb"
+  "Source Code Pro": {
+   "license": "OFL",
+   "copyright": "© 2010 - 2020 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name ‘Source’.",
+   "repo": "https://github.com/adobe-fonts/source-code-pro",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/sourcecodepro/METADATA.pb"
   },
-  "Balsamiq Sans": {
-   "license": null,
-   "copyright": "Copyright 2011 The Balsamiq Sans Project Authors (https://github.com/balsamiq/balsamiqsans)",
-   "repo": "https://github.com/balsamiq/balsamiqsans",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/balsamiqsans/METADATA.pb"
+  "Anton": {
+   "license": "OFL",
+   "copyright": "Copyright 2020 The Anton Project Authors (https://github.com/googlefonts/AntonFont.git)",
+   "repo": "https://github.com/googlefonts/AntonFont",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/anton/METADATA.pb"
+  },
+  "Quicksand": {
+   "license": "OFL",
+   "copyright": "Copyright 2019 The Quicksand Project Authors (https://github.com/andrew-paglinawan/QuicksandFamily.git), with Reserved Font Name \\\"Quicksand\\\"",
+   "repo": "https://github.com/ThomasJockin/QuicksandFamily",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/quicksand/METADATA.pb"
   },
   "Public Sans": {
    "license": "OFL",
@@ -1168,29 +304,197 @@
    "repo": "https://github.com/uswds/public-sans",
    "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/publicsans/METADATA.pb"
   },
+  "IBM Plex Sans": {
+   "license": "OFL",
+   "copyright": "Copyright 2019 IBM Corp. All rights reserved.",
+   "repo": "https://github.com/googlefonts/plex",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/ibmplexsans/METADATA.pb"
+  },
+  "Archivo": {
+   "license": "OFL",
+   "copyright": "Copyright 2020 The Archivo Project Authors (https://github.com/Omnibus-Type/Archivo)",
+   "repo": "https://github.com/Omnibus-Type/Archivo",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/archivo/METADATA.pb"
+  },
+  "Libre Franklin": {
+   "license": "OFL",
+   "copyright": "Copyright 2020 The Libre Franklin Project Authors (https://github.com/googlefonts/Libre-Franklin)",
+   "repo": "https://github.com/googlefonts/Libre-Franklin",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/librefranklin/METADATA.pb"
+  },
+  "Noto Sans SC": {
+   "license": "OFL",
+   "copyright": "(c) 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'.",
+   "repo": "https://github.com/notofonts/noto-cjk",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notosanssc/METADATA.pb"
+  },
+  "Inconsolata": {
+   "license": "OFL",
+   "copyright": "Copyright 2006 The Inconsolata Project Authors (https://github.com/cyrealtype/Inconsolata)",
+   "repo": "https://github.com/googlefonts/Inconsolata",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/inconsolata/METADATA.pb"
+  },
+  "Black Ops One": {
+   "license": "OFL",
+   "copyright": "Copyright 2022 The PinyonScript Project Authors (https://github.com/SorkinType/Black-Ops)",
+   "repo": "https://github.com/SorkinType/Black-Ops",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/blackopsone/METADATA.pb"
+  },
+  "Dancing Script": {
+   "license": "OFL",
+   "copyright": "Copyright 2016 The Dancing Script Project Authors (https://github.com/googlefonts/DancingScript), with Reserved Font Name \\'Dancing Script\\'.",
+   "repo": "https://github.com/googlefonts/DancingScript",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/dancingscript/METADATA.pb"
+  },
+  "Barlow": {
+   "license": "OFL",
+   "copyright": "Copyright 2017 The Barlow Project Authors (https://github.com/jpt/barlow)",
+   "repo": "https://github.com/jpt/barlow",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/barlow/METADATA.pb"
+  },
   "EB Garamond": {
    "license": "OFL",
    "copyright": "Copyright 2017 The EB Garamond Project Authors (https://github.com/octaviopardo/EBGaramond12)",
    "repo": "https://github.com/octaviopardo/EBGaramond12",
    "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/ebgaramond/METADATA.pb"
   },
-  "Andada Pro": {
-   "license": null,
-   "copyright": "Copyright 2011 The Andada Pro Project Authors (https://github.com/huertatipografica/Andada)",
-   "repo": "https://github.com/huertatipografica/Andada-Pro",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/andadapro/METADATA.pb"
+  "Cairo": {
+   "license": "OFL",
+   "copyright": "Copyright 2009 The Cairo Project Authors (https://github.com/Gue3bara/Cairo)",
+   "repo": "https://github.com/Gue3bara/Cairo",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/cairo/METADATA.pb"
   },
-  "Pixelify Sans": {
-   "license": null,
-   "copyright": "Copyright 2021 The Pixelify Sans Project Authors (https://github.com/eifetx/Pixelify-Sans)",
-   "repo": "https://github.com/eifetx/Pixelify-Sans",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/pixelifysans/METADATA.pb"
+  "Geist": {
+   "license": "OFL",
+   "copyright": "Copyright 2024 The Geist Project Authors (https://github.com/vercel/geist-font)",
+   "repo": "https://github.com/vercel/geist-font",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/geist/METADATA.pb"
   },
-  "Pirata One": {
+  "Rajdhani": {
    "license": null,
-   "copyright": "Copyright (c) 2012, Rodrigo Fuenzalida (hello@rfuenzalida.com), Nicolas Massi (www.taip.com.ar / abc.taip.com.ar / nmassi@gmail.com), with Reserved Font Name \\'Pirata\\'",
-   "repo": "https://github.com/googlefonts/pirataone",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/pirataone/METADATA.pb"
+   "copyright": "Copyright (c) 2014 Indian Type Foundry (info@indiantypefoundry.com)",
+   "repo": "https://github.com/itfoundry/rajdhani",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/rajdhani/METADATA.pb"
+  },
+  "Fira Sans": {
+   "license": "OFL",
+   "copyright": "Digitized data copyright 2012-2016, The Mozilla Foundation and Telefonica S.A.",
+   "repo": "https://github.com/googlefonts/FiraGFVersion",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/firasans/METADATA.pb"
+  },
+  "Noto Serif": {
+   "license": "OFL",
+   "copyright": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/latin-greek-cyrillic)",
+   "repo": "https://github.com/notofonts/latin-greek-cyrillic",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notoserif/METADATA.pb"
+  },
+  "Noto Serif JP": {
+   "license": "OFL",
+   "copyright": "(c) 2017-2024 Adobe (http://www.adobe.com/).",
+   "repo": "https://www.github.com/notofonts/noto-cjk",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notoserifjp/METADATA.pb"
+  },
+  "Space Grotesk": {
+   "license": "OFL",
+   "copyright": "Copyright 2020 The Space Grotesk Project Authors (https://github.com/floriankarsten/space-grotesk)",
+   "repo": "https://github.com/floriankarsten/space-grotesk",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/spacegrotesk/METADATA.pb"
+  },
+  "Cormorant Garamond": {
+   "license": "OFL",
+   "copyright": "Copyright 2015 The Cormorant Project Authors (github.com/CatharsisFonts/Cormorant)",
+   "repo": "https://github.com/CatharsisFonts/Cormorant",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/cormorantgaramond/METADATA.pb"
+  },
+  "Fjalla One": {
+   "license": "OFL",
+   "copyright": "Copyright 2012 The Fjalla Project Authors (https://github.com/SorkinType/FjallaOne)",
+   "repo": "https://github.com/SorkinType/FjallaOne",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/fjallaone/METADATA.pb"
+  },
+  "Bricolage Grotesque": {
+   "license": "OFL",
+   "copyright": "Copyright 2022 The Bricolage Grotesque Project Authors (https://github.com/ateliertriay/bricolage)",
+   "repo": "https://github.com/ateliertriay/bricolage",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/bricolagegrotesque/METADATA.pb"
+  },
+  "Karla": {
+   "license": "OFL",
+   "copyright": "Copyright 2019 The Karla Project Authors (https://github.com/googlefonts/karla)",
+   "repo": "https://github.com/googlefonts/karla",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/karla/METADATA.pb"
+  },
+  "IBM Plex Mono": {
+   "license": "OFL",
+   "copyright": "Copyright 2017 IBM Corp. All rights reserved.",
+   "repo": "https://github.com/googlefonts/plex",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/ibmplexmono/METADATA.pb"
+  },
+  "Lobster Two": {
+   "license": "OFL",
+   "copyright": "Copyright (c) 2011 by Pablo Impallari (www.impallari.com impallari@gmail.com). All rights reserved.",
+   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/lobstertwo/METADATA.pb"
+  },
+  "Share Tech": {
+   "license": "OFL",
+   "copyright": "Copyright 2012 The Share Tech Project Authors (post@carrois.com), with Reserved Font Name \\'Share.",
+   "repo": "https://github.com/m4rc1e/ShareTech",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/sharetech/METADATA.pb"
+  },
+  "PT Serif": {
+   "license": "OFL",
+   "copyright": "Copyright © 2010 ParaType Ltd (yakupov@paratype.com). All rights reserved.",
+   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/ptserif/METADATA.pb"
+  },
+  "Assistant": {
+   "license": null,
+   "copyright": "Copyright 2020 The Assistant Project Authors (https://github.com/hafontia/Assistant). Copyright 2010 The Source Sans Pro Authors (https://github.com/adobe-fonts/source-sans-pro), with Reserved Font Name \\'Source\\'. Source is a trademark of Adobe Systems Incorporated in the United States and/or other countries.",
+   "repo": "https://github.com/TypeNetwork/Assistant",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/assistant/METADATA.pb"
+  },
+  "Urbanist": {
+   "license": null,
+   "copyright": "Copyright 2021 The Urbanist Project Authors (https://github.com/coreyhu/Urbanist)",
+   "repo": "https://github.com/coreyhu/Urbanist",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/urbanist/METADATA.pb"
+  },
+  "Schibsted Grotesk": {
+   "license": null,
+   "copyright": "Copyright 2023 The Schibsted-Grotesk Project Authors (https://github.com/schibsted/schibsted-grotesk)",
+   "repo": "https://github.com/schibsted/schibsted-grotesk",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/schibstedgrotesk/METADATA.pb"
+  },
+  "Josefin Sans": {
+   "license": "OFL",
+   "copyright": "Copyright 2010 The Josefin Sans Project Authors (https://github.com/ThomasJockin/JosefinSansFont-master), with Reserved Font Name \\\"Josefin Sans\\\".",
+   "repo": "https://github.com/googlefonts/josefinsans",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/josefinsans/METADATA.pb"
+  },
+  "Caveat": {
+   "license": null,
+   "copyright": "Copyright 2014 The Caveat Project Authors (https://github.com/googlefonts/caveat)",
+   "repo": "https://github.com/googlefonts/caveat",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/caveat/METADATA.pb"
+  },
+  "DM Serif Display": {
+   "license": null,
+   "copyright": "Copyright 2014 - 2017 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name \\'Source\\'. Copyright 2019 Google LLC.",
+   "repo": "https://github.com/googlefonts/dm-fonts",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/dmserifdisplay/METADATA.pb"
+  },
+  "Alfa Slab One": {
+   "license": "OFL",
+   "copyright": "Copyright 2016 The Alfa Slab One Project Authors (http://www.jmsole.cl | info@jmsole.cl), with Reserved Font Name \\\"Alfa Slab\\\".",
+   "repo": "https://github.com/librefonts/alfaslabone",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/alfaslabone/METADATA.pb"
+  },
+  "Noto Color Emoji": {
+   "license": "OFL",
+   "copyright": "Copyright 2021 Google Inc. All Rights Reserved.",
+   "repo": null,
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notocoloremoji/METADATA.pb"
   },
   "Fraunces": {
    "license": "OFL",
@@ -1198,11 +502,707 @@
    "repo": "https://github.com/undercasetype/Fraunces",
    "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/fraunces/METADATA.pb"
   },
-  "Bree Serif": {
+  "Sora": {
    "license": null,
-   "copyright": "Copyright (c) 2011, TypeTogether (www.type-together.com), with Reserved Font Names \\\"Bree\\\" and \\\"Bree Serif\\\"",
-   "repo": "https://github.com/googlefonts/breeserif",
-   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/breeserif/METADATA.pb"
+   "copyright": "Copyright 2019 The Sora Project Authors (https://github.com/sora-xor/sora-font)",
+   "repo": "https://github.com/sora-xor/sora-font",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/sora/METADATA.pb"
+  },
+  "Merriweather Sans": {
+   "license": null,
+   "copyright": "Copyright 2019 The Merriweather Project Authors (https://github.com/SorkinType/Merriweather-Sans)",
+   "repo": "https://github.com/SorkinType/Merriweather-Sans",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/merriweathersans/METADATA.pb"
+  },
+  "Roboto Flex": {
+   "license": null,
+   "copyright": "Copyright 2017 The Roboto Flex Project Authors (https://github.com/googlefonts/roboto-flex)",
+   "repo": "https://github.com/googlefonts/Roboto-Flex",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/robotoflex/METADATA.pb"
+  },
+  "Instrument Serif": {
+   "license": "OFL",
+   "copyright": "Copyright 2022 The Instrument Serif Project Authors (https://github.com/Instrument/instrument-serif)",
+   "repo": "https://github.com/Instrument/instrument-serif",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/instrumentserif/METADATA.pb"
+  },
+  "Nanum Gothic": {
+   "license": "OFL",
+   "copyright": "Copyright © 2010 NHN Corporation. All rights reserved. Font designed by Sandoll Communications Inc.",
+   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/nanumgothic/METADATA.pb"
+  },
+  "Changa One": {
+   "license": "OFL",
+   "copyright": "Copyright (c) 2011, Eduardo Tunni (http://www.tipo.net.ar edu@tipo.net.ar), with Reserved Font Name \\\"Changa\\\"",
+   "repo": "https://github.com/etunni/changa-one",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/changaone/METADATA.pb"
+  },
+  "Noto Sans Khmer": {
+   "license": null,
+   "copyright": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/khmer)",
+   "repo": "https://github.com/notofonts/khmer",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notosanskhmer/METADATA.pb"
+  },
+  "Fredoka": {
+   "license": null,
+   "copyright": "Copyright 2016 The Fredoka Project Authors (https://github.com/hafontia/Fredoka-One)",
+   "repo": "https://github.com/hafontia-zz/Fredoka-One",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/fredoka/METADATA.pb"
+  },
+  "Orbitron": {
+   "license": null,
+   "copyright": "Copyright 2018 The Orbitron Project Authors (https://github.com/theleagueof/orbitron)",
+   "repo": "https://github.com/googlefonts/orbitron-vf",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/orbitron/METADATA.pb"
+  },
+  "Exo 2": {
+   "license": null,
+   "copyright": "Copyright 2013 The Exo 2 Project Authors (https://github.com/googlefonts/Exo-2.0)",
+   "repo": "https://github.com/googlefonts/Exo-2.0",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/exo2/METADATA.pb"
+  },
+  "Epilogue": {
+   "license": "OFL",
+   "copyright": "Copyright 2020 The Epilogue Project Authors (https://github.com/Etcetera-Type-Co/Epilogue)",
+   "repo": "https://github.com/Etcetera-Type-Co/Epilogue",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/epilogue/METADATA.pb"
+  },
+  "Bitter": {
+   "license": null,
+   "copyright": "Copyright 2011 The Bitter Project Authors (https://github.com/solmatas/BitterPro)",
+   "repo": "https://github.com/solmatas/BitterPro",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/bitter/METADATA.pb"
+  },
+  "Ramabhadra": {
+   "license": "OFL",
+   "copyright": "Copyright (c) 2012 Andhra Pradesh Society for Knowledge Networks (fonts.siliconandhra.org). Digitized data copyright (c) 2010-2012 Google Corporation.",
+   "repo": "https://github.com/appajid/ramabhadra",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/ramabhadra/METADATA.pb"
+  },
+  "Google Sans Flex": {
+   "license": null,
+   "copyright": "Copyright 2025 The Google Sans Flex Project Authors (https://github.com/googlefonts/googlesans-flex)",
+   "repo": null,
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/googlesansflex/METADATA.pb"
+  },
+  "Barlow Semi Condensed": {
+   "license": "OFL",
+   "copyright": "Copyright 2017 The Barlow Project Authors (https://github.com/jpt/barlow)",
+   "repo": "https://github.com/jpt/barlow",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/barlowsemicondensed/METADATA.pb"
+  },
+  "DM Mono": {
+   "license": null,
+   "copyright": "Copyright 2020 The DM Mono Project Authors (https://www.github.com/googlefonts/dm-mono)",
+   "repo": "https://github.com/googlefonts/dm-mono",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/dmmono/METADATA.pb"
+  },
+  "Arvo": {
+   "license": "OFL",
+   "copyright": "Copyright 2010 Anton Koovit.",
+   "repo": "https://github.com/antonxheight/Arvo",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/arvo/METADATA.pb"
+  },
+  "Chakra Petch": {
+   "license": "OFL",
+   "copyright": "Copyright 2018 The Chakra Petch Project Authors (https://github.com/m4rc1e/Chakra-Petch.git)",
+   "repo": "https://github.com/m4rc1e/Chakra-Petch",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/chakrapetch/METADATA.pb"
+  },
+  "Bodoni Moda": {
+   "license": "OFL",
+   "copyright": "Copyright 2020 The Bodoni Moda Project Authors (https://github.com/indestructible-type/Bodoni)",
+   "repo": "https://github.com/indestructible-type/Bodoni",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/bodonimoda/METADATA.pb"
+  },
+  "Mukta": {
+   "license": null,
+   "copyright": "Copyright (c) 2014, Girish Dalvi, Ek Type. All rights reserved.",
+   "repo": "https://github.com/EkType/Mukta",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/mukta/METADATA.pb"
+  },
+  "Teko": {
+   "license": null,
+   "copyright": "Copyright 2023 The Teko Project Authors (https://www.github.com/googlefonts/teko)",
+   "repo": "https://www.github.com/googlefonts/teko",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/teko/METADATA.pb"
+  },
+  "Hind Siliguri": {
+   "license": "OFL",
+   "copyright": "Copyright (c) 2015 Indian Type Foundry (info@indiantypefoundry.com)",
+   "repo": "https://github.com/itfoundry/hind-siliguri",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/hindsiliguri/METADATA.pb"
+  },
+  "Space Mono": {
+   "license": "OFL",
+   "copyright": "Copyright 2016 The Space Mono Project Authors (https://github.com/googlefonts/spacemono)",
+   "repo": "https://github.com/googlefonts/spacemono",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/spacemono/METADATA.pb"
+  },
+  "Noto Sans Arabic": {
+   "license": null,
+   "copyright": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/arabic)",
+   "repo": "https://github.com/notofonts/arabic",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notosansarabic/METADATA.pb"
+  },
+  "Dosis": {
+   "license": null,
+   "copyright": "Copyright 2011 The Dosis Project Authors (https://github.com/googlefonts/dosis-vf)",
+   "repo": "https://github.com/googlefonts/dosis-vf",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/dosis/METADATA.pb"
+  },
+  "Asap": {
+   "license": null,
+   "copyright": "Copyright 2018 The Asap Project Authors (https://github.com/Omnibus-Type/Asap)",
+   "repo": "https://github.com/Omnibus-Type/Asap",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/asap/METADATA.pb"
+  },
+  "Red Hat Display": {
+   "license": "OFL",
+   "copyright": "Copyright 2024 The Red Hat Project Authors (https://github.com/RedHatOfficial/RedHatFont)",
+   "repo": "https://github.com/RedHatOfficial/RedHatFont",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/redhatdisplay/METADATA.pb"
+  },
+  "Newsreader": {
+   "license": "OFL",
+   "copyright": "Copyright 2020 The Newsreader Project Authors (http://github.com/productiontype/Newsreader)",
+   "repo": "https://github.com/productiontype/NewsReader",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/newsreader/METADATA.pb"
+  },
+  "Almarai": {
+   "license": null,
+   "copyright": "Copyright (c) 2019 by Almarai. All rights reserved.",
+   "repo": "https://github.com/JuergenWillrodt/Almarai",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/almarai/METADATA.pb"
+  },
+  "Zen Kaku Gothic New": {
+   "license": null,
+   "copyright": "Copyright 2022 The Zen Project Authors (https://github.com/googlefonts/zen-kakugothic)",
+   "repo": "https://github.com/googlefonts/zen-kakugothic",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/zenkakugothicnew/METADATA.pb"
+  },
+  "Noto Sans Thai": {
+   "license": null,
+   "copyright": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/thai)",
+   "repo": "https://github.com/notofonts/thai",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notosansthai/METADATA.pb"
+  },
+  "Source Serif 4": {
+   "license": null,
+   "copyright": "© 2014 - 2021 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name ‘Source’.",
+   "repo": "https://github.com/adobe-fonts/source-serif",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/sourceserif4/METADATA.pb"
+  },
+  "Questrial": {
+   "license": null,
+   "copyright": "Copyright 2011 The Questrial Project Authors (https://github.com/googlefonts/questrial)",
+   "repo": "https://github.com/googlefonts/questrial",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/questrial/METADATA.pb"
+  },
+  "Lexend": {
+   "license": null,
+   "copyright": "Copyright 2019 The Lexend Project Authors (https://github.com/googlefonts/lexend)",
+   "repo": "https://github.com/googlefonts/lexend",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/lexend/METADATA.pb"
+  },
+  "Archivo Narrow": {
+   "license": "OFL",
+   "copyright": "Copyright 2019 The Archivo Narrow Project Authors (https://github.com/Omnibus-Type/ArchivoNarrow)",
+   "repo": "https://github.com/Omnibus-Type/ArchivoNarrow",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/archivonarrow/METADATA.pb"
+  },
+  "Oxygen": {
+   "license": "OFL",
+   "copyright": "Copyright (c) 2012, Vernon Adams (vern@newtypography.co.uk), with Reserved Font Names \\'Oxygen\\'",
+   "repo": "https://github.com/vernnobile/oxygenFont",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/oxygen/METADATA.pb"
+  },
+  "Marcellus": {
+   "license": null,
+   "copyright": "Copyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \\\"Marcellus\\\"",
+   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/marcellus/METADATA.pb"
+  },
+  "Cabin": {
+   "license": null,
+   "copyright": "Copyright 2018 The Cabin Project Authors (https://github.com/impallari/Cabin)",
+   "repo": "https://github.com/impallari/Cabin",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/cabin/METADATA.pb"
+  },
+  "Cinzel": {
+   "license": null,
+   "copyright": "Copyright 2020 The Cinzel Project Authors (https://github.com/NDISCOVER/Cinzel)",
+   "repo": "https://github.com/NDISCOVER/Cinzel",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/cinzel/METADATA.pb"
+  },
+  "Lilita One": {
+   "license": null,
+   "copyright": "Copyright (c) 2011 Juan Montoreano (juan@remolacha.biz), with Reserved Font Names \\\"Lilita One\\\"",
+   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/lilitaone/METADATA.pb"
+  },
+  "Overpass": {
+   "license": "OFL",
+   "copyright": "Copyright 2021 The Overpass Project Authors (https://github.com/RedHatOfficial/Overpass)",
+   "repo": "https://github.com/RedHatOfficial/Overpass",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/overpass/METADATA.pb"
+  },
+  "Zilla Slab": {
+   "license": null,
+   "copyright": "Copyright 2017, The Mozilla Foundation",
+   "repo": "https://github.com/mozilla/zilla-slab",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/zillaslab/METADATA.pb"
+  },
+  "Great Vibes": {
+   "license": null,
+   "copyright": "Copyright 2010 The Great Vibes Pro Project Authors (https://github.com/googlefonts/great-vibes)",
+   "repo": "https://github.com/googlefonts/great-vibes",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/greatvibes/METADATA.pb"
+  },
+  "Onest": {
+   "license": null,
+   "copyright": "Copyright 2021 The Onest Project Authors (https://github.com/simpals/onest)",
+   "repo": "https://github.com/simpals/onest",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/onest/METADATA.pb"
+  },
+  "Abril Fatface": {
+   "license": null,
+   "copyright": "Copyright (c) 2011, Copyright (c) 2011, TypeTogether (www.type-together.com info@type-together.com), with Reserved Font Names \\\"Abril\\\" and \\\"Abril Fatface\\\"",
+   "repo": "https://github.com/librefonts/abrilfatface",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/abrilfatface/METADATA.pb"
+  },
+  "Play": {
+   "license": null,
+   "copyright": "Copyright (c) 2011, Jonas Hecksher, Playtypes, e-types AS (lasse@e-types.com), with Reserved Font Name \\'Play\\', \\'Playtype\\', \\'Playtype Sans\\'.",
+   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/play/METADATA.pb"
+  },
+  "M PLUS Rounded 1c": {
+   "license": "OFL",
+   "copyright": "Copyright 2016 The Rounded M+ Project Authors.",
+   "repo": "https://github.com/coz-m/MPLUS_FONTS",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/mplusrounded1c/METADATA.pb"
+  },
+  "Saira Condensed": {
+   "license": null,
+   "copyright": "Copyright 2016 The Saira Project Authors (omnibus.type@gmail.com), with reserved font name \\\"Saira\\\".",
+   "repo": "https://github.com/Omnibus-Type/Saira",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/sairacondensed/METADATA.pb"
+  },
+  "Slabo 27px": {
+   "license": "OFL",
+   "copyright": "Copyright (c) 2013, Tiro Typeworks Ltd (www.tiro.com).",
+   "repo": "https://github.com/TiroTypeworks/Slabo",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/slabo27px/METADATA.pb"
+  },
+  "Hind": {
+   "license": null,
+   "copyright": "Copyright (c) 2014 Indian Type Foundry (info@indiantypefoundry.com)",
+   "repo": "https://github.com/itfoundry/hind",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/hind/METADATA.pb"
+  },
+  "Spectral": {
+   "license": null,
+   "copyright": "Copyright 2017 The Spectral Project Authors (https://github.com/productiontype/Spectral)",
+   "repo": "https://github.com/productiontype/Spectral",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/spectral/METADATA.pb"
+  },
+  "Noto Sans Telugu": {
+   "license": null,
+   "copyright": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/telugu)",
+   "repo": "https://github.com/notofonts/telugu",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notosanstelugu/METADATA.pb"
+  },
+  "Pacifico": {
+   "license": null,
+   "copyright": "Copyright 2018 The Pacifico Project Authors (https://github.com/googlefonts/Pacifico)",
+   "repo": "https://github.com/googlefonts/Pacifico",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/pacifico/METADATA.pb"
+  },
+  "IBM Plex Serif": {
+   "license": null,
+   "copyright": "Copyright 2020 IBM Corp. All rights reserved.",
+   "repo": "https://github.com/googlefonts/plex",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/ibmplexserif/METADATA.pb"
+  },
+  "Baloo 2": {
+   "license": "OFL",
+   "copyright": "Copyright 2019 The Baloo 2 Project Authors (https://github.com/EkType/Baloo2)",
+   "repo": "https://github.com/yanone/Baloo2-Variable",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/baloo2/METADATA.pb"
+  },
+  "Bungee": {
+   "license": null,
+   "copyright": "Copyright 2023 The Bungee Project Authors (https://github.com/djrrb/Bungee)",
+   "repo": "https://github.com/djrrb/Bungee",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/bungee/METADATA.pb"
+  },
+  "Cormorant": {
+   "license": null,
+   "copyright": "Copyright 2015 The Cormorant Project Authors (github.com/CatharsisFonts/Cormorant)",
+   "repo": "https://github.com/CatharsisFonts/Cormorant",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/cormorant/METADATA.pb"
+  },
+  "Hanken Grotesk": {
+   "license": "OFL",
+   "copyright": "Copyright 2021 The Hanken Grotesk Project Authors (https://github.com/marcologous/hanken-grotesk)",
+   "repo": "https://github.com/marcologous/hanken-grotesk",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/hankengrotesk/METADATA.pb"
+  },
+  "Crimson Text": {
+   "license": null,
+   "copyright": "Copyright 2010 The Crimson Text Project Authors (https://github.com/googlefonts/Crimson)",
+   "repo": "https://github.com/googlefonts/Crimson",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/crimsontext/METADATA.pb"
+  },
+  "Exo": {
+   "license": "OFL",
+   "copyright": "Copyright 2017 The Exo Project Authors (https://github.com/NDISCOVER/Exo-1.0)",
+   "repo": "https://github.com/NDISCOVER/Exo-1.0",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/exo/METADATA.pb"
+  },
+  "Zeyada": {
+   "license": null,
+   "copyright": "Copyright (c) 2010, Kimberly Geswein (kimberlygeswein.com kimberlygeswein@gmail.com)",
+   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/zeyada/METADATA.pb"
+  },
+  "Instrument Sans": {
+   "license": null,
+   "copyright": "Copyright 2022 The Instrument Sans Project Authors (https://github.com/Instrument/instrument-sans)",
+   "repo": "https://github.com/Instrument/instrument-sans",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/instrumentsans/METADATA.pb"
+  },
+  "Syne": {
+   "license": null,
+   "copyright": "Copyright 2019 The Syne Project Authors (https://gitlab.com/bonjour-monde/fonderie/syne-typeface)",
+   "repo": "https://gitlab.com/bonjour-monde/fonderie/syne-typeface",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/syne/METADATA.pb"
+  },
+  "Tajawal": {
+   "license": "OFL",
+   "copyright": "(c) 2017 by Boutros International. All rights reserved.",
+   "repo": "https://github.com/googlefonts/tajawal",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/tajawal/METADATA.pb"
+  },
+  "Sofia Sans": {
+   "license": null,
+   "copyright": "Copyright 2019 The Sofia Sans Project Authors (https://github.com/lettersoup/Sofia-Sans)",
+   "repo": "https://github.com/lettersoup/Sofia-Sans",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/sofiasans/METADATA.pb"
+  },
+  "PT Sans Narrow": {
+   "license": null,
+   "copyright": "Copyright © 2009 ParaType Ltd (yakupov@paratype.com). All rights reserved.",
+   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/ptsansnarrow/METADATA.pb"
+  },
+  "Geist Mono": {
+   "license": null,
+   "copyright": "Copyright 2024 The Geist Project Authors (https://github.com/vercel/geist-font.git)",
+   "repo": "https://github.com/vercel/geist-font",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/geistmono/METADATA.pb"
+  },
+  "Nanum Myeongjo": {
+   "license": null,
+   "copyright": "Copyright © 2010 NHN Corporation. All rights reserved. Font designed by FONTRIX.",
+   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/nanummyeongjo/METADATA.pb"
+  },
+  "Slabo 13px": {
+   "license": null,
+   "copyright": "Copyright (c) 2013, Tiro Typeworks Ltd (www.tiro.com).",
+   "repo": "https://github.com/TiroTypeworks/Slabo",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/slabo13px/METADATA.pb"
+  },
+  "Lobster": {
+   "license": "OFL",
+   "copyright": "Copyright 2010 The Lobster Project Authors (https://github.com/impallari/The-Lobster-Font), with Reserved Font Name \\\"Lobster\\\".",
+   "repo": "https://github.com/impallari/The-Lobster-Font",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/lobster/METADATA.pb"
+  },
+  "Gravitas One": {
+   "license": null,
+   "copyright": "Copyright (c) 2011, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com) with Reserved Font Name \\\"Gravitas\\\". This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+   "repo": "https://github.com/googlefonts/gravitasone",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/gravitasone/METADATA.pb"
+  },
+  "Domine": {
+   "license": "OFL",
+   "copyright": "Copyright 2020 The Domine Project Authors (https://github.com/googlefonts/domine)",
+   "repo": "https://github.com/googlefonts/Domine",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/domine/METADATA.pb"
+  },
+  "Noto Serif KR": {
+   "license": null,
+   "copyright": "(c) 2017-2024 Adobe (http://www.adobe.com/).",
+   "repo": "https://www.github.com/notofonts/noto-cjk",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notoserifkr/METADATA.pb"
+  },
+  "Oleo Script": {
+   "license": null,
+   "copyright": "Copyright (c) 2012, Soytutype (contact@soytutype.com.ar|soytutype@gmail.com), with reserved fontname \\'Oleo\\'",
+   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/oleoscript/METADATA.pb"
+  },
+  "Noto Serif TC": {
+   "license": null,
+   "copyright": "(c) 2017-2024 Adobe (http://www.adobe.com/).",
+   "repo": "https://www.github.com/notofonts/noto-cjk",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notoseriftc/METADATA.pb"
+  },
+  "Frank Ruhl Libre": {
+   "license": null,
+   "copyright": "Copyright 2015 The Frank Ruhl Libre Project Authors (https://github.com/fontef/frankruhllibre)",
+   "repo": "https://github.com/fontef/frankruhllibre",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/frankruhllibre/METADATA.pb"
+  },
+  "Alegreya Sans": {
+   "license": null,
+   "copyright": "Copyright 2013 The Alegreya Sans Project Authors (https://github.com/huertatipografica/Alegreya-Sans)",
+   "repo": "https://github.com/huertatipografica/Alegreya-Sans",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/alegreyasans/METADATA.pb"
+  },
+  "Anek Telugu": {
+   "license": "OFL",
+   "copyright": "Copyright 2021 The Anek Project Authors (https://github.com/EkType/Anek)",
+   "repo": "https://github.com/EkType/Anek",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/anektelugu/METADATA.pb"
+  },
+  "Kalam": {
+   "license": null,
+   "copyright": "Copyright (c) 2014 Indian Type Foundry (info@indiantypefoundry.com)",
+   "repo": "https://github.com/itfoundry/kalam",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/kalam/METADATA.pb"
+  },
+  "Amiri": {
+   "license": null,
+   "copyright": "Copyright 2010-2022 The Amiri Project Authors (https://github.com/aliftype/amiri).",
+   "repo": "https://github.com/aliftype/amiri.git",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/amiri/METADATA.pb"
+  },
+  "Shadows Into Light": {
+   "license": null,
+   "copyright": "Copyright (c) 2010, Kimberly Geswein (kimberlygeswein.com kimberlygeswein@gmail.com)",
+   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/shadowsintolight/METADATA.pb"
+  },
+  "Fira Code": {
+   "license": null,
+   "copyright": "Copyright 2014-2020 The Fira Code Project Authors (https://github.com/tonsky/FiraCode)",
+   "repo": "https://github.com/tonsky/FiraCode",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/firacode/METADATA.pb"
+  },
+  "Fira Sans Condensed": {
+   "license": null,
+   "copyright": "Digitized data copyright 2012-2016, The Mozilla Foundation and Telefonica S.A.",
+   "repo": "https://github.com/googlefonts/FiraGFVersion",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/firasanscondensed/METADATA.pb"
+  },
+  "Comfortaa": {
+   "license": null,
+   "copyright": "Copyright 2011 The Comfortaa Project Authors (https://github.com/alexeiva/comfortaa), with Reserved Font Name \\\"Comfortaa\\\".",
+   "repo": "https://github.com/alexeiva/comfortaa",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/comfortaa/METADATA.pb"
+  },
+  "Crimson Pro": {
+   "license": null,
+   "copyright": "Copyright 2018 The Crimson Pro Project Authors (https://github.com/Fonthausen/CrimsonPro)",
+   "repo": "https://github.com/Fonthausen/CrimsonPro",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/crimsonpro/METADATA.pb"
+  },
+  "Courier Prime": {
+   "license": null,
+   "copyright": "Copyright 2015 The Courier Prime Project Authors (https://github.com/quoteunquoteapps/CourierPrime).",
+   "repo": "https://github.com/quoteunquoteapps/CourierPrime",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/courierprime/METADATA.pb"
+  },
+  "Faustina": {
+   "license": null,
+   "copyright": "Copyright 2019 The Faustina Project Authors (https://github.com/Omnibus-Type/Faustina)",
+   "repo": "https://github.com/Omnibus-Type/Faustina",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/faustina/METADATA.pb"
+  },
+  "Be Vietnam Pro": {
+   "license": null,
+   "copyright": "Copyright 2021 The Be Vietnam Pro Project Authors (https://github.com/bettergui/BeVietnamPro)",
+   "repo": "https://github.com/bettergui/BeVietnamPro",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/bevietnampro/METADATA.pb"
+  },
+  "Red Hat Text": {
+   "license": null,
+   "copyright": "Copyright 2024 The Red Hat Project Authors (https://github.com/RedHatOfficial/RedHatFont)",
+   "repo": "https://github.com/RedHatOfficial/RedHatFont",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/redhattext/METADATA.pb"
+  },
+  "Righteous": {
+   "license": null,
+   "copyright": "Copyright (c) 2011 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \\\"Righteous\\\"",
+   "repo": "https://github.com/librefonts/righteous",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/righteous/METADATA.pb"
+  },
+  "ABeeZee": {
+   "license": null,
+   "copyright": "Copyright 2011 The ABeeZee Project Authors (https://github.com/googlefonts/abeezee) with Reserved Font Name ABeeZee",
+   "repo": "https://github.com/googlefonts/abeezee",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/abeezee/METADATA.pb"
+  },
+  "Noto Naskh Arabic": {
+   "license": null,
+   "copyright": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/arabic)",
+   "repo": "https://github.com/notofonts/arabic",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notonaskharabic/METADATA.pb"
+  },
+  "Abel": {
+   "license": "OFL",
+   "copyright": "Copyright (c) 2011, Matthew Desmond (http://www.madtype.com | mattdesmond@gmail.com), with Reserved Font Name Abel.",
+   "repo": "https://github.com/googlefonts/abel",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/abel/METADATA.pb"
+  },
+  "Andada Pro": {
+   "license": null,
+   "copyright": "Copyright 2011 The Andada Pro Project Authors (https://github.com/huertatipografica/Andada)",
+   "repo": "https://github.com/huertatipografica/Andada-Pro",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/andadapro/METADATA.pb"
+  },
+  "IBM Plex Sans Arabic": {
+   "license": "OFL",
+   "copyright": "Copyright 2019 IBM Corp. All rights reserved.",
+   "repo": "https://github.com/googlefonts/plex",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/ibmplexsansarabic/METADATA.pb"
+  },
+  "Cardo": {
+   "license": null,
+   "copyright": "Copyright (c) 2002-2011, David J. Perry (hospes02@scholarsfonts.net)",
+   "repo": "https://github.com/googlefonts/CardoFont",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/cardo/METADATA.pb"
+  },
+  "Lexend Deca": {
+   "license": null,
+   "copyright": "Copyright 2019 The Lexend Project Authors (https://github.com/googlefonts/lexend)",
+   "repo": "https://github.com/googlefonts/lexend",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/lexenddeca/METADATA.pb"
+  },
+  "Playfair": {
+   "license": null,
+   "copyright": "Copyright 2005 The Playfair Project Authors (https://github.com/clauseggers/Playfair)",
+   "repo": "https://github.com/googlefonts/Playfair",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/playfair/METADATA.pb"
+  },
+  "Maven Pro": {
+   "license": "OFL",
+   "copyright": "Copyright 2011 The Maven Pro Project Authors (https://github.com/m4rc1e/mavenproFont), with Reserved Font Name \\\"Maven Pro\\\".",
+   "repo": "https://www.github.com/m4rc1e/mavenproFont",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/mavenpro/METADATA.pb"
+  },
+  "Baskervville": {
+   "license": null,
+   "copyright": "Copyright 2018 The Baskervville Project Authors (https://github.com/anrt-type/ANRT-Baskervville)",
+   "repo": "https://github.com/anrt-type/ANRT-Baskervville",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/baskervville/METADATA.pb"
+  },
+  "Hammersmith One": {
+   "license": null,
+   "copyright": "Copyright (c) 2011, Sorkin Type Co. (www.sorkintype.com eben@eyebytes.com) with Reserved Font Name \\\"Hammersmith One\\\". This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+   "repo": "https://github.com/googlefonts/hammersmithone",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/hammersmithone/METADATA.pb"
+  },
+  "Satisfy": {
+   "license": null,
+   "copyright": "Copyright (c) 2011 by Font Diner, Inc. All rights reserved.",
+   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/apache/satisfy/METADATA.pb"
+  },
+  "Readex Pro": {
+   "license": null,
+   "copyright": "Copyright 2019 The Readex Pro Project Authors (https://github.com/ThomasJockin/readexpro)",
+   "repo": "https://github.com/ThomasJockin/readexpro",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/readexpro/METADATA.pb"
+  },
+  "IBM Plex Sans Condensed": {
+   "license": null,
+   "copyright": "Copyright 2019 IBM Corp. All rights reserved.",
+   "repo": "https://github.com/googlefonts/plex",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/ibmplexsanscondensed/METADATA.pb"
+  },
+  "Varela Round": {
+   "license": "OFL",
+   "copyright": "Copyright 2023 The Varela Round Project Authors (https://github.com/alefalefalef/Varela-Round-Hebrew/), with Reserved Font Names Varela and Varela Round.",
+   "repo": "https://github.com/m4rc1e/Varela-Round-Hebrew",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/varelaround/METADATA.pb"
+  },
+  "Russo One": {
+   "license": null,
+   "copyright": "Copyright (c) 2011-2012, Jovanny Lemonad (lemonad@jovanny.ru), with Reserved Font Name \\\"Russo\\\"",
+   "repo": "https://github.com/googlefonts/russoone",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/russoone/METADATA.pb"
+  },
+  "Permanent Marker": {
+   "license": null,
+   "copyright": "Copyright (c) 2010 by Font Diner, Inc. All rights reserved.",
+   "repo": "https://github.com/googlefonts/googlefontdirectory-hg",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/apache/permanentmarker/METADATA.pb"
+  },
+  "Golos Text": {
+   "license": null,
+   "copyright": "Copyright 2019 The Golos Text Project Authors (https://github.com/googlefonts/golos-text)",
+   "repo": "https://github.com/googlefonts/golos-text",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/golostext/METADATA.pb"
+  },
+  "Albert Sans": {
+   "license": null,
+   "copyright": "Copyright 2021 The Albert Sans Project Authors (https://github.com/usted/Albert-Sans)",
+   "repo": "https://github.com/usted/Albert-Sans",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/albertsans/METADATA.pb"
+  },
+  "Chivo": {
+   "license": null,
+   "copyright": "Copyright 2019 The Chivo Project Authors (https://github.com/Omnibus-Type/Chivo)",
+   "repo": "https://github.com/Omnibus-Type/Chivo",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/chivo/METADATA.pb"
+  },
+  "League Spartan": {
+   "license": null,
+   "copyright": "Copyright 2020 The League Spartan Project Authors (https://github.com/theleagueof/league-spartan)",
+   "repo": "https://github.com/theleagueof/league-spartan",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/leaguespartan/METADATA.pb"
+  },
+  "Noto Sans Display": {
+   "license": null,
+   "copyright": "Copyright 2015 Google Inc. All Rights Reserved.",
+   "repo": "https://github.com/notofonts/latin-greek-cyrillic",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notosansdisplay/METADATA.pb"
+  },
+  "Doppio One": {
+   "license": null,
+   "copyright": "Copyright (c) 2011, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com), with Reserved Font Name \\\"Doppio\\\"",
+   "repo": "https://github.com/googlefonts/doppioone",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/doppioone/METADATA.pb"
+  },
+  "Paytone One": {
+   "license": null,
+   "copyright": "Copyright 2011 The Paytone Project Authors (https://github.com/googlefonts/paytoneFont)",
+   "repo": "https://github.com/googlefonts/paytoneFont",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/paytoneone/METADATA.pb"
+  },
+  "Comic Neue": {
+   "license": null,
+   "copyright": "Copyright 2014 The Comic Neue Project Authors (https://github.com/crozynski/comicneue)",
+   "repo": "https://github.com/crozynski/comicneue",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/comicneue/METADATA.pb"
+  },
+  "Roboto Serif": {
+   "license": "OFL",
+   "copyright": "Copyright 2020 The Roboto Serif Project Authors (https://github.com/googlefonts/RobotoSerif)",
+   "repo": "https://github.com/googlefonts/roboto-serif",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/robotoserif/METADATA.pb"
+  },
+  "Google Sans Code": {
+   "license": null,
+   "copyright": "Copyright 2025 The Google Sans Code Project Authors (github.com/googlefonts/googlesans-code)",
+   "repo": "https://github.com/googlefonts/googlesans-code",
+   "metadataUrl": "https://github.com/google/fonts/blob/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/googlesanscode/METADATA.pb"
   }
  }
 }
