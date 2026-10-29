@@ -1,5 +1,5 @@
 {
- "asOf": "2026-10-28T18:54:46.466Z",
+ "asOf": "2026-10-29T19:02:06.112Z",
  "source": "Google Fonts axis registry (in family metadata)",
  "sourceUrl": "https://fonts.google.com/metadata/fonts",
  "axes": [
@@ -130,6 +130,14 @@
    "max": 100,
    "def": 0,
    "desc": "Adjusts overall design from formal and traditional (0%) to informal and unconventional (up to 100%)."
+  },
+  {
+   "tag": "JITT",
+   "name": "Jitter",
+   "min": 0,
+   "max": 100,
+   "def": 0,
+   "desc": "Controls the amount of jitter applied to the glyphs. Higher values emulate the mechanical imperfection and displacement of vintage printers."
   },
   {
    "tag": "MONO",
